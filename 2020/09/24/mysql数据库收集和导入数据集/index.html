@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="FNSFLM">
+    
+    
+    
+    
+    
+    
+    <title>mysql数据库收集和导入数据集 | Hello World</title>
+    <link href="http://fnsflm.xyz" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/illust_82901177_20200711_200055.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://fnsflm.xyz">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">Hello World</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="">
+                    <a href="/tags">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://fnsflm.xyz">Hello World</a>
+        >
+        <span>mysql数据库收集和导入数据集</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2020/09/24/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-09-24
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2020/09/24/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2020-09-24
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="mysql数据库收集和导入数据集"><a href="#mysql数据库收集和导入数据集" class="headerlink" title="mysql数据库收集和导入数据集"></a>mysql数据库收集和导入数据集</h1><p>&nbsp;</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>linux ubuntu 18.04LTS<br>mysql-5.7.31<br>&nbsp;</p>
+<h2 id="数据集的收集"><a href="#数据集的收集" class="headerlink" title="数据集的收集"></a>数据集的收集</h2><blockquote>
+<p>原贴<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40975029/article/details/88918624">【资源】史上最全数据集汇总</a></p>
+</blockquote>
+<ol>
+<li>首先试了一下<a target="_blank" rel="noopener" href="http://data.worldbank.org/">World Bank</a><br>&nbsp;<br><img src="https://img-blog.csdnimg.cn/20200915095749738.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyODQ4Njkz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">&nbsp;<br><img src="https://img-blog.csdnimg.cn/20200915100050420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyODQ4Njkz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>&nbsp;<br>下载该数据集时出现<code>submit</code>始终无法点的情况，以待解决<br>&nbsp;<br><img src="https://img-blog.csdnimg.cn/20200915095913704.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyODQ4Njkz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">&nbsp;<br>&nbsp;</li>
+<li>再尝试<a target="_blank" rel="noopener" href="https://rbi.org.in/Scripts/Statistics.aspx">RBI</a>数据集<br>&nbsp;<img src="https://img-blog.csdnimg.cn/20200915100159553.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyODQ4Njkz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">首页就能看到许多数据集，可以用chrome翻译成中文<br>随便点一个：<br><img src="https://img-blog.csdnimg.cn/20200915100644122.png#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020091510072265.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyODQ4Njkz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">&nbsp;<br>点击pdf的图标，再点击pdf里的超链接，可以直接下载到数据集<br><img src="https://img-blog.csdnimg.cn/20200915100759523.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyODQ4Njkz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">随便下一个，数据集如图所示：<br><img src="https://img-blog.csdnimg.cn/20200915101023341.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyODQ4Njkz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">再将该表转为csv格式，方便后续数据库读取<br><a target="_blank" rel="noopener" href="https://kdocs.cn/l/caQ1D5D06nWy%20%5B%E9%87%91%E5%B1%B1%E6%96%87%E6%A1%A3%5D%20ELECT07022016_FEB18.csv">ELECT07022016_FEB18.csv</a><br>&nbsp;<h2 id="数据集导入mysql数据库"><a href="#数据集导入mysql数据库" class="headerlink" title="数据集导入mysql数据库"></a>数据集导入mysql数据库</h2></li>
+<li>mysql小数类型的使用</li>
+</ol>
+<blockquote>
+<p> 原贴：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ljhdo/p/4910699.html">SQL Server 小数类型（float 和 decimal）</a></p>
+</blockquote>
+<ol start="2">
+<li>在数据库中创建表</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> ELECT07022016_FEB18(</span><br><span class="line"><span class="keyword">data</span> <span class="built_in">varchar</span>(<span class="number">200</span>), </span><br><span class="line">rtgs_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),rtgs_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">neft_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),neft_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">cts_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),cts_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),</span><br><span class="line">imps_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),imps_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">nach_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),nach_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">upi_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),upi_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">ussd_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),ussd_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">dccp_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),dccp_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),</span><br><span class="line">ppi_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),ppi_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),</span><br><span class="line">mb_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),mb_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),</span><br><span class="line">total_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),total_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+<p>查了下load data infile的用法，暂时没找到忽略最后几行的办法，因此使用了较大的varchar来存储第一格<br>下图是看最长的一个有多少字符<br><img src="https://img-blog.csdnimg.cn/20200915142004529.png#pic_center" alt="在这里插入图片描述"></p>
+<p>看看创建的表<br><img src="https://img-blog.csdnimg.cn/20200915112227786.png#pic_center" alt="在这里插入图片描述">创建成功，然后感觉名字太复杂了，不好操作，改一下名：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rename</span> <span class="keyword">table</span> ELECT07022016_FEB18 <span class="keyword">to</span> eps_rd;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200915112401441.png#pic_center" alt="在这里插入图片描述">3. 用<code>load</code>导入到数据库中</p>
+<blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xj2015/p/6656287.html">mysql中的load data infile用法</a></p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">load</span> <span class="keyword">data</span> <span class="keyword">infile</span> <span class="string">&#x27;/home/hjy/桌面/everyday-learning2/2020-9-15/ELECT07022016_FEB18.csv&#x27;</span>  </span><br><span class="line"><span class="keyword">into</span> <span class="keyword">table</span> mysql_learning.eps_rd </span><br><span class="line"><span class="built_in">character</span> <span class="keyword">set</span> gb2312 </span><br><span class="line"><span class="keyword">fields</span> <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">&#x27;,&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>出现报错：<br><img src="https://img-blog.csdnimg.cn/2020091514292091.png#pic_center" alt="![在这里插入图片描述](https://img-blog.csdnimg.cn/20200915142314724.png#pic_center"></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44595372/article/details/88723191">将csv 文件存入mysql 报错The MySQL server is running with the –secure-file-priv option so it cannot execute</a>，显示secure_file_priv文件路径</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">&#x27;%secure%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200915143054848.png#pic_center" alt="在这里插入图片描述">然后将文件拷贝至该路径下（文章中可以永久修改，解决该问题，但要重启mysql，为了简单起见，直接复制）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /home/hjy/桌面/everyday-learning2/2020-9-15/ELECT07022016_FEB18.csv /var/lib/mysql-files/</span><br></pre></td></tr></table></figure>
+<p>再次导入，发生如下报错：<br><img src="https://img-blog.csdnimg.cn/2020091514394487.png#pic_center" alt="在这里插入图片描述">参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/stormlovetao/article/details/7265002">mysql 用load data 导入数据时，数据被截断问题</a> </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> sql_mode=<span class="string">&#x27;&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>再次运行，导入成功：<br><img src="https://img-blog.csdnimg.cn/20200915144252623.png#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200915144358954.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyODQ4Njkz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">4. 后续操作</p>
+<ul>
+<li>删除为空的行</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> eps_rd <span class="keyword">where</span> <span class="keyword">data</span>=<span class="string">&#x27;&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>拆分表</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> month_eps <span class="keyword">as</span> (<span class="keyword">select</span> * <span class="keyword">from</span> eps_rd <span class="keyword">where</span> <span class="keyword">data</span> <span class="keyword">like</span> <span class="string">&#x27;___-%&#x27;</span>);</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> month_eps <span class="keyword">where</span> <span class="keyword">data</span>=<span class="string">&#x27;Feb-18&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200915173004514.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyODQ4Njkz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>把18年每天的数据分出来还有点麻烦，这里用了正则表达式</p>
+<blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_22238021/article/details/80929518">MySQL正则表达式</a></p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> feb_esp <span class="keyword">as</span> </span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> eps_rd </span><br><span class="line"><span class="keyword">where</span> <span class="keyword">data</span> regexp <span class="string">&#x27;^[0-9]&#x27;</span> </span><br><span class="line"><span class="keyword">and</span> <span class="keyword">data</span> <span class="keyword">not</span> <span class="keyword">like</span> <span class="string">&#x27;_.%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200915173208728.png#pic_center" alt="在这里插入图片描述"></p>
+<p>再将其它信息存起来</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> note <span class="keyword">as</span> <span class="keyword">select</span> <span class="keyword">data</span> <span class="keyword">from</span> eps_rd <span class="keyword">where</span> <span class="keyword">data</span> <span class="keyword">like</span> <span class="string">&#x27;____%&#x27;</span> <span class="keyword">and</span> <span class="keyword">data</span> <span class="keyword">not</span> <span class="keyword">like</span> <span class="string">&#x27;___-__&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200915173406337.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyODQ4Njkz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>最后，我想给更改一下列名，把<code>data</code>改成<code>notes</code>可在网上没查到方法（好多写的是用sp_name更改，但我不会用），说来惭愧。<br>我的java IDE：IntelliJ IDEA里有连结数据库的功能，然后用里面的工具成功更改列名。<br><img src="https://img-blog.csdnimg.cn/20200915172620643.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyODQ4Njkz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> note <span class="keyword">change</span> <span class="keyword">data</span> notes <span class="built_in">varchar</span>(<span class="number">200</span>) <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<p>over！</p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            FNSFLM
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/illust_82901177_20200711_200055.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/24/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/24/Linux%E4%B8%8Bvscode%20C%E8%AF%AD%E8%A8%80%20%E5%AF%B9pow%E3%80%81exp%E6%9C%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">Linux下vscode C语言 对pow、exp未定义引用问题</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/24/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/24/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/24/Linux%E4%B8%8Bvscode%20C%E8%AF%AD%E8%A8%80%20%E5%AF%B9pow%E3%80%81exp%E6%9C%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">Linux下vscode C语言 对pow、exp未定义引用问题</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/24/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2020/09/24/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/09/24/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2020/09/24/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/fnsflmzqdydk/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://fnsflm.coding.net" target="_blank">Coding</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 FNSFLM Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
