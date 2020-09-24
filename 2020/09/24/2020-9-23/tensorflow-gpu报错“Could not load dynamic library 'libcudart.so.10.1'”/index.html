@@ -191,7 +191,7 @@
         </center>
     </div>
     <div class="content-article">
-        <h1 id="tensorflow-gpu报错“Could-not-load-dynamic-library-‘libcudart-so-10-1’”"><a href="#tensorflow-gpu报错“Could-not-load-dynamic-library-‘libcudart-so-10-1’”" class="headerlink" title="tensorflow-gpu报错“Could not load dynamic library ‘libcudart.so.10.1’”"></a>tensorflow-gpu报错“Could not load dynamic library ‘libcudart.so.10.1’”</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在安装好tensorflow、cuda和cudnn后，在python中import tensorflow时仍然发生报错：<br><img src="http://47.99.197.253/usr/uploads/2020/09/3995948114.png" alt="请输入图片描述"></p>
+        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在安装好tensorflow、cuda和cudnn后，在python中import tensorflow时仍然发生报错：<br><img src="http://47.99.197.253/usr/uploads/2020/09/3995948114.png" alt="请输入图片描述"></p>
 <h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>这里是cuda版本不对的问题，我安装的是11.0版本，而需要的是10.1，所以在安装tensorflow之前，一定要确认tensorflow和cuda版本的对应！！</p>
 <h2 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h2><h3 id="cuda安装时选择了network网络版本"><a href="#cuda安装时选择了network网络版本" class="headerlink" title="cuda安装时选择了network网络版本"></a>cuda安装时选择了<code>network</code>网络版本</h3><p><img src="http://47.99.197.253/usr/uploads/2020/09/369309157.png" alt="请输入图片描述"></p>
 <p>安装好后看看软件包里有什么版本：<br><img src="http://47.99.197.253/usr/uploads/2020/09/2368034389.png" alt="选区_136.png"></p>
