@@ -10,7 +10,7 @@
     
     
     
-    <title>自搭梯子 | Hello World</title>
+    <title>ubuntu上c++使用mysql接口调用数据库 | Hello World</title>
     <link href="http://fnsflm.xyz" rel="prefetch" />
 
     
@@ -156,19 +156,19 @@
         <i class="fa fa-home"></i>
         <a href="http://fnsflm.xyz">Hello World</a>
         >
-        <span>自搭梯子</span>
+        <span>ubuntu上c++使用mysql接口调用数据库</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2020/09/24/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/">自搭梯子</a>
+                <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
             </h1>
         </div>
         <div class="tag-article">
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2020-09-24
+                <i class="fa fa-calendar"></i> 2020-09-25
             </span>
             
         </div>
@@ -178,11 +178,11 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2020/09/24/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/">自搭梯子</a>
+                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2020-09-24
+                <i class="fa fa-calendar"></i> 2020-09-25
             </p>
             <p>
                 
@@ -191,7 +191,21 @@
         </center>
     </div>
     <div class="content-article">
-        <h1 id="自搭梯子"><a href="#自搭梯子" class="headerlink" title="自搭梯子"></a>自搭梯子</h1><p>购买vps：<a target="_blank" rel="noopener" href="https://app.cloudcone.com/">cloudcone</a>，这个比<a target="_blank" rel="noopener" href="https://www.vultr.com/">vultr</a>便宜<br>安装ssr：<a target="_blank" rel="noopener" href="https://viencoding.com/article/155">https://viencoding.com/article/155</a><br>安装bbr加速：<a target="_blank" rel="noopener" href="http://luyiminggonnabeok.cn/2018/08/10/%E5%8D%81%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84SSR%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E6%A2%AF%E5%AD%90/">http://luyiminggonnabeok.cn/2018/08/10/%E5%8D%81%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84SSR%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E6%A2%AF%E5%AD%90/</a><br>在此做记录，防止以后找不到了</p>
+        <h1 id="ubuntu上c-使用mysql接口调用数据库"><a href="#ubuntu上c-使用mysql接口调用数据库" class="headerlink" title="ubuntu上c++使用mysql接口调用数据库"></a>ubuntu上c++使用mysql接口调用数据库</h1><p><strong>c++ 连接mysql有两种方法，一种是通过odbc调用，另一种是通过mysql提供的c api进行调用</strong></p>
+<p><del>我才不是把两种方法搞混了稀里糊涂装了odbc却抄的mysql c api的代码呢</del></p>
+<blockquote>
+<p>参考： <a target="_blank" rel="noopener" href="https://blog.csdn.net/lisonglisonglisong/article/details/25071793">Linux下C++访问MySQL数据库</a></p>
+</blockquote>
+<p>首先要安装<code>libmysql++</code>库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libmysql++-dev</span><br></pre></td></tr></table></figure>
+
+<p>代码示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mysql/mysql.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    MYSQL mysql;</span><br><span class="line">    mysql_init(&amp;mysql);</span><br><span class="line">	<span class="comment">// 函数mysql_real_connect建立一个数据库连接</span></span><br><span class="line">    mysql = *mysql_real_connect(&amp;mysql, <span class="string">&quot;127.0.0.1&quot;</span>, <span class="string">&quot;root&quot;</span>, <span class="string">&quot;root&quot;</span>, <span class="string">&quot;blhxbot&quot;</span>, <span class="number">0</span>, <span class="literal">NULL</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="comment">// mysql_query()执行成功返回0，失败返回非0值</span></span><br><span class="line">    mysql_query(&amp;mysql, <span class="string">&quot;show tables&quot;</span>);</span><br><span class="line">    MYSQL_RES *result;</span><br><span class="line">	<span class="comment">// 获取结果集</span></span><br><span class="line">    result = mysql_store_result(&amp;mysql);</span><br><span class="line">	<span class="comment">// mysql_num_fields()返回结果集中的字段数</span></span><br><span class="line">    <span class="keyword">while</span>(MYSQL_ROW row = mysql_fetch_row(result))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; mysql_num_fields(result); j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; row[j]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	mysql_close(&amp;mysql);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>原文 <a target="_blank" rel="noopener" href="https://blog.csdn.net/lisonglisonglisong/article/details/25071793">Linux下C++访问MySQL数据库</a>中，mysql_field_count表示的是列数，而mysql_fetch_row取出的一整行，包括所有列，故mysql_field_count不能作为循环的指标。使用while循环可取出每一行。</p>
+<p>注：g++编译时要链接库，否则会报错</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g++ new_cpp.cpp -o new_cpp -lmysqlclient</span><br><span class="line">./new_cpp</span><br></pre></td></tr></table></figure>
+
 
     </div>
 </article>
@@ -253,6 +267,18 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEodbc/">ubuntu上配置odbc</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2020/09/24/2020-9-23/tensorflow-gpu%E6%8A%A5%E9%94%99%E2%80%9CCould-not-load-dynamic-library-libcudart-so-10-1-%E2%80%9D/">tensorflow-gpu报错“Could not load dynamic library &#39;libcudart.so.10.1&#39;”</a>
                 </span>
             </li>
@@ -265,7 +291,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/">自搭梯子</a>
+                    <a href="/2020/09/24/2020-9-20/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/">自搭梯子</a>
                 </span>
             </li>
             
@@ -341,12 +367,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/">自搭梯子</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
                 </span>
             </li>
@@ -363,6 +383,24 @@
                 </span>
             </li>
             
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/24/2020-9-20/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/">自搭梯子</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEodbc/">ubuntu上配置odbc</a>
+                </span>
+            </li>
+            
         </ul>
     </div>
 </aside>
@@ -374,17 +412,17 @@
 
                 
                 <li>
-                    <a href="/2020/09/24/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/09/24/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/09/24/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
