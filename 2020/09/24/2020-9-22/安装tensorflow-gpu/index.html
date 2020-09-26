@@ -14,24 +14,24 @@
     <link href="https://fnsflm.gitee.io/fnslfm" rel="prefetch" />
 
     
-<link rel="stylesheet" href="/css/bootstrap.min.css">
-<link rel="stylesheet" href="/css/aos.css">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/fnslfm/css/bootstrap.min.css">
+<link rel="stylesheet" href="/fnslfm/css/aos.css">
+<link rel="stylesheet" href="/fnslfm/css/style.css">
 
     
-<script src="/js/jquery.min.js"></script>
+<script src="/fnslfm/js/jquery.min.js"></script>
 
     
-<script src="/js/bootstrap.min.js"></script>
+<script src="/fnslfm/js/bootstrap.min.js"></script>
 
     
-<script src="/js/aos.js"></script>
+<script src="/fnslfm/js/aos.js"></script>
 
     
-<script src="/js/highslide/highslide-full.min.js"></script>
+<script src="/fnslfm/js/highslide/highslide-full.min.js"></script>
 
     
-<link rel="stylesheet" href="/js/highslide/highslide.css">
+<link rel="stylesheet" href="/fnslfm/js/highslide/highslide.css">
 
     <style type="text/css">
         @media (max-width: 768px) {
@@ -46,12 +46,12 @@
     <!--<script type="text/javascript">
       if (document.images) {
         var avatar = new Image();
-        avatar.src = '/imgs/illust_82901177_20200711_200055.jpg'
+        avatar.src = '/fnslfm/imgs/illust_82901177_20200711_200055.jpg'
         var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.png'.split(',')
         var previewsPreLoad = []
         for(var i = 0; i < length; i++) {
           previewsPreLoad.push(new Image())
-          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/fnslfm/imgs/preview' + previews[i]
         }
       }
     </script>-->
@@ -100,7 +100,7 @@
                 
                 
                 <li class="">
-                    <a href="/">
+                    <a href="/fnslfm/">
                         <i class="fa fa-home"></i>首页
                     </a>
                 </li>
@@ -108,7 +108,7 @@
                 
                 
                 <li class="">
-                    <a href="/archives">
+                    <a href="/fnslfm/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
                 </li>
@@ -117,7 +117,7 @@
                 
                 
                 <li class="">
-                    <a href="/categories">
+                    <a href="/fnslfm/categories">
                         <i class="fa fa-list"></i>分类
                     </a>
                 </li>
@@ -127,7 +127,7 @@
                 
                 
                 <li class="">
-                    <a href="/tags">
+                    <a href="/fnslfm/tags">
                         <i class="fa fa-tags"></i>标签
                     </a>
                 </li>
@@ -136,7 +136,7 @@
                 
                 
                 <li class="">
-                    <a href="/about">
+                    <a href="/fnslfm/about">
                         <i class="fa fa-user"></i>关于我
                     </a>
                 </li>
@@ -162,7 +162,7 @@
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
+                <a href="/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -178,7 +178,7 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
+                    <a href="/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
                 </h4>
             </div>
             <p>
@@ -204,7 +204,7 @@
 <p>参考： <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_25241325/article/details/90753830">Ubuntu16.04+CUDA9.0 安装（全网最简便快速安装，测试成功）</a></p>
 </blockquote>
 <ul>
-<li>下载deb安装包<br>在英伟达官网下载<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-toolkit-archive">cuda</a>，选择适合的版本，我选择的是10.1版，接下来根据自己的系统一步一步的点：<br><img src="/fnsflm/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/369309157.png" alt="选区_127.png"></li>
+<li>下载deb安装包<br>在英伟达官网下载<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-toolkit-archive">cuda</a>，选择适合的版本，我选择的是10.1版，接下来根据自己的系统一步一步的点：<br><img src="/fnslfm/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/369309157.png" alt="选区_127.png"></li>
 </ul>
 <ul>
 <li>安装cuda<br>代码在官网已经给出，依次执行即可，时间有些长,<strong>复制官网的代码来执行</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i cuda-repo-ubuntu1804_10.1.105-1_amd64.deb</span><br><span class="line">sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install cuda</span><br></pre></td></tr></table></figure>
@@ -215,17 +215,17 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span>  PATH=/usr/<span class="built_in">local</span>/cuda-11.0/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span>  LD_LIBRARY_PATH=/usr/<span class="built_in">local</span>/cuda-11.0/lib64:<span class="variable">$LD_LIBRARY_PATH</span></span><br></pre></td></tr></table></figure>
 <p>不确定路径的话ls找一找就好<br><del>其实这里挺奇怪的，我官网上点的是10.1版本，可这里怎么变成11.0了。可能是因为我使用的网络安装，添加源后使用的apt去下载，这时下载的会时默认的最新版。</del><br>最后<code>source /etc/profile</code>更新配置<br>tips:有的人会在<code>~/.bashrc</code>中配置终端的颜色，而执行<code>source /etc/profile</code>后，hostname可能会变成白色，此时，只用再执行<code>source ~/.bashrc</code>即可恢复（导入的环境变量依然有效）</p>
 <ul>
-<li>验证安装<br>执行<code>nvcc -V</code>验证安装是否成功：<br><img src="/fnsflm/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/853236940.png" alt="选区_129.png"></li>
+<li>验证安装<br>执行<code>nvcc -V</code>验证安装是否成功：<br><img src="/fnslfm/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/853236940.png" alt="选区_129.png"></li>
 </ul>
 <h2 id="安装cudnn"><a href="#安装cudnn" class="headerlink" title="安装cudnn"></a>安装cudnn</h2><blockquote>
-<p>参考 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/622f47f94784">CUDA与cuDNN</a><br>官网上下载<a target="_blank" rel="noopener" href="https://developer.nvidia.com/rdp/cudnn-download%EF%BC%8C%E9%80%89%E6%8B%A9%E4%B9%8B%E5%89%8D%E4%B8%8B%E8%BD%BD%E7%9A%84cuda%E5%AF%B9%E5%BA%94%E7%89%88%E6%9C%AC%E5%8D%B3%E5%8F%AF%EF%BC%8C%E4%BD%86%E8%A6%81%E4%BA%8B%E5%85%88%E6%B3%A8%E5%86%8C%E8%B4%A6%E6%88%B7%E5%92%8C%E5%A1%AB%E4%B8%80%E4%B8%AA%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B7%EF%BC%8C%E7%85%A7%E7%9D%80%E6%B5%81%E7%A8%8B%E8%B5%B0%E5%8D%B3%E5%8F%AF">https://developer.nvidia.com/rdp/cudnn-download，选择之前下载的cuda对应版本即可，但要事先注册账户和填一个调查问卷，照着流程走即可</a><br><img src="/fnsflm/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/1446294553.png" alt="选区_130.png"><br><img src="/fnsflm/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/3382395239.png" alt="选区_131.png"><br>下载<strong>Library</strong>，我选择第一个<br>下载完后，解压，里边有<code>include</code>,<code>lib64</code>两个文件夹，复制到之前下载的cuda对应的目录中即可</p>
+<p>参考 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/622f47f94784">CUDA与cuDNN</a><br>官网上下载<a target="_blank" rel="noopener" href="https://developer.nvidia.com/rdp/cudnn-download%EF%BC%8C%E9%80%89%E6%8B%A9%E4%B9%8B%E5%89%8D%E4%B8%8B%E8%BD%BD%E7%9A%84cuda%E5%AF%B9%E5%BA%94%E7%89%88%E6%9C%AC%E5%8D%B3%E5%8F%AF%EF%BC%8C%E4%BD%86%E8%A6%81%E4%BA%8B%E5%85%88%E6%B3%A8%E5%86%8C%E8%B4%A6%E6%88%B7%E5%92%8C%E5%A1%AB%E4%B8%80%E4%B8%AA%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B7%EF%BC%8C%E7%85%A7%E7%9D%80%E6%B5%81%E7%A8%8B%E8%B5%B0%E5%8D%B3%E5%8F%AF">https://developer.nvidia.com/rdp/cudnn-download，选择之前下载的cuda对应版本即可，但要事先注册账户和填一个调查问卷，照着流程走即可</a><br><img src="/fnslfm/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/1446294553.png" alt="选区_130.png"><br><img src="/fnslfm/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/3382395239.png" alt="选区_131.png"><br>下载<strong>Library</strong>，我选择第一个<br>下载完后，解压，里边有<code>include</code>,<code>lib64</code>两个文件夹，复制到之前下载的cuda对应的目录中即可</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/下载</span><br><span class="line">tar -xvf cudnn-11.0-linux-x64-v8.0.3.33.tgz</span><br><span class="line"><span class="built_in">cd</span> cudnn-11.0-linux-x64-v8.0.3.33/cuda</span><br><span class="line">sudo cp include/cudnn.h /usr/<span class="built_in">local</span>/cuda-11.0/include/</span><br><span class="line">sudo cp lib64/libcudnn* /usr/<span class="built_in">local</span>/cuda-11.0/lib64/</span><br><span class="line">sudo chmod a+r /usr/<span class="built_in">local</span>/cuda-11.0/include/cudnn.h</span><br><span class="line">sudo chmod a+r /usr/<span class="built_in">local</span>/cuda-11.0/lib64/libcudnn*</span><br></pre></td></tr></table></figure>
-<p>这样就安装完了<br>其实在找cuda文件夹时会发现<code>/usr/local</code>下有<code>cuda</code>和<code>cuda-11.0</code><br>但通过<code>ls -l</code>命令列出后可以发现这是个链接,所以不用担心,复制到cuda或者cuda-11.0里都是有效的<br><img src="/fnsflm/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/2457587356.png" alt="选区_134.png"></p>
+<p>这样就安装完了<br>其实在找cuda文件夹时会发现<code>/usr/local</code>下有<code>cuda</code>和<code>cuda-11.0</code><br>但通过<code>ls -l</code>命令列出后可以发现这是个链接,所以不用担心,复制到cuda或者cuda-11.0里都是有效的<br><img src="/fnslfm/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/2457587356.png" alt="选区_134.png"></p>
 <h2 id="安装tensorflow-gpu-1"><a href="#安装tensorflow-gpu-1" class="headerlink" title="安装tensorflow-gpu"></a>安装tensorflow-gpu</h2><p>终端中输入：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tensorflow-gpu==2.3.0</span><br></pre></td></tr></table></figure>
-<p><code>==</code>后写合适的版本，tensorflow-gpu 2.3.0对应的cuda是10.1,所以我这里发生了报错:<br><img src="/fnsflm/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/3995948114.png" alt="选区_135.png"></p>
-<p>通过降低cuda版本，程序问题解决，安装成功，可以参考这篇文章<a target="_blank" rel="noopener" href="https://coding-pages-bucket-3476924-7958521-1051-325578-1303258246.cos-website.ap-hongkong.myqcloud.com/2020/09/24/2020-9-23/tensorflow-gpu%E6%8A%A5%E9%94%99%E2%80%9CCould%20not%20load%20dynamic%20library%20'libcudart.so.10.1'%E2%80%9D/">tensorflow-gpu报错“Could not load dynamic library ‘libcudart.so.10.1’”</a><br><img src="/fnsflm/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/1226443971.png" alt="选区_148.png"></p>
+<p><code>==</code>后写合适的版本，tensorflow-gpu 2.3.0对应的cuda是10.1,所以我这里发生了报错:<br><img src="/fnslfm/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/3995948114.png" alt="选区_135.png"></p>
+<p>通过降低cuda版本，程序问题解决，安装成功，可以参考这篇文章<a target="_blank" rel="noopener" href="https://coding-pages-bucket-3476924-7958521-1051-325578-1303258246.cos-website.ap-hongkong.myqcloud.com/2020/09/24/2020-9-23/tensorflow-gpu%E6%8A%A5%E9%94%99%E2%80%9CCould%20not%20load%20dynamic%20library%20'libcudart.so.10.1'%E2%80%9D/">tensorflow-gpu报错“Could not load dynamic library ‘libcudart.so.10.1’”</a><br><img src="/fnslfm/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/1226443971.png" alt="选区_148.png"></p>
 
     </div>
 </article>
@@ -237,7 +237,7 @@
 <aside id="sidebar-search">
     <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
         <form class="form-inline clearfix" id="search-form" method="get"
-              action="/search/index.html">
+              action="/fnslfm/search/index.html">
             <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
             <button class="btn btn-danger btn-gal" type="submit">
                 <i class="fa fa-search"></i>
@@ -253,7 +253,7 @@
             <i class="fa fa-quote-right"></i>
         </div>
         <div class="author-panel text-center">
-            <img src="/imgs/illust_82901177_20200711_200055.jpg" width="140" height="140"
+            <img src="/fnslfm/imgs/illust_82901177_20200711_200055.jpg" width="140" height="140"
                  alt="个人头像" class="author-image">
             <p class="author-description"></p>
         </div>
@@ -287,61 +287,61 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/25/2020-9-26/vscode%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95c++/">vscode快速配置调试c++</a>
+                    <a href="/fnslfm/2020/09/25/2020-9-26/vscode%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95c++/">vscode快速配置调试c++</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
+                    <a href="/fnslfm/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEodbc/">ubuntu上配置odbc</a>
+                    <a href="/fnslfm/2020/09/25/2020-9-25/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEodbc/">ubuntu上配置odbc</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2020-9-23/tensorflow-gpu%E6%8A%A5%E9%94%99%E2%80%9CCould-not-load-dynamic-library-libcudart-so-10-1-%E2%80%9D/">tensorflow-gpu报错“Could not load dynamic library &#39;libcudart.so.10.1&#39;”</a>
+                    <a href="/fnslfm/2020/09/24/2020-9-23/tensorflow-gpu%E6%8A%A5%E9%94%99%E2%80%9CCould-not-load-dynamic-library-libcudart-so-10-1-%E2%80%9D/">tensorflow-gpu报错“Could not load dynamic library &#39;libcudart.so.10.1&#39;”</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
+                    <a href="/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2020-9-20/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/">自搭梯子</a>
+                    <a href="/fnslfm/2020/09/24/2020-9-20/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/">自搭梯子</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/%E5%B0%9D%E8%AF%95%E9%85%8D%E7%BD%AEhadoop%E7%8E%AF%E5%A2%83/">尝试配置hadoop环境</a>
+                    <a href="/fnslfm/2020/09/24/%E5%B0%9D%E8%AF%95%E9%85%8D%E7%BD%AEhadoop%E7%8E%AF%E5%A2%83/">尝试配置hadoop环境</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8navicat/">尝试使用navicat</a>
+                    <a href="/fnslfm/2020/09/24/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8navicat/">尝试使用navicat</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
+                    <a href="/fnslfm/2020/09/24/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2019-2-18/Linux%E4%B8%8Bvscode-C%E8%AF%AD%E8%A8%80-%E5%AF%B9pow%E3%80%81exp%E6%9C%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">Linux下vscode C语言 对pow、exp未定义引用问题</a>
+                    <a href="/fnslfm/2020/09/24/2019-2-18/Linux%E4%B8%8Bvscode-C%E8%AF%AD%E8%A8%80-%E5%AF%B9pow%E3%80%81exp%E6%9C%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">Linux下vscode C语言 对pow、exp未定义引用问题</a>
                 </span>
             </li>
             
@@ -363,61 +363,61 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/hello-world/">Hello World</a>
+                    <a href="/fnslfm/2020/09/24/hello-world/">Hello World</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
+                    <a href="/fnslfm/2020/09/24/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8navicat/">尝试使用navicat</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8navicat/">尝试使用navicat</a>
+                    <a href="/fnslfm/2020/09/24/%E5%B0%9D%E8%AF%95%E9%85%8D%E7%BD%AEhadoop%E7%8E%AF%E5%A2%83/">尝试配置hadoop环境</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/%E5%B0%9D%E8%AF%95%E9%85%8D%E7%BD%AEhadoop%E7%8E%AF%E5%A2%83/">尝试配置hadoop环境</a>
+                    <a href="/fnslfm/2020/09/24/2019-2-18/Linux%E4%B8%8Bvscode-C%E8%AF%AD%E8%A8%80-%E5%AF%B9pow%E3%80%81exp%E6%9C%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">Linux下vscode C语言 对pow、exp未定义引用问题</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2019-2-18/Linux%E4%B8%8Bvscode-C%E8%AF%AD%E8%A8%80-%E5%AF%B9pow%E3%80%81exp%E6%9C%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">Linux下vscode C语言 对pow、exp未定义引用问题</a>
+                    <a href="/fnslfm/2020/09/24/2020-9-20/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/">自搭梯子</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2020-9-20/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/">自搭梯子</a>
+                    <a href="/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
+                    <a href="/fnslfm/2020/09/24/2020-9-23/tensorflow-gpu%E6%8A%A5%E9%94%99%E2%80%9CCould-not-load-dynamic-library-libcudart-so-10-1-%E2%80%9D/">tensorflow-gpu报错“Could not load dynamic library &#39;libcudart.so.10.1&#39;”</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2020-9-23/tensorflow-gpu%E6%8A%A5%E9%94%99%E2%80%9CCould-not-load-dynamic-library-libcudart-so-10-1-%E2%80%9D/">tensorflow-gpu报错“Could not load dynamic library &#39;libcudart.so.10.1&#39;”</a>
+                    <a href="/fnslfm/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
+                    <a href="/fnslfm/2020/09/25/2020-9-25/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEodbc/">ubuntu上配置odbc</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/25/2020-9-26/vscode%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95c++/">vscode快速配置调试c++</a>
+                    <a href="/fnslfm/2020/09/25/2020-9-26/vscode%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95c++/">vscode快速配置调试c++</a>
                 </span>
             </li>
             
@@ -432,17 +432,17 @@
 
                 
                 <li>
-                    <a href="/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/fnslfm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -502,7 +502,7 @@
 </div>
 </body>
 
-<script src="/js/activate-power-mode.js"></script>
+<script src="/fnslfm/js/activate-power-mode.js"></script>
 
 <script>
 
@@ -545,14 +545,14 @@
 </script>
 <script>
     window.slideConfig = {
-      prefix: '/imgs/slide/background',
+      prefix: '/fnslfm/imgs/slide/background',
       ext: 'jpg',
       maxCount: '6'
     }
 </script>
 
-<script src="/js/hs.js"></script>
-<script src="/js/blog.js"></script>
+<script src="/fnslfm/js/hs.js"></script>
+<script src="/fnslfm/js/blog.js"></script>
 
 
 
