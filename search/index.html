@@ -11,27 +11,27 @@
     
     
     <title>search | Hello World</title>
-    <link href="http://fnsflm.xyz" rel="prefetch" />
+    <link href="https://fnsflm.gitee.io/fnslfm" rel="prefetch" />
 
     
-<link rel="stylesheet" href="/css/bootstrap.min.css">
-<link rel="stylesheet" href="/css/aos.css">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/fnsflm/css/bootstrap.min.css">
+<link rel="stylesheet" href="/fnsflm/css/aos.css">
+<link rel="stylesheet" href="/fnsflm/css/style.css">
 
     
-<script src="/js/jquery.min.js"></script>
+<script src="/fnsflm/js/jquery.min.js"></script>
 
     
-<script src="/js/bootstrap.min.js"></script>
+<script src="/fnsflm/js/bootstrap.min.js"></script>
 
     
-<script src="/js/aos.js"></script>
+<script src="/fnsflm/js/aos.js"></script>
 
     
-<script src="/js/highslide/highslide-full.min.js"></script>
+<script src="/fnsflm/js/highslide/highslide-full.min.js"></script>
 
     
-<link rel="stylesheet" href="/js/highslide/highslide.css">
+<link rel="stylesheet" href="/fnsflm/js/highslide/highslide.css">
 
     <style type="text/css">
         @media (max-width: 768px) {
@@ -46,12 +46,12 @@
     <!--<script type="text/javascript">
       if (document.images) {
         var avatar = new Image();
-        avatar.src = '/imgs/illust_82901177_20200711_200055.jpg'
+        avatar.src = '/fnsflm/imgs/illust_82901177_20200711_200055.jpg'
         var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.png'.split(',')
         var previewsPreLoad = []
         for(var i = 0; i < length; i++) {
           previewsPreLoad.push(new Image())
-          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/fnsflm/imgs/preview' + previews[i]
         }
       }
     </script>-->
@@ -78,7 +78,7 @@
                     aria-expanded="false">
                 <span class="fa fa-lg fa-reorder"></span>
             </button>
-            <a href="http://fnsflm.xyz">
+            <a href="https://fnsflm.gitee.io/fnslfm">
                 
                 <style>
                     #gal-header .navbar-brand {
@@ -100,7 +100,7 @@
                 
                 
                 <li class="">
-                    <a href="/">
+                    <a href="/fnsflm/">
                         <i class="fa fa-home"></i>首页
                     </a>
                 </li>
@@ -108,7 +108,7 @@
                 
                 
                 <li class="">
-                    <a href="/archives">
+                    <a href="/fnsflm/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
                 </li>
@@ -117,7 +117,7 @@
                 
                 
                 <li class="">
-                    <a href="/categories">
+                    <a href="/fnsflm/categories">
                         <i class="fa fa-list"></i>分类
                     </a>
                 </li>
@@ -127,7 +127,7 @@
                 
                 
                 <li class="">
-                    <a href="/tags">
+                    <a href="/fnsflm/tags">
                         <i class="fa fa-tags"></i>标签
                     </a>
                 </li>
@@ -136,7 +136,7 @@
                 
                 
                 <li class="">
-                    <a href="/about">
+                    <a href="/fnsflm/about">
                         <i class="fa fa-user"></i>关于我
                     </a>
                 </li>
@@ -183,7 +183,7 @@
     var pageSize = '10'
     var useLeancloud = ''
     var useComment = ('false' === 'true')
-    $.getJSON('/content.json', function (json) {
+    $.getJSON('/fnsflm/content.json', function (json) {
       $('#search-breadcrumb').append(`搜索'${s}'的结果`)
       var result = getArticles(s, 'posts', json).concat(getArticles(s, 'pages', json))
       if (result.length === 0 || result.length <= (p - 1) * pageSize) {
@@ -206,9 +206,9 @@
       	var [month, day] = article.date.split('-')
         ''
         ''
-        var defaultPreview = '/imgs/preview/preview1.jpg'
+        var defaultPreview = '/fnsflm/imgs/preview/preview3.jpg'
         var preview = article.preview ? article.preview : defaultPreview
-        var path = '/' + article.path
+        var path = '/fnsflm/' + article.path
         resultList.append(`<div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
                                 <div class="data-article hidden-xs">
                                     <span class="month">${month}月</span>
@@ -260,7 +260,7 @@
         pgContainer.css('display', 'block')
       }
       var num = Math.ceil(result.length / pageSize)
-      var root = '/search'
+      var root = '/fnsflm/search'
       var link = root + `/index.html?s=${s}`
       if(p > 1) {
       	pg.append(`<li class="prev"><a href="${link}&page=${p-1}">«</a></li>`)
@@ -366,7 +366,7 @@
 <aside id="sidebar-search">
     <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
         <form class="form-inline clearfix" id="search-form" method="get"
-              action="/search/index.html">
+              action="/fnsflm/search/index.html">
             <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
             <button class="btn btn-danger btn-gal" type="submit">
                 <i class="fa fa-search"></i>
@@ -382,7 +382,7 @@
             <i class="fa fa-quote-right"></i>
         </div>
         <div class="author-panel text-center">
-            <img src="/imgs/illust_82901177_20200711_200055.jpg" width="140" height="140"
+            <img src="/fnsflm/imgs/illust_82901177_20200711_200055.jpg" width="140" height="140"
                  alt="个人头像" class="author-image">
             <p class="author-description"></p>
         </div>
@@ -416,61 +416,61 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/25/2020-9-26/vscode%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95c++/">vscode快速配置调试c++</a>
+                    <a href="/fnsflm/2020/09/25/2020-9-26/vscode%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95c++/">vscode快速配置调试c++</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
+                    <a href="/fnsflm/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEodbc/">ubuntu上配置odbc</a>
+                    <a href="/fnsflm/2020/09/25/2020-9-25/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEodbc/">ubuntu上配置odbc</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2020-9-23/tensorflow-gpu%E6%8A%A5%E9%94%99%E2%80%9CCould-not-load-dynamic-library-libcudart-so-10-1-%E2%80%9D/">tensorflow-gpu报错“Could not load dynamic library &#39;libcudart.so.10.1&#39;”</a>
+                    <a href="/fnsflm/2020/09/24/2020-9-23/tensorflow-gpu%E6%8A%A5%E9%94%99%E2%80%9CCould-not-load-dynamic-library-libcudart-so-10-1-%E2%80%9D/">tensorflow-gpu报错“Could not load dynamic library &#39;libcudart.so.10.1&#39;”</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
+                    <a href="/fnsflm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2020-9-20/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/">自搭梯子</a>
+                    <a href="/fnsflm/2020/09/24/2020-9-20/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/">自搭梯子</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/%E5%B0%9D%E8%AF%95%E9%85%8D%E7%BD%AEhadoop%E7%8E%AF%E5%A2%83/">尝试配置hadoop环境</a>
+                    <a href="/fnsflm/2020/09/24/%E5%B0%9D%E8%AF%95%E9%85%8D%E7%BD%AEhadoop%E7%8E%AF%E5%A2%83/">尝试配置hadoop环境</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8navicat/">尝试使用navicat</a>
+                    <a href="/fnsflm/2020/09/24/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8navicat/">尝试使用navicat</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
+                    <a href="/fnsflm/2020/09/24/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2019-2-18/Linux%E4%B8%8Bvscode-C%E8%AF%AD%E8%A8%80-%E5%AF%B9pow%E3%80%81exp%E6%9C%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">Linux下vscode C语言 对pow、exp未定义引用问题</a>
+                    <a href="/fnsflm/2020/09/24/2019-2-18/Linux%E4%B8%8Bvscode-C%E8%AF%AD%E8%A8%80-%E5%AF%B9pow%E3%80%81exp%E6%9C%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">Linux下vscode C语言 对pow、exp未定义引用问题</a>
                 </span>
             </li>
             
@@ -492,61 +492,61 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/hello-world/">Hello World</a>
+                    <a href="/fnsflm/2020/09/24/hello-world/">Hello World</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
+                    <a href="/fnsflm/2020/09/24/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8navicat/">尝试使用navicat</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8navicat/">尝试使用navicat</a>
+                    <a href="/fnsflm/2020/09/24/%E5%B0%9D%E8%AF%95%E9%85%8D%E7%BD%AEhadoop%E7%8E%AF%E5%A2%83/">尝试配置hadoop环境</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/%E5%B0%9D%E8%AF%95%E9%85%8D%E7%BD%AEhadoop%E7%8E%AF%E5%A2%83/">尝试配置hadoop环境</a>
+                    <a href="/fnsflm/2020/09/24/2019-2-18/Linux%E4%B8%8Bvscode-C%E8%AF%AD%E8%A8%80-%E5%AF%B9pow%E3%80%81exp%E6%9C%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">Linux下vscode C语言 对pow、exp未定义引用问题</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
+                    <a href="/fnsflm/2020/09/24/2020-9-20/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/">自搭梯子</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2019-2-18/Linux%E4%B8%8Bvscode-C%E8%AF%AD%E8%A8%80-%E5%AF%B9pow%E3%80%81exp%E6%9C%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">Linux下vscode C语言 对pow、exp未定义引用问题</a>
+                    <a href="/fnsflm/2020/09/24/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2020-9-23/tensorflow-gpu%E6%8A%A5%E9%94%99%E2%80%9CCould-not-load-dynamic-library-libcudart-so-10-1-%E2%80%9D/">tensorflow-gpu报错“Could not load dynamic library &#39;libcudart.so.10.1&#39;”</a>
+                    <a href="/fnsflm/2020/09/24/2020-9-23/tensorflow-gpu%E6%8A%A5%E9%94%99%E2%80%9CCould-not-load-dynamic-library-libcudart-so-10-1-%E2%80%9D/">tensorflow-gpu报错“Could not load dynamic library &#39;libcudart.so.10.1&#39;”</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/24/2020-9-20/%E8%87%AA%E6%90%AD%E6%A2%AF%E5%AD%90/">自搭梯子</a>
+                    <a href="/fnsflm/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
+                    <a href="/fnsflm/2020/09/25/2020-9-25/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEodbc/">ubuntu上配置odbc</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEodbc/">ubuntu上配置odbc</a>
+                    <a href="/fnsflm/2020/09/25/2020-9-26/vscode%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95c++/">vscode快速配置调试c++</a>
                 </span>
             </li>
             
@@ -561,17 +561,17 @@
 
                 
                 <li>
-                    <a href="/search/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/fnsflm/search/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/search/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/fnsflm/search/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/search/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/fnsflm/search/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -631,7 +631,7 @@
 </div>
 </body>
 
-<script src="/js/activate-power-mode.js"></script>
+<script src="/fnsflm/js/activate-power-mode.js"></script>
 
 <script>
 
@@ -674,14 +674,14 @@
 </script>
 <script>
     window.slideConfig = {
-      prefix: '/imgs/slide/background',
+      prefix: '/fnsflm/imgs/slide/background',
       ext: 'jpg',
       maxCount: '6'
     }
 </script>
 
-<script src="/js/hs.js"></script>
-<script src="/js/blog.js"></script>
+<script src="/fnsflm/js/hs.js"></script>
+<script src="/fnsflm/js/blog.js"></script>
 
 
 
