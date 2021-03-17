@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fnsflm.xyz/2020/09/27/2021-03-16/jupyter-lab-build%E6%8A%A5%E9%94%99/</loc>
+    
+    <lastmod>2021-03-17</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fnsflm.xyz/2021/03/17/2021-03-17/git_clone%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/</loc>
     
     <lastmod>2021-03-17</lastmod>
@@ -424,13 +431,6 @@
   </url>
   
   <url>
-    <loc>https://fnsflm.xyz/tags/%E5%9B%BE%E8%AE%BA/</loc>
-    <lastmod>2021-03-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://fnsflm.xyz/tags/vscode/</loc>
     <lastmod>2021-03-17</lastmod>
     <changefreq>daily</changefreq>
@@ -439,6 +439,13 @@
   
   <url>
     <loc>https://fnsflm.xyz/tags/linux/</loc>
+    <lastmod>2021-03-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fnsflm.xyz/tags/%E5%9B%BE%E8%AE%BA/</loc>
     <lastmod>2021-03-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -501,14 +508,14 @@
   </url>
   
   <url>
-    <loc>https://fnsflm.xyz/tags/bug/</loc>
+    <loc>https://fnsflm.xyz/tags/x-org/</loc>
     <lastmod>2021-03-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://fnsflm.xyz/tags/x-org/</loc>
+    <loc>https://fnsflm.xyz/tags/bug/</loc>
     <lastmod>2021-03-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
