@@ -6,7 +6,7 @@
   <link href="https://fnsflm.xyz/atom.xml" rel="self"/>
   
   <link href="https://fnsflm.xyz/"/>
-  <updated>2021-03-17T01:00:47.760Z</updated>
+  <updated>2021-03-17T08:38:31.278Z</updated>
   <id>https://fnsflm.xyz/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jupyter lab build报错</title>
+    <link href="https://fnsflm.xyz/2021/03/17/2021-03-16/jupyter-lab-build%E6%8A%A5%E9%94%99/"/>
+    <id>https://fnsflm.xyz/2021/03/17/2021-03-16/jupyter-lab-build%E6%8A%A5%E9%94%99/</id>
+    <published>2021-03-17T09:00:00.000Z</published>
+    <updated>2021-03-17T08:38:31.278Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>git_clone加速方法整理</title>
@@ -542,33 +563,6 @@
     
     
     <category term="python" scheme="https://fnsflm.xyz/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu开机提示错误locale-check: 没有那个文件或目录</title>
-    <link href="https://fnsflm.xyz/2020/10/07/2020-10-7/ubuntu%E5%BC%80%E6%9C%BA%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AFlocale-check:%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/"/>
-    <id>https://fnsflm.xyz/2020/10/07/2020-10-7/ubuntu%E5%BC%80%E6%9C%BA%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AFlocale-check:%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/</id>
-    <published>2020-10-07T12:00:00.000Z</published>
-    <updated>2021-02-28T12:18:20.363Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="https://fnsflm.xyz/categories/linux/"/>
-    
-    
-    <category term="linux" scheme="https://fnsflm.xyz/tags/linux/"/>
-    
-    <category term="bug" scheme="https://fnsflm.xyz/tags/bug/"/>
     
   </entry>
   
