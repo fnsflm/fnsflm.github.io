@@ -42,7 +42,7 @@
     <link href="https://fnsflm.xyz/2021/03/17/2021-03-17/git_clone%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/"/>
     <id>https://fnsflm.xyz/2021/03/17/2021-03-17/git_clone%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/</id>
     <published>2021-03-17T01:10:00.000Z</published>
-    <updated>2021-03-17T01:00:47.760Z</updated>
+    <updated>2021-03-21T00:23:00.226Z</updated>
     
     
       
@@ -328,9 +328,9 @@
     <category term="大数据" scheme="https://fnsflm.xyz/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
     
-    <category term="java" scheme="https://fnsflm.xyz/tags/java/"/>
-    
     <category term="大数据" scheme="https://fnsflm.xyz/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    <category term="java" scheme="https://fnsflm.xyz/tags/java/"/>
     
     <category term="kafka" scheme="https://fnsflm.xyz/tags/kafka/"/>
     
@@ -357,11 +357,11 @@
     <category term="大数据" scheme="https://fnsflm.xyz/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
     
-    <category term="java" scheme="https://fnsflm.xyz/tags/java/"/>
-    
     <category term="hbase" scheme="https://fnsflm.xyz/tags/hbase/"/>
     
     <category term="大数据" scheme="https://fnsflm.xyz/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    <category term="java" scheme="https://fnsflm.xyz/tags/java/"/>
     
     <category term="hadoop" scheme="https://fnsflm.xyz/tags/hadoop/"/>
     
@@ -394,11 +394,11 @@
     
     <category term="安装配置" scheme="https://fnsflm.xyz/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
     
-    <category term="java" scheme="https://fnsflm.xyz/tags/java/"/>
-    
     <category term="hbase" scheme="https://fnsflm.xyz/tags/hbase/"/>
     
     <category term="大数据" scheme="https://fnsflm.xyz/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    <category term="java" scheme="https://fnsflm.xyz/tags/java/"/>
     
   </entry>
   
@@ -423,9 +423,9 @@
     <category term="java" scheme="https://fnsflm.xyz/categories/java/"/>
     
     
-    <category term="javafx" scheme="https://fnsflm.xyz/tags/javafx/"/>
-    
     <category term="java" scheme="https://fnsflm.xyz/tags/java/"/>
+    
+    <category term="javafx" scheme="https://fnsflm.xyz/tags/javafx/"/>
     
     <category term="css" scheme="https://fnsflm.xyz/tags/css/"/>
     
@@ -488,31 +488,6 @@
   </entry>
   
   <entry>
-    <title>kdenlive无法导出多层视频</title>
-    <link href="https://fnsflm.xyz/2020/10/18/2020-10-17/kdenlive%E6%97%A0%E6%B3%95%E5%AF%BC%E5%87%BA%E5%A4%9A%E5%B1%82%E8%A7%86%E9%A2%91/"/>
-    <id>https://fnsflm.xyz/2020/10/18/2020-10-17/kdenlive%E6%97%A0%E6%B3%95%E5%AF%BC%E5%87%BA%E5%A4%9A%E5%B1%82%E8%A7%86%E9%A2%91/</id>
-    <published>2020-10-18T12:00:00.000Z</published>
-    <updated>2021-02-28T12:18:20.383Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
-    
-    
-    
-    <category term="tools" scheme="https://fnsflm.xyz/categories/tools/"/>
-    
-    
-    <category term="kdenlive" scheme="https://fnsflm.xyz/tags/kdenlive/"/>
-    
-  </entry>
-  
-  <entry>
     <title>ubuntu上安装pixiv-nginx</title>
     <link href="https://fnsflm.xyz/2020/10/18/2020-10-18/ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85pixiv-nginx/"/>
     <id>https://fnsflm.xyz/2020/10/18/2020-10-18/ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85pixiv-nginx/</id>
@@ -538,6 +513,31 @@
     <category term="nginx" scheme="https://fnsflm.xyz/tags/nginx/"/>
     
     <category term="安装配置" scheme="https://fnsflm.xyz/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kdenlive无法导出多层视频</title>
+    <link href="https://fnsflm.xyz/2020/10/18/2020-10-17/kdenlive%E6%97%A0%E6%B3%95%E5%AF%BC%E5%87%BA%E5%A4%9A%E5%B1%82%E8%A7%86%E9%A2%91/"/>
+    <id>https://fnsflm.xyz/2020/10/18/2020-10-17/kdenlive%E6%97%A0%E6%B3%95%E5%AF%BC%E5%87%BA%E5%A4%9A%E5%B1%82%E8%A7%86%E9%A2%91/</id>
+    <published>2020-10-18T12:00:00.000Z</published>
+    <updated>2021-02-28T12:18:20.383Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="https://fnsflm.xyz/categories/tools/"/>
+    
+    
+    <category term="kdenlive" scheme="https://fnsflm.xyz/tags/kdenlive/"/>
     
   </entry>
   
