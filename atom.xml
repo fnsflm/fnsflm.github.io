@@ -6,7 +6,7 @@
   <link href="https://fnsflm.xyz/atom.xml" rel="self"/>
   
   <link href="https://fnsflm.xyz/"/>
-  <updated>2022-02-01T08:09:39.182Z</updated>
+  <updated>2022-11-28T20:00:36.455Z</updated>
   <id>https://fnsflm.xyz/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pycharm opencv无法自动补全</title>
+    <link href="https://fnsflm.xyz/2022/11/29/2022-11-29/pycharm-opencv%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>https://fnsflm.xyz/2022/11/29/2022-11-29/pycharm-opencv%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
+    <published>2022-11-28T20:00:00.000Z</published>
+    <updated>2022-11-28T20:00:36.455Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>linux传输文件解决方案</title>
@@ -528,33 +549,6 @@
     <category term="mysql" scheme="https://fnsflm.xyz/tags/mysql/"/>
     
     <category term="sql" scheme="https://fnsflm.xyz/tags/sql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>fcitx重启后快捷键失效</title>
-    <link href="https://fnsflm.xyz/2020/10/28/2020-10-28/fcitx%E9%87%8D%E5%90%AF%E5%90%8E%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88/"/>
-    <id>https://fnsflm.xyz/2020/10/28/2020-10-28/fcitx%E9%87%8D%E5%90%AF%E5%90%8E%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88/</id>
-    <published>2020-10-27T16:00:00.000Z</published>
-    <updated>2021-03-29T15:03:55.928Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="https://fnsflm.xyz/categories/linux/"/>
-    
-    
-    <category term="linux" scheme="https://fnsflm.xyz/tags/linux/"/>
-    
-    <category term="fcitx" scheme="https://fnsflm.xyz/tags/fcitx/"/>
     
   </entry>
   
