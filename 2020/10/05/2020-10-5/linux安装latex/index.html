@@ -64,17 +64,12 @@
         }
       }
     </script>-->
-<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
 }
 
 mjx-container[jax="SVG"][display="true"] {
@@ -390,13 +385,13 @@ mjx-container[display="true"] + br {
     </div>
     <div class="content-article">
         <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/03/29/%E6%BF%A1%E3%82%8C%E9%80%8F%E3%81%91%E3%83%A8%E3%83%8F%E3%83%8D_62228328_p0-77a737.jpg" alt="illustration"></p>
-<h1><span id="linux安装latex">linux安装latex</span></h1><h2><span id="环境">环境</span></h2><ul>
-<li><p>linux ubuntu 18.04 LTS</p>
+<h1 id="linux安装latex"><a href="#linux安装latex" class="headerlink" title="linux安装latex"></a>linux安装latex</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li><p>  linux ubuntu 18.04 LTS</p>
 </li>
-<li><p>perl 5.26.1</p>
+<li><p>  perl 5.26.1</p>
 </li>
 </ul>
-<h2><span id="安装texlive">安装texlive</span></h2><p>关于版本的选择，我看到有说用ctex的，然后到官网上一看更新记录，最新的维护是在12年3月，8年无人问津，就可以直接pass了</p>
+<h2 id="安装texlive"><a href="#安装texlive" class="headerlink" title="安装texlive"></a>安装texlive</h2><p>关于版本的选择，我看到有说用ctex的，然后到官网上一看更新记录，最新的维护是在12年3月，8年无人问津，就可以直接pass了</p>
 <blockquote>
 <p>  参考： <a target="_blank" rel="noopener" href="https://blog.csdn.net/u010801696/article/details/78815514">linux下安装texlive2017</a></p>
 </blockquote>
@@ -405,24 +400,24 @@ mjx-container[display="true"] + br {
 <p>英文说的很清楚了，下载其它版本</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/008-2e2971.jpg" alt="linux安装latex"></p>
 <p>下载后解压缩，终端cd到解压缩的路径下，执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./install-tl</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./install-tl</span><br></pre></td></tr></table></figure>
 
 <p>执行后会问要执行的操作，按<code>i</code>执行</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/001-4f5125.jpg"></p>
 <p>下载时间要一个小时，下载过程会显示要多长时间，看到welcome to latex说明安装成功</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/002-1b1f3c.jpg"></p>
 <p>设置环境变量：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> MANPATH=<span class="variable">${MANPATH}</span>:/usr/<span class="built_in">local</span>/texlive/2020/texmf-dist/doc/man/</span><br><span class="line"><span class="built_in">export</span> INFOPATH=<span class="variable">${INFOPATH}</span>:/usr/<span class="built_in">local</span>/texlive/2020/texmf-dist/doc/info/</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">${PATH}</span>:/usr/<span class="built_in">local</span>/texlive/2020/bin/x86_64-linux/</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> MANPATH=<span class="variable">${MANPATH}</span>:/usr/local/texlive/2020/texmf-dist/doc/man/</span><br><span class="line"><span class="built_in">export</span> INFOPATH=<span class="variable">${INFOPATH}</span>:/usr/local/texlive/2020/texmf-dist/doc/info/</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">${PATH}</span>:/usr/local/texlive/2020/bin/x86_64-linux/</span><br></pre></td></tr></table></figure>
 
 <p>测试下环境变量是否正确：</p>
 <p><code>vim test.txt</code></p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">documentclass</span><span class="string">{article}</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">{document}</span></span></span><br><span class="line">hello <span class="tag">\<span class="name">LaTeX</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">{document}</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{article}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">hello <span class="keyword">\LaTeX</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></table></figure>
 
 <p>执行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xelatex test.txt</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/003-434e06.jpg"></p>
-<h2><span id="安装texstudio">安装texstudio</span></h2><p>到官网上下载<a target="_blank" rel="noopener" href="http://texstudio.sourceforge.net/">texstudio</a></p>
+<h2 id="安装texstudio"><a href="#安装texstudio" class="headerlink" title="安装texstudio"></a>安装texstudio</h2><p>到官网上下载<a target="_blank" rel="noopener" href="http://texstudio.sourceforge.net/">texstudio</a></p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/004-1de52e.jpg"></p>
 <p>下载后用dpkg安装即可</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i texstudio_3.0.1-1+2.1_amd64.deb</span><br></pre></td></tr></table></figure>
@@ -431,18 +426,18 @@ mjx-container[display="true"] + br {
 <p>成功！</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/006-417b47.jpg"></p>
 <p>注：这里选用的版本是xubuntu，我使用的是gubuntu，但并有出现缺失依赖的情况。因为没有找到对应的版本，我先下的是AppImage，但效果并不怎么好，在选项栏停留时会出现黑框框，而正常的应该是黄框框+解释说明的英文。</p>
-<h2><span id="报错">报错</span></h2><blockquote>
+<h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><blockquote>
 <p>  参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41177247/article/details/85245810">确认已经安装了某个 (La)TeX 发行版例如 MiKTeX 或 TeX Live，并且已经在命令配置页设置了正确的路径，解决办法</a></p>
 </blockquote>
 <p>载入刚刚测试的<code>test.txt</code>运行发生报错</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Make sure that you have installed a (La)TeX distribution e.g. MiKTeX or TeX Live, and have set the correct paths to this distribution on the command configuration page.</span><br><span class="line">A (La)TeX editor like TeXstudio cannot work without the (La)TeX commands provided by such a distribution. </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Make sure that you have installed a (La)TeX distribution e.g. MiKTeX or TeX Live, and have set the correct paths to this distribution on the command configuration page.</span><br><span class="line">A (La)TeX editor like TeXstudio cannot work without the (La)TeX commands provided by such a distribution. </span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/009-22101b.jpg"></p>
 <p>点击<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex" xmlns="http://www.w3.org/2000/svg" width="47.694ex" height="2.059ex" role="img" focusable="false" viewbox="0 -705 21080.8 910"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mi" transform="translate(763, 0)"><path data-c="1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"/></g><g data-mml-node="mi" transform="translate(1266, 0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/></g><g data-mml-node="mi" transform="translate(1627, 0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(1972, 0)"><path data-c="1D45C" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"/></g><g data-mml-node="mi" transform="translate(2457, 0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(3057, 0)"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/></g><g data-mml-node="mo" transform="translate(3803.8, 0)"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"/></g><g data-mml-node="mi" transform="translate(5081.6, 0)"><path data-c="1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"/></g><g data-mml-node="mi" transform="translate(5841.6, 0)"><path data-c="1D45C" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"/></g><g data-mml-node="mi" transform="translate(6326.6, 0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(6926.6, 0)"><path data-c="1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"/></g><g data-mml-node="mi" transform="translate(7476.6, 0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(7821.6, 0)"><path data-c="1D454" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"/></g><g data-mml-node="mi" transform="translate(8298.6, 0)"><path data-c="1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(8870.6, 0)"><path data-c="1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(9321.6, 0)"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"/></g><g data-mml-node="mo" transform="translate(9787.6, 0)"><path data-c="3B" d="M78 370Q78 394 95 412T138 430Q162 430 180 414T199 371Q199 346 182 328T139 310T96 327T78 370ZM78 60Q78 85 94 103T137 121Q202 121 202 8Q202 -44 183 -94T144 -169T118 -194Q115 -194 106 -186T95 -174Q94 -171 107 -155T137 -107T160 -38Q161 -32 162 -22T165 -4T165 4Q165 5 161 4T142 0Q110 0 94 18T78 60Z"/></g><g data-mml-node="mi" transform="translate(10232.2, 0)"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"/></g><g data-mml-node="mi" transform="translate(10936.2, 0)"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"/></g><g data-mml-node="mi" transform="translate(11402.2, 0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"/></g><g data-mml-node="mi" transform="translate(12254.2, 0)"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/></g><g data-mml-node="mi" transform="translate(12723.2, 0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/></g><g data-mml-node="mi" transform="translate(13084.2, 0)"><path data-c="1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(13656.2, 0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"/></g><g data-mml-node="mi" transform="translate(14176.2, 0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(14521.2, 0)"><path data-c="1D45C" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"/></g><g data-mml-node="mo" transform="translate(15284, 0)"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"/></g><g data-mml-node="mi" transform="translate(16561.8, 0)"><path data-c="1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"/></g><g data-mml-node="mi" transform="translate(17321.8, 0)"><path data-c="1D45C" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"/></g><g data-mml-node="mi" transform="translate(17806.8, 0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(18684.8, 0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(19562.8, 0)"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/></g><g data-mml-node="mi" transform="translate(20091.8, 0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"/></g><g data-mml-node="mi" transform="translate(20611.8, 0)"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"/></g></g></g></svg></mjx-container></p>
 <p>会发现前四个都是<code>&lt;unknown&gt;</code>，在<code>/usr/local/texlive/2020/bin/x86_64-linux/</code>下对应的有，加进去就行了</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/010-b8841a.jpg"></p>
 <p>如果不太确定位置，使用find命令搜索，比如</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /usr/<span class="built_in">local</span>/texlive/ -iname pdflatex</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /usr/local/texlive/ -iname pdflatex</span><br></pre></td></tr></table></figure>
 
 <p>成功！</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/011-960c70.jpg"></p>
@@ -604,6 +599,12 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/1999/04/14/1999-4-14/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/11/18/2019-11-18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%91/">数据结构实验报告-树</a>
                 </span>
             </li>
@@ -616,49 +617,43 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/15/2019-12-15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%8E%92%E5%BA%8F/">数据结构实验报告-排序</a>
+                    <a href="/2020/10/10/2020-10-10/python%E7%94%9F%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/">python生成可执行文件</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/18/2020-10-17/kdenlive%E6%97%A0%E6%B3%95%E5%AF%BC%E5%87%BA%E5%A4%9A%E5%B1%82%E8%A7%86%E9%A2%91/">kdenlive无法导出多层视频</a>
+                    <a href="/2020/12/15/2020-12-15/kafka%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">kafka安装配置</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/28/2020-10-28/fcitx%E9%87%8D%E5%90%AF%E5%90%8E%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88/">fcitx重启后快捷键失效</a>
+                    <a href="/2020/09/22/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/12/17/2020-12-17/%E5%85%B3%E7%B3%BB%E5%9B%BEgraph/">关系图graph</a>
+                    <a href="/2020/09/26/2020-9-26/vscode%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95c++/">vscode快速配置调试c++</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/18/2020-9-18/%E5%B0%9D%E8%AF%95%E9%85%8D%E7%BD%AEhadoop%E7%8E%AF%E5%A2%83/">尝试配置hadoop环境</a>
+                    <a href="/2020/09/30/2020-9-30/ubuntu%E5%AE%89%E8%A3%85%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8/">ubuntu安装植物大战僵尸</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/02/03/2021-02-03/%E5%AE%89%E8%A3%85obs-studio%E6%8A%A5%E9%94%99/">安装obs-studio报错</a>
+                    <a href="/2021/01/10/2021-1-11/%E5%BA%9F%E7%89%A9%E5%88%A9%E7%94%A8--%E6%97%A7%E6%89%8B%E6%9C%BA%E6%90%AD%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/">废物利用--旧手机搭建服务器</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/02/28/2021-02-28/hexo%E5%8D%9A%E5%AE%A2%E5%8E%8B%E7%BC%A9css%E3%80%81js%E7%AD%89%E6%96%87%E4%BB%B6/">hexo博客压缩css、js等文件</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/03/05/2021-03-05/pdftk%E5%B7%A5%E5%85%B7/">pdftk工具</a>
+                    <a href="/2022/11/29/2022-11-29/pycharm-opencv%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">pycharm opencv无法自动补全</a>
                 </span>
             </li>
             
@@ -691,123 +686,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 15.207961209765312px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 16.390389133058324px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 14.645682585486945px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 12.755525044120603px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 8.53699558676194px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 13.099555585220807px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 11.622827239242781px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 15.722474111393726px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 15.308711814723416px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 9.149820541673044px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 17.781913314278768px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 13.058236851249145px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 19.93505865621682px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 18.109515633996317px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 12.860281878775039px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 15.67410916066758px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/vscode/" style="font-size: 8.194098396719106px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 9.741367794014531px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/linux/" style="font-size: 10.5931200954276px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/vscode/" style="font-size: 13.122787362988394px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 16.926767183598134px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/linux/" style="font-size: 17.25299675599515px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 16.866484932764596px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 15.252096935759813px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 10.0720322699011px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 14.67725251035572px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 9.283016779405019px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 17.956662777840393px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 16.091065324645022px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 12.80145631239549px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 13.340141926984817px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 16.676810326672772px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 18.57542691894466px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 19.55218290365687px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 13.643137321331789px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 15.470608444243659px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 16.58297040436114px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 19.60102122079307px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 15.88830719437881px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14.59319719219378px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/bug/" style="font-size: 15.607744320034989px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/mysql/" style="font-size: 11.025976989461238px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 9.267529106087071px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/sql/" style="font-size: 12.86279254430853px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/mysql/" style="font-size: 19.60192772064318px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/x-org/" style="font-size: 10.37052249442165px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/sql/" style="font-size: 13.63871800575776px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/bug/" style="font-size: 8.12518025666061px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/javafx/" style="font-size: 16.036167350031235px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 15.637628898974118px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 15.793637455289986px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 18.27807972022095px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 8.577667720876496px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 15.341463416124636px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 12.28701821750883px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 19.204650868597096px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 14.554830832062223px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 12.133737808427544px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 18.504060063726822px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/mapreduce/" style="font-size: 12.451391096136488px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 13.563013241222183px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 17.57098835874212px;" class="tag-cloud-link">爬虫</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 17.932148844102265px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/hadoop/" style="font-size: 15.30861907375996px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 12.737689139509737px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/kafka/" style="font-size: 17.10300481670584px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 12.681172608469787px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/navicat/" style="font-size: 14.66690422529663px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/navicat/" style="font-size: 10.420254052239716px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/pyecharts/" style="font-size: 8.514729896290035px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/hadoop/" style="font-size: 15.01129260995803px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 18.25630574327999px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 18.1075870184517px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 8.920104642891282px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 16.41894332502957px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 18.758869898919087px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/cuda/" style="font-size: 13.773714716103061px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/tenserflow/" style="font-size: 13.033169672706077px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/wine/" style="font-size: 16.030630193107697px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 8.178798986820798px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/hexo/" style="font-size: 9.459524836608304px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/cuda/" style="font-size: 13.298923635026169px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 17.494067901595336px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/wine/" style="font-size: 19.076283864099427px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 15.333222801897682px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/hexo/" style="font-size: 9.145312576645772px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/win7/" style="font-size: 18.32815915355111px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 15.21657909724959px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/telegram/" style="font-size: 10.091092240371335px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10.72797498661927px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/ACGN/" style="font-size: 15.399497164823071px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/win7/" style="font-size: 18.512557406964397px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/github/" style="font-size: 19.103613423123324px;" class="tag-cloud-link">github</a>
+    <a href="/tags/telegram/" style="font-size: 17.714909672069965px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/github-action/" style="font-size: 17.53350314321986px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/ACGN/" style="font-size: 19.560792708657402px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/js/" style="font-size: 13.909985566046874px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 11.892070413951686px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 16.03885095218601px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 14.454157598811886px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 15.872999354959257px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 13.461246033455438px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 8.54945520609306px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/github/" style="font-size: 12.003473268919846px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 9.639232479280833px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/github-action/" style="font-size: 8.811885629141035px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 13.086942108940478px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/ssh/" style="font-size: 13.420512986951898px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 17.263317889836312px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 19.179626773402994px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/android/" style="font-size: 13.465758130916576px;" class="tag-cloud-link">android</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 9.314599285884295px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 13.306643606307576px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 14.203327839091838px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 12.725396223642592px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/android/" style="font-size: 18.12770116511553px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 15.59497411542635px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 19.22322468762335px;" class="tag-cloud-link">计算机组成原理</a>
     
 </div>
                 

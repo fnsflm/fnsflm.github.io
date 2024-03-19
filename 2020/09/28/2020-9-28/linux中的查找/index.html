@@ -64,17 +64,12 @@
         }
       }
     </script>-->
-<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
 }
 
 mjx-container[jax="SVG"][display="true"] {
@@ -401,20 +396,20 @@ mjx-container[display="true"] + br {
         </center>
     </div>
     <div class="content-article">
-        <h1><span id="linux中的查找持续更新">linux中的查找[持续更新]</span></h1><!-- toc -->
+        <h1 id="linux中的查找-持续更新"><a href="#linux中的查找-持续更新" class="headerlink" title="linux中的查找[持续更新]"></a>linux中的查找[持续更新]</h1><!-- toc -->
 
 <ul>
-<li><a href="#%E6%96%87%E4%BB%B6%E6%9F%A5%E6%89%BE">文件查找</a><ul>
+<li><a href="#----">文件查找</a><ul>
 <li><a href="#find">find</a></li>
 </ul>
 </li>
 </ul>
 <!-- tocstop -->
 
-<h2><span id="文件查找">文件查找</span></h2><h3><span id="find">find</span></h3><blockquote>
+<h2 id="文件查找"><a href="#文件查找" class="headerlink" title="文件查找"></a>文件查找</h2><h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><blockquote>
 <p>帮助文档 <a target="_blank" rel="noopener" href="http://www.gnu.org/software/findutils/manual/html_mono/find.html">Finding Files</a></p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 常用</span></span><br><span class="line">find [path] -name [filename] <span class="comment"># 查找[path]下[filename]文件</span></span><br><span class="line">find [path] -iname [filename] <span class="comment"># 忽略大小写的查找</span></span><br><span class="line">find [path]  -maxdepth [num] -name [filename] <span class="comment"># -maxdepth +数字为搜索的最大层数</span></span><br><span class="line">find [path] -not -name [filename] <span class="comment"># 查找不匹配的，同 find [path] ! -name [filename]</span></span><br><span class="line">find [path] -name [filename1] -name [filename2] <span class="comment"># 多条件查找</span></span><br><span class="line">find [path] -<span class="built_in">type</span> d -name [dirname] <span class="comment"># 查找目录</span></span><br><span class="line">find [path] -<span class="built_in">type</span> d -empty <span class="comment"># 查找空目录</span></span><br><span class="line">find [path] -size [size]  <span class="comment"># 查找文件大小大于/大于/等于size的 </span></span><br><span class="line"><span class="comment"># 进阶用法</span></span><br><span class="line">find [path]  -maxdepth [num] -maxdepth [num2] -name [filename] <span class="comment"># 设置查找的最大深度和最小深度</span></span><br><span class="line">find [path] -c[dimension] [num] <span class="comment"># 查找符合条件修改时间的文件</span></span><br><span class="line">find [path] -perm [permision] <span class="comment"># 查找文件中符合权限的文件</span></span><br><span class="line">find [path] [...] -<span class="built_in">exec</span> [bash instruction] {} \; <span class="comment"># 对查找出的符合条件的文件进行批处理操作</span></span><br><span class="line"><span class="comment"># tips</span></span><br><span class="line">find [path] [...] |wc -l  <span class="comment"># 查看有多少条记录</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 常用</span></span><br><span class="line">find [path] -name [filename] <span class="comment"># 查找[path]下[filename]文件</span></span><br><span class="line">find [path] -iname [filename] <span class="comment"># 忽略大小写的查找</span></span><br><span class="line">find [path]  -maxdepth [num] -name [filename] <span class="comment"># -maxdepth +数字为搜索的最大层数</span></span><br><span class="line">find [path] -not -name [filename] <span class="comment"># 查找不匹配的，同 find [path] ! -name [filename]</span></span><br><span class="line">find [path] -name [filename1] -name [filename2] <span class="comment"># 多条件查找</span></span><br><span class="line">find [path] -<span class="built_in">type</span> d -name [<span class="built_in">dirname</span>] <span class="comment"># 查找目录</span></span><br><span class="line">find [path] -<span class="built_in">type</span> d -empty <span class="comment"># 查找空目录</span></span><br><span class="line">find [path] -size [size]  <span class="comment"># 查找文件大小大于/大于/等于size的 </span></span><br><span class="line"><span class="comment"># 进阶用法</span></span><br><span class="line">find [path]  -maxdepth [num] -maxdepth [num2] -name [filename] <span class="comment"># 设置查找的最大深度和最小深度</span></span><br><span class="line">find [path] -c[dimension] [num] <span class="comment"># 查找符合条件修改时间的文件</span></span><br><span class="line">find [path] -perm [permision] <span class="comment"># 查找文件中符合权限的文件</span></span><br><span class="line">find [path] [...] -<span class="built_in">exec</span> [bash instruction] {} \; <span class="comment"># 对查找出的符合条件的文件进行批处理操作</span></span><br><span class="line"><span class="comment"># tips</span></span><br><span class="line">find [path] [...] |<span class="built_in">wc</span> -l  <span class="comment"># 查看有多少条记录</span></span><br></pre></td></tr></table></figure>
 
 <p><strong><em>详细说明</em></strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找[path]下[filename]文件</span></span><br><span class="line">find [path] -name [filename]</span><br></pre></td></tr></table></figure>
@@ -423,7 +418,7 @@ mjx-container[display="true"] + br {
 <p>最大深度设为1的话还可以使用<code>ls</code>+<code>grep</code>：<code>ls /etc | grep conf</code>，除了maxdepth，还有mindepth，用法一样，如果要查找第n层的结果，让最大深度和最小深度的值一样即可</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -maxdepth +数字为搜索的最大层数</span></span><br><span class="line">find [path]  -maxdapth [num] -name [filename] </span><br></pre></td></tr></table></figure>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/002-931943.jpg"></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找目录</span></span><br><span class="line">find [path] -<span class="built_in">type</span> d -name [dirname]</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找目录</span></span><br><span class="line">find [path] -<span class="built_in">type</span> d -name [<span class="built_in">dirname</span>]</span><br></pre></td></tr></table></figure>
 
 <p>如果一个路径的几层都能和[dirname]匹配，那这几层都会在结果中分条显示出来</p>
 <p>type后能接的类型：</p>
@@ -469,11 +464,11 @@ mjx-container[display="true"] + br {
 <p>另一种是用字母表示，ugo分别代表user,group,others，a则代表所有人。rwx代表读、写、可执行。</p>
 <p>在表示权限的字母/数字前如果什么都不加就是精确匹配，而加上短横线<code>-</code>代表含有表示的权限就能匹配，而<code>/</code>代表三个用户中有一个满足即可（无权限除外）</p>
 <p>做一个简单的小实验，先用bash生成不同权限的文件，忽略others，生成权限不同的16个文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> {1..16}</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	touch <span class="string">"<span class="variable">$i</span>.txt"</span></span><br><span class="line">	chmod 000 <span class="string">"<span class="variable">$i</span>.txt"</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">pm=(0 4 2 6)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> {0..3}</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> {0..3}</span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">		name = `expr <span class="variable">$i</span> \* 4 + <span class="variable">$j</span> + 1`</span><br><span class="line">		chmod <span class="string">"<span class="variable">${pm[i]}</span><span class="variable">${pm[j]}</span>"</span>  <span class="string">"<span class="variable">${name}</span>.txt"</span></span><br><span class="line">	<span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> {1..16}</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">touch</span> <span class="string">"<span class="variable">$i</span>.txt"</span></span><br><span class="line">	<span class="built_in">chmod</span> 000 <span class="string">"<span class="variable">$i</span>.txt"</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">pm=(0 4 2 6)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> {0..3}</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> {0..3}</span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">		name = `<span class="built_in">expr</span> <span class="variable">$i</span> \* 4 + <span class="variable">$j</span> + 1`</span><br><span class="line">		<span class="built_in">chmod</span> <span class="string">"<span class="variable">${pm[i]}</span><span class="variable">${pm[j]}</span>"</span>  <span class="string">"<span class="variable">${name}</span>.txt"</span></span><br><span class="line">	<span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/006-7d1403.jpg"></p>
 <p>依次执行下面三条命令，为了看的更清楚，使用了<code>-exec</code>，将find的结果用<code>ls -l</code>显示出来，这里的[path]没有用<code>.</code>或者<code>./</code>，是因为会find到<code>.</code>这个目录本身，而目录能正常访问，至少要具有500的权限，所以采用了<code>./*</code>的写法。结果已经很清晰明了了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find ./* -perm 420 -<span class="built_in">exec</span> ls -l {} \;</span><br><span class="line">find ./* -perm -420 -<span class="built_in">exec</span> ls -l {} \;</span><br><span class="line">find ./* -perm /420 -<span class="built_in">exec</span> ls -l {} \;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find ./* -perm 420 -<span class="built_in">exec</span> <span class="built_in">ls</span> -l {} \;</span><br><span class="line">find ./* -perm -420 -<span class="built_in">exec</span> <span class="built_in">ls</span> -l {} \;</span><br><span class="line">find ./* -perm /420 -<span class="built_in">exec</span> <span class="built_in">ls</span> -l {} \;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/007-0bf2ae.jpg"></p>
 
@@ -634,61 +629,61 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/1999/04/14/1999-4-14/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/11/18/2019-11-18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%91/">数据结构实验报告-树</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/11/2019-9-20/%E7%88%B1%E6%95%B0%E7%A4%BE%E6%8B%9B%E6%96%B0%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/">爱数社招新试题解答</a>
+                    <a href="/2019/11/03/2019-11-3/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E4%B8%B2/">数据结构实验报告-串</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/18/2020-10-17/kdenlive%E6%97%A0%E6%B3%95%E5%AF%BC%E5%87%BA%E5%A4%9A%E5%B1%82%E8%A7%86%E9%A2%91/">kdenlive无法导出多层视频</a>
+                    <a href="/2020/10/28/2020-10-28/fcitx%E9%87%8D%E5%90%AF%E5%90%8E%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88/">fcitx重启后快捷键失效</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/07/2020-10-7/ubuntu%E5%BC%80%E6%9C%BA%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AFlocale-check%20%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/">ubuntu开机提示错误locale-check: 没有那个文件或目录</a>
+                    <a href="/2020/10/05/2020-10-5/linux%E5%AE%89%E8%A3%85latex/">linux安装latex</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/11/22/2020-11-22/javafx%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/">javafx设置背景图片</a>
+                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/12/17/2020-12-17/%E5%85%B3%E7%B3%BB%E5%9B%BEgraph/">关系图graph</a>
+                    <a href="/2020/09/28/2020-9-28/linux%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/">linux中的查找</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/16/2020-9-16/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8navicat/">尝试使用navicat</a>
+                    <a href="/2021/03/17/2021-03-16/jupyter-lab-build%E6%8A%A5%E9%94%99/">jupyter lab build报错</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/22/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
+                    <a href="/2021/01/10/2021-1-11/%E5%BA%9F%E7%89%A9%E5%88%A9%E7%94%A8--%E6%97%A7%E6%89%8B%E6%9C%BA%E6%90%AD%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/">废物利用--旧手机搭建服务器</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/02/03/2021-02-03/%E5%AE%89%E8%A3%85obs-studio%E6%8A%A5%E9%94%99/">安装obs-studio报错</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/12/12/2020-12-12/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B0%8F%E9%A1%B9%E7%9B%AE-%E6%96%B0%E9%97%BB%E7%88%AC%E5%8F%96%E4%B8%8E%E5%A4%84%E7%90%86/">大数据小项目-新闻爬取与处理</a>
+                    <a href="/2021/01/06/2021-1-7/%E8%A5%BF%E7%94%B5%E8%BD%AF%E5%B7%A5%E8%AE%A1%E7%BB%84II%E7%AD%94%E6%A1%88/">西电软工计组II答案</a>
                 </span>
             </li>
             
@@ -721,123 +716,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 16.4356407516698px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 12.01143392029539px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 12.092444833377186px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 19.387879359844092px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 18.59923461815375px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 18.5749878081358px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 11.853162627921655px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 12.535412957875112px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 18.556488490306098px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 15.743632043234404px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 13.072786624999772px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 19.249864336382203px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 16.523941834449765px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 15.932811103549781px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 9.972732476669842px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 15.2761090285552px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/vscode/" style="font-size: 15.165072957560975px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 8.106812270017304px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/linux/" style="font-size: 8.518435562503825px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/vscode/" style="font-size: 19.674946846992295px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 9.914526077033077px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/linux/" style="font-size: 19.93812325956235px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 12.783015641293453px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 14.102399618755907px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 12.847017998198297px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 14.438946667276458px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 17.697622982191596px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 9.702602172979237px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 8.220585837193799px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 10.197086117115493px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 10.614983545305341px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 11.065360493468106px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 13.603687194899429px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 19.201719529539332px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 11.050127990497455px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 11.91488216125881px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 10.416171102240853px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 12.716559197115874px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 19.511462489352276px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 9.922880817896374px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/bug/" style="font-size: 11.561663943649975px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/mysql/" style="font-size: 8.172209699920172px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 8.471278721810023px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/sql/" style="font-size: 15.71530707690075px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/mysql/" style="font-size: 8.81645343049071px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/x-org/" style="font-size: 13.028782556681193px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/sql/" style="font-size: 8.830623687466733px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/bug/" style="font-size: 15.676036484911066px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/javafx/" style="font-size: 13.795393203039865px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 13.691984693993415px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 14.317557704796698px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 9.422696260496263px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 10.015410197545014px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 16.037246891809865px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 16.302372618493763px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 19.97790759797734px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 18.05124755326723px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 11.14588655491804px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 13.525169000097637px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/mapreduce/" style="font-size: 11.825126064983852px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 8.636072178190272px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 15.978126604352765px;" class="tag-cloud-link">爬虫</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 9.919080231794165px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/hadoop/" style="font-size: 18.386388992305776px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 12.100740593513503px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/kafka/" style="font-size: 16.813874429012397px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 9.046621437263461px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/navicat/" style="font-size: 8.424170124883567px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/navicat/" style="font-size: 14.49458331416689px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/pyecharts/" style="font-size: 16.78160389341268px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/hadoop/" style="font-size: 12.280730885733746px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 18.454802170339214px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 15.630261587511427px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 10.814953820733798px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 13.612887223209034px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 9.747409497920252px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/cuda/" style="font-size: 19.878074870145586px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/tenserflow/" style="font-size: 9.553864794355764px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/wine/" style="font-size: 14.91964020546125px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 13.54828802999803px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/hexo/" style="font-size: 11.706259440139501px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/cuda/" style="font-size: 19.48831410574784px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 9.644168374747991px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/wine/" style="font-size: 10.4097061462449px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 18.241426057043682px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/hexo/" style="font-size: 12.24056617194448px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/win7/" style="font-size: 9.655632284783419px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 17.514889202419866px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/telegram/" style="font-size: 14.834652533144768px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14.762728695490015px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/ACGN/" style="font-size: 18.81031560155503px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/win7/" style="font-size: 13.179481801126455px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/github/" style="font-size: 11.763358334606291px;" class="tag-cloud-link">github</a>
+    <a href="/tags/telegram/" style="font-size: 15.530576280970974px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/github-action/" style="font-size: 15.290258660809378px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/ACGN/" style="font-size: 9.285232784417833px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/js/" style="font-size: 10.695728702274794px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 15.762551953994386px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 9.434127431056691px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 13.711034933966399px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 11.004821399232057px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 12.085480038407233px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 16.05543464434979px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/github/" style="font-size: 19.774842980195075px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 11.321012073969438px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/github-action/" style="font-size: 9.594813664208706px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 8.204503996321945px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/ssh/" style="font-size: 11.21827833517208px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 18.176323329743838px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 19.633096150163198px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/android/" style="font-size: 17.847615327611003px;" class="tag-cloud-link">android</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 8.856493972749075px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 15.56424951363503px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 13.505483085870459px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 11.616148820712002px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/android/" style="font-size: 19.302785281586704px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 19.355191399898263px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 12.170957844684356px;" class="tag-cloud-link">计算机组成原理</a>
     
 </div>
                 

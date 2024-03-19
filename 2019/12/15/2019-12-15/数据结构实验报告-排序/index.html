@@ -64,17 +64,12 @@
         }
       }
     </script>-->
-<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
 }
 
 mjx-container[jax="SVG"][display="true"] {
@@ -413,31 +408,31 @@ mjx-container[display="true"] + br {
         </center>
     </div>
     <div class="content-article">
-        <h1><span id="数据结构实验报告-排序">数据结构实验报告-排序</span></h1><p>[toc]</p>
-<h2><span id="一-实验目的">一、实验目的</span></h2><ul>
+        <h1 id="数据结构实验报告-排序"><a href="#数据结构实验报告-排序" class="headerlink" title="数据结构实验报告-排序"></a>数据结构实验报告-排序</h1><p>[toc]</p>
+<h2 id="一、实验目的"><a href="#一、实验目的" class="headerlink" title="一、实验目的"></a>一、实验目的</h2><ul>
 <li>学习各种排序的基本原理，并能计算各种排序的时间复杂度</li>
 <li>能使用c/c++实现快速排序,并记录运行时间</li>
 </ul>
-<h2><span id="二-实验环境">二、实验环境</span></h2><ul>
+<h2 id="二、实验环境"><a href="#二、实验环境" class="headerlink" title="二、实验环境"></a>二、实验环境</h2><ul>
 <li>操作系统：Ubuntu 18.04 LTS</li>
 <li>IDE：CLion</li>
 <li>编译器：g++</li>
 <li>数据（随机生成）：<a target="_blank" rel="noopener" href="https://paste.ubuntu.com/p/DbxZ3GFFK8/">https://paste.ubuntu.com/p/DbxZ3GFFK8/</a></li>
 </ul>
-<h2><span id="三-实验内容">三、实验内容</span></h2><ul>
+<h2 id="三、实验内容"><a href="#三、实验内容" class="headerlink" title="三、实验内容"></a>三、实验内容</h2><ul>
 <li>用随机函数产生 10000（或更多）个整数（或浮点数），保存在文件（intfile.dat / realfile.dat）中</li>
 <li>然后将文件中的所有整数（或浮点数）读入一个数组 a。用快速排序算法对上述数组 A中的数据进行排序</li>
 <li>输出排序过程中元素的比较次数、交换（移动）次数，以及排序过程所消耗的时间（以 s 或 ms 为单位）</li>
 </ul>
-<h2><span id="四-实验问题">四、实验问题</span></h2><ul>
+<h2 id="四、实验问题"><a href="#四、实验问题" class="headerlink" title="四、实验问题"></a>四、实验问题</h2><ul>
 <li>while循环内交换顺序错误，应该先右–，然后将右边的元素放到左边。对利用key多出来的空位的做法还是不太熟悉。</li>
 <li>while判断时写了等号，导致死循环。</li>
 </ul>
-<h2><span id="五-数据结构">五、数据结构</span></h2><p>数组，存放整型待排数据。</p>
-<h2><span id="六-算法及代码">六、算法及代码</span></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//a数组存储数据，size记录数据个数</span></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">10007</span>];</span><br><span class="line"><span class="keyword">int</span> size;</span><br><span class="line"><span class="keyword">int</span> compTimes = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> swapTimes = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//随机生成数据</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">createdata</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="built_in">string</span> path = <span class="string">"random.txt"</span>;</span><br><span class="line">    <span class="function">ofstream <span class="title">f</span><span class="params">(path)</span></span>;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>) time(<span class="number">0</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; ++i) {</span><br><span class="line">        f &lt;&lt; rand() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//从文件中读入数据</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">readdata</span><span class="params">(<span class="built_in">string</span> path)</span> </span>{</span><br><span class="line">    <span class="function">ifstream <span class="title">f</span><span class="params">(path)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (size = <span class="number">0</span>; !f.eof(); size++) {</span><br><span class="line">        f &gt;&gt; a[size];</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//尾行总是多读入一个0，所以长度减一</span></span><br><span class="line">    size--;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//快速排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quicksort</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>{</span><br><span class="line">    <span class="comment">//当要排的元素只有一个时，不用操作，直接退出</span></span><br><span class="line">    <span class="keyword">if</span> (left &gt;= right)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> l = left, r = right;</span><br><span class="line">    <span class="comment">//最左端的元素为基准元素</span></span><br><span class="line">    <span class="keyword">int</span> key = a[left];</span><br><span class="line">    <span class="comment">//左边元素都小于基准元素，右边的都大于基准元素，才结束循环</span></span><br><span class="line">    <span class="keyword">while</span> (l &lt; r) {</span><br><span class="line">        <span class="comment">//右指针移到比基准元素小的元素，用被移动过，没有用的空位的左指针记录</span></span><br><span class="line">        <span class="keyword">while</span> (l &lt; r &amp;&amp; a[r] &gt;= key)</span><br><span class="line">            r--, compTimes++;</span><br><span class="line">        a[l] = a[r], swapTimes++;</span><br><span class="line">        <span class="comment">//同理，左指针移到比基准元素大的元素，用被移动过，没有用的空位的右指针记录</span></span><br><span class="line">        <span class="keyword">while</span> (l &lt; r &amp;&amp; a[l] &lt;= key)</span><br><span class="line">            l++, compTimes++;</span><br><span class="line">        a[r] = a[l], swapTimes++;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//最后左右指针位置重合，且左指针的位置实际上是空的，存入基准元素</span></span><br><span class="line">    a[l] = key;</span><br><span class="line">    <span class="comment">//基准元素左右两边分别快排</span></span><br><span class="line">    quicksort(left, l - <span class="number">1</span>);</span><br><span class="line">    quicksort(r + <span class="number">1</span>, right);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印当前所有数据</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; size; i++) {</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; a[i];</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">clock_t</span> start, end;</span><br><span class="line">    <span class="comment">//createdata();</span></span><br><span class="line">    <span class="built_in">string</span> path = <span class="string">"/home/hjy/CLionProjects/数据结构实验-排序/random.txt"</span>;</span><br><span class="line">    readdata(path);</span><br><span class="line">    print();</span><br><span class="line">    <span class="comment">//记录排序前的时间</span></span><br><span class="line">    start = clock();</span><br><span class="line">    quicksort(<span class="number">0</span>, size - <span class="number">1</span>);</span><br><span class="line">    <span class="comment">//记录排序之后的时间</span></span><br><span class="line">    end = clock();</span><br><span class="line">    print();</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"比较次数： "</span> &lt;&lt; compTimes &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"移动次数： "</span> &lt;&lt; swapTimes &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"用时："</span> &lt;&lt;(<span class="keyword">double</span>)( end - start )/CLOCKS_PER_SEC&lt;&lt; <span class="string">" s"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="五、数据结构"><a href="#五、数据结构" class="headerlink" title="五、数据结构"></a>五、数据结构</h2><p>数组，存放整型待排数据。</p>
+<h2 id="六、算法及代码"><a href="#六、算法及代码" class="headerlink" title="六、算法及代码"></a>六、算法及代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ctime&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//a数组存储数据，size记录数据个数</span></span><br><span class="line"><span class="type">int</span> a[<span class="number">10007</span>];</span><br><span class="line"><span class="type">int</span> size;</span><br><span class="line"><span class="type">int</span> compTimes = <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> swapTimes = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//随机生成数据</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">createdata</span><span class="params">()</span> </span>{</span><br><span class="line">    string path = <span class="string">"random.txt"</span>;</span><br><span class="line">    <span class="function">ofstream <span class="title">f</span><span class="params">(path)</span></span>;</span><br><span class="line">    <span class="built_in">srand</span>((<span class="type">unsigned</span>) <span class="built_in">time</span>(<span class="number">0</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; ++i) {</span><br><span class="line">        f &lt;&lt; <span class="built_in">rand</span>() &lt;&lt; endl;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//从文件中读入数据</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">readdata</span><span class="params">(string path)</span> </span>{</span><br><span class="line">    <span class="function">ifstream <span class="title">f</span><span class="params">(path)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (size = <span class="number">0</span>; !f.<span class="built_in">eof</span>(); size++) {</span><br><span class="line">        f &gt;&gt; a[size];</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//尾行总是多读入一个0，所以长度减一</span></span><br><span class="line">    size--;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//快速排序</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">quicksort</span><span class="params">(<span class="type">int</span> left, <span class="type">int</span> right)</span> </span>{</span><br><span class="line">    <span class="comment">//当要排的元素只有一个时，不用操作，直接退出</span></span><br><span class="line">    <span class="keyword">if</span> (left &gt;= right)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> l = left, r = right;</span><br><span class="line">    <span class="comment">//最左端的元素为基准元素</span></span><br><span class="line">    <span class="type">int</span> key = a[left];</span><br><span class="line">    <span class="comment">//左边元素都小于基准元素，右边的都大于基准元素，才结束循环</span></span><br><span class="line">    <span class="keyword">while</span> (l &lt; r) {</span><br><span class="line">        <span class="comment">//右指针移到比基准元素小的元素，用被移动过，没有用的空位的左指针记录</span></span><br><span class="line">        <span class="keyword">while</span> (l &lt; r &amp;&amp; a[r] &gt;= key)</span><br><span class="line">            r--, compTimes++;</span><br><span class="line">        a[l] = a[r], swapTimes++;</span><br><span class="line">        <span class="comment">//同理，左指针移到比基准元素大的元素，用被移动过，没有用的空位的右指针记录</span></span><br><span class="line">        <span class="keyword">while</span> (l &lt; r &amp;&amp; a[l] &lt;= key)</span><br><span class="line">            l++, compTimes++;</span><br><span class="line">        a[r] = a[l], swapTimes++;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//最后左右指针位置重合，且左指针的位置实际上是空的，存入基准元素</span></span><br><span class="line">    a[l] = key;</span><br><span class="line">    <span class="comment">//基准元素左右两边分别快排</span></span><br><span class="line">    <span class="built_in">quicksort</span>(left, l - <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">quicksort</span>(r + <span class="number">1</span>, right);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印当前所有数据</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span> </span>{</span><br><span class="line">    cout &lt;&lt; a[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; size; i++) {</span><br><span class="line">        cout &lt;&lt; <span class="string">" "</span> &lt;&lt; a[i];</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="type">clock_t</span> start, end;</span><br><span class="line">    <span class="comment">//createdata();</span></span><br><span class="line">    string path = <span class="string">"/home/hjy/CLionProjects/数据结构实验-排序/random.txt"</span>;</span><br><span class="line">    <span class="built_in">readdata</span>(path);</span><br><span class="line">    <span class="built_in">print</span>();</span><br><span class="line">    <span class="comment">//记录排序前的时间</span></span><br><span class="line">    start = <span class="built_in">clock</span>();</span><br><span class="line">    <span class="built_in">quicksort</span>(<span class="number">0</span>, size - <span class="number">1</span>);</span><br><span class="line">    <span class="comment">//记录排序之后的时间</span></span><br><span class="line">    end = <span class="built_in">clock</span>();</span><br><span class="line">    <span class="built_in">print</span>();</span><br><span class="line">    cout &lt;&lt; <span class="string">"比较次数： "</span> &lt;&lt; compTimes &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">"移动次数： "</span> &lt;&lt; swapTimes &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">"用时："</span> &lt;&lt;(<span class="type">double</span>)( end - start )/CLOCKS_PER_SEC&lt;&lt; <span class="string">" s"</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2><span id="七-运行结果">七、运行结果</span></h2><p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/1-98fc6d.png" alt="选区_008.png-57.5kB"></p>
-<h2><span id="八-实验小结">八、实验小结</span></h2><p>在这次实验中，我学会了快速排序算法的原理，能使用c++代码实现，并能统计比较次数，交换次数，以及计算时间复杂度。而且，我还学会了用ctime中的clock记录程序运行的时间。收获颇丰。</p>
+<h2 id="七、运行结果"><a href="#七、运行结果" class="headerlink" title="七、运行结果"></a>七、运行结果</h2><p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/1-98fc6d.png" alt="选区_008.png-57.5kB"></p>
+<h2 id="八、实验小结"><a href="#八、实验小结" class="headerlink" title="八、实验小结"></a>八、实验小结</h2><p>在这次实验中，我学会了快速排序算法的原理，能使用c++代码实现，并能统计比较次数，交换次数，以及计算时间复杂度。而且，我还学会了用ctime中的clock记录程序运行的时间。收获颇丰。</p>
 
     </div>
 </article>
@@ -596,37 +591,43 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/21/2019-10-19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%95%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">数据结构试验报告-栈和队列</a>
+                    <a href="/2019/11/03/2019-11-3/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E4%B8%B2/">数据结构实验报告-串</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/18/2019-11-18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%91/">数据结构实验报告-树</a>
+                    <a href="/2019/12/01/2019-12-1/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%95%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%9F%A5%E6%89%BE/">数据结构试验报告-查找</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/28/2020-10-28/fcitx%E9%87%8D%E5%90%AF%E5%90%8E%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88/">fcitx重启后快捷键失效</a>
+                    <a href="/2020/09/20/2019-9-20/%E7%88%B1%E6%95%B0%E7%A4%BE%E6%8B%9B%E6%96%B0%E8%AF%95%E9%A2%98/">爱数社招新试题</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/15/2020-9-15/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
+                    <a href="/2020/11/24/2020-11-24/hbase%E9%85%8D%E7%BD%AE/">hbase配置</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/26/2020-9-26/vscode%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95c++/">vscode快速配置调试c++</a>
+                    <a href="/2020/12/15/2020-12-15/kafka%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">kafka安装配置</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/30/2020-9-30/ubuntu%E5%AE%89%E8%A3%85%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8/">ubuntu安装植物大战僵尸</a>
+                    <a href="/2020/09/16/2020-9-16/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8navicat/">尝试使用navicat</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/22/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
                 </span>
             </li>
             
@@ -638,19 +639,13 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/12/2021-03-12/%E5%8A%9E%E7%90%86visa%E5%8D%A1%E7%BB%8F%E5%8E%86/">办理visa卡经历</a>
+                    <a href="/2021/02/28/2021-02-28/hexo%E5%8D%9A%E5%AE%A2%E5%8E%8B%E7%BC%A9css%E3%80%81js%E7%AD%89%E6%96%87%E4%BB%B6/">hexo博客压缩css、js等文件</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/04/24/2021-04-24/ssh%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95%E6%9C%AC%E5%9C%B0localhost/">ssh无法登录本地localhost</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/01/10/2021-1-11/%E5%BA%9F%E7%89%A9%E5%88%A9%E7%94%A8--%E6%97%A7%E6%89%8B%E6%9C%BA%E6%90%AD%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/">废物利用--旧手机搭建服务器</a>
+                    <a href="/2020/09/27/2021-02-17/%E6%8E%A8%E8%8D%90github%E7%8A%B6%E6%80%81%E5%8D%A1%E7%89%87/">推荐github状态卡片</a>
                 </span>
             </li>
             
@@ -683,123 +678,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 8.065764111753037px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10.063686896486974px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 11.983883158824014px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 19.589377095753434px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 13.711972483914298px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 17.690394998552573px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 18.734876797411438px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 13.261886532127377px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 15.98355180696347px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 15.075289949999462px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 16.84327881770931px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 14.834382248041093px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 8.275296318280336px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 8.832221636490928px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 9.4624943487312px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 11.439977817803195px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/vscode/" style="font-size: 15.662703120603403px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 17.888934908432837px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/linux/" style="font-size: 13.075258463933173px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/vscode/" style="font-size: 16.59958006188695px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 8.852536006306103px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/linux/" style="font-size: 16.962704927010186px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 15.48877746794161px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 8.18511397224591px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 14.370200690073265px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 9.352064550597262px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 17.07377841533784px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 11.79526325985725px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 10.143099910444999px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 12.560725465750991px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 19.378284148424818px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 19.59749952796678px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 17.30639853451095px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 12.595814161906196px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 9.258362555473791px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 12.50846856814307px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 8.694146856423902px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 13.140437749495488px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 12.155590485935654px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 12.9944668805969px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/bug/" style="font-size: 17.212451801901683px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/mysql/" style="font-size: 16.51853375112145px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13.044012023342171px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/sql/" style="font-size: 11.457020647097226px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/mysql/" style="font-size: 18.638695675320697px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/x-org/" style="font-size: 10.851149206065813px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/sql/" style="font-size: 15.80736139348343px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/bug/" style="font-size: 14.748729675553694px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/javafx/" style="font-size: 16.434093905176315px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 19.759962017429814px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 10.111588316617883px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 13.085926197873267px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 10.961329887459978px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 15.075545790239966px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 8.833737872050008px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 18.903079610825223px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 14.67137712639869px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 12.311596126723945px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 16.182694709188763px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/mapreduce/" style="font-size: 11.322381437814965px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 16.773279107652485px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 16.440802565056494px;" class="tag-cloud-link">爬虫</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 15.719265496812632px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/hadoop/" style="font-size: 9.170352812976336px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 18.976673545431964px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/kafka/" style="font-size: 12.164586478329603px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 16.921975527860248px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/navicat/" style="font-size: 12.617559626764983px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/navicat/" style="font-size: 9.523152045927327px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/pyecharts/" style="font-size: 11.80583918514051px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/hadoop/" style="font-size: 12.590422629045229px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 9.350227144479874px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 18.09688986257182px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 13.687846954894844px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 9.38301944942557px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 14.882443856207633px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/cuda/" style="font-size: 16.622564537921157px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/tenserflow/" style="font-size: 12.647741127586707px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/wine/" style="font-size: 12.37482590501139px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 16.234339287727547px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/hexo/" style="font-size: 10.908538827466526px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/cuda/" style="font-size: 11.091131524126993px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 19.05678702519966px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/wine/" style="font-size: 17.89493976513423px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 9.733377850178002px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/hexo/" style="font-size: 12.931635356460658px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/win7/" style="font-size: 13.144987062617094px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 13.649218216453193px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/telegram/" style="font-size: 15.258234731492124px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14.906010882339759px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/ACGN/" style="font-size: 16.176196121464383px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/win7/" style="font-size: 19.13636020345404px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/github/" style="font-size: 10.265642670526525px;" class="tag-cloud-link">github</a>
+    <a href="/tags/telegram/" style="font-size: 9.447392047322685px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/github-action/" style="font-size: 15.305720839021003px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/ACGN/" style="font-size: 19.723666720531416px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/js/" style="font-size: 19.921295168997002px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 18.10078172854943px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 18.765673876552px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 11.684846483113363px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 8.520368670370797px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 8.16258707584735px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 14.218169328263116px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/github/" style="font-size: 14.162910662059737px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 18.62754644280936px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/github-action/" style="font-size: 12.812234945277964px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 11.19080610230925px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/ssh/" style="font-size: 13.312363378243331px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 16.587768176302742px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 15.661790426199115px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/android/" style="font-size: 17.719520430066236px;" class="tag-cloud-link">android</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 13.585877863979416px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 8.747717572112323px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 9.91307018280201px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 14.348747654936428px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/android/" style="font-size: 11.599214184150533px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 18.680117730038788px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 9.490371919037717px;" class="tag-cloud-link">计算机组成原理</a>
     
 </div>
                 

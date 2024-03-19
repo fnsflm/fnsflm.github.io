@@ -64,17 +64,12 @@
         }
       }
     </script>-->
-<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
 }
 
 mjx-container[jax="SVG"][display="true"] {
@@ -413,22 +408,22 @@ mjx-container[display="true"] + br {
         </center>
     </div>
     <div class="content-article">
-        <h1><span id="尝试配置hadoop环境">尝试配置hadoop环境</span></h1><h2><span id="系统环境">系统环境</span></h2><ul>
+        <h1 id="尝试配置hadoop环境"><a href="#尝试配置hadoop环境" class="headerlink" title="尝试配置hadoop环境"></a>尝试配置hadoop环境</h1><h2 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h2><ul>
 <li><strong>操作系统</strong>：linux ubuntu 18.04 LTS</li>
 <li><strong>java</strong>: openjdk 11.0.8</li>
 </ul>
-<h2><span id="安装hadoop">安装hadoop</span></h2><p>我的电脑上已经配置好了java环境，这里就不详细说了，官网上可以下载的java的jdk源码包，下载后配置环境变量即可，而ubuntu有自带的openjdk，可以用apt工具直接下载<br>在<a target="_blank" rel="noopener" href="https://hadoop.apache.org/releases.html">apache hadoop官网</a>上下载适合的版本，可以参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/-luoke/p/12809623.html">Hadoop2与Hadoop3的区别</a><br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/1-c2f6fb.png" alt="在这里插入图片描述"></p>
+<h2 id="安装hadoop"><a href="#安装hadoop" class="headerlink" title="安装hadoop"></a>安装hadoop</h2><p>我的电脑上已经配置好了java环境，这里就不详细说了，官网上可以下载的java的jdk源码包，下载后配置环境变量即可，而ubuntu有自带的openjdk，可以用apt工具直接下载<br>在<a target="_blank" rel="noopener" href="https://hadoop.apache.org/releases.html">apache hadoop官网</a>上下载适合的版本，可以参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/-luoke/p/12809623.html">Hadoop2与Hadoop3的区别</a><br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/1-c2f6fb.png" alt="在这里插入图片描述"></p>
 <p>这里选择最新的3.1.4<br>下载时间稍微有点长（可能是我网不好），下载后找个地方解压就好，很多教程里写的<code>/usr/local/</code>下，但个人因为权限的原因，不太喜欢存到这个目录下，自己找个地方存下了就是了，我存的地方是<code>~/software</code><br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/2-d69189.png" alt="在这里插入图片描述"><br>配置环境变量<code>vim ~/.bashrc</code>修改<code>.bashrc</code>,$HADOOP_HOME就是解压后的文件夹的路径</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HADOOP_HOME=~/software/hadoop-3.1.4/</span><br><span class="line"><span class="built_in">export</span> HADOOP_CONF_DIR=<span class="variable">$HADOOP_HOME</span>/etc/hadoop</span><br><span class="line"><span class="built_in">export</span> YARN_CONF_DIR=<span class="variable">$HADOOP_HOME</span>/etc/hadoop</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$HADOOP_HOME</span>/bin</span><br></pre></td></tr></table></figure>
 <p>再输入<code>source ~/.bashrc</code>更新配置，<code>hadoop version</code>查看是否安装成功<br>    <img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/3-18cc6a.png" alt="在这里插入图片描述"></p>
-<h2><span id="单机配置">单机配置</span></h2><blockquote>
+<h2 id="单机配置"><a href="#单机配置" class="headerlink" title="单机配置"></a>单机配置</h2><blockquote>
 <p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/sench/p/8542175.html">Ubuntu16.04下Hadoop的本地安装与配置</a></p>
 </blockquote>
 <p>默认情况下，Hadoop被配置成以非分布式模式运行的一个独立Java进程。这对调试非常有帮助。</p>
 <p>下面的例子将已解压的<code>$HADOOP_HOME/etc/hadoop/*.xml</code> 作为输入（其它文本文件也行），查找并显示匹配给定正则表达式的条目。输出写入到指定的output目录。为了不污染源码，随便找个文件夹执行以下操作（大部分教程实在hadoop解压的文件夹下执行）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir input</span><br><span class="line">cp <span class="variable">$HADOOP_HOME</span>/etc/hadoop/*.xml ./input </span><br><span class="line">hadoop jar <span class="variable">$HADOOP_HOME</span>/share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep ./input ./output <span class="string">'dfs[a-z.]+'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> input</span><br><span class="line"><span class="built_in">cp</span> <span class="variable">$HADOOP_HOME</span>/etc/hadoop/*.xml ./input </span><br><span class="line">hadoop jar <span class="variable">$HADOOP_HOME</span>/share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar grep ./input ./output <span class="string">'dfs[a-z.]+'</span></span><br></pre></td></tr></table></figure>
 <p>注： 目录下不能有<code>output</code>文件夹，否则会报错<br>结果为：<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/4-4abbb5.png" alt="在这里插入图片描述"><br>配置成功！</p>
-<h2><span id="伪分布配置">伪分布配置</span></h2><p><strong>ssh配置：</strong><br>如果<code>ssh localhost</code>能正常连接，如下图所示<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/5-5bcc8e.png" alt="在这里插入图片描述"><br>则可继续后续的步骤，其中可能出现报错：<code>connect to host localhost port 22: Connection refused</code>，此时使用apt重新下载ssh即可<code>sudo apt-get install openssh-server</code>，可以参考文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/happygrilclh/article/details/80793606">Ubuntu 安装配置SSH(ssh: connect to host localhost port 22: Connection refused问题的解决)</a></p>
+<h2 id="伪分布配置"><a href="#伪分布配置" class="headerlink" title="伪分布配置"></a>伪分布配置</h2><p><strong>ssh配置：</strong><br>如果<code>ssh localhost</code>能正常连接，如下图所示<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/5-5bcc8e.png" alt="在这里插入图片描述"><br>则可继续后续的步骤，其中可能出现报错：<code>connect to host localhost port 22: Connection refused</code>，此时使用apt重新下载ssh即可<code>sudo apt-get install openssh-server</code>，可以参考文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/happygrilclh/article/details/80793606">Ubuntu 安装配置SSH(ssh: connect to host localhost port 22: Connection refused问题的解决)</a></p>
 <p><strong>修改hadoop配置文件：</strong><br>配置文件在<code>$HADOOPHOME/etc/hadoop</code>文件夹下，要修改的是core-site.xml和hdfs-site.xml<br>配置文件具体参数的说明可以参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/ViMan1204/article/details/88980813">修改core-site.xml配置文件</a>，<a target="_blank" rel="noopener" href="https://blog.csdn.net/ViMan1204/article/details/89005702">修改hdfs-site.xml配置文件</a></p>
 <p><strong>core-site.xml:</strong></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">value</span>&gt;</span>file:/tmp/hadoop<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -595,13 +590,7 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/1999/04/14/1999-4-14/hello-world/">Hello World</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/10/21/2019-10-19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%95%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">数据结构试验报告-栈和队列</a>
+                    <a href="/2019/12/15/2019-12-15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%8E%92%E5%BA%8F/">数据结构实验报告-排序</a>
                 </span>
             </li>
             
@@ -613,43 +602,49 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/05/2020-10-5/linux%E5%AE%89%E8%A3%85latex/">linux安装latex</a>
+                    <a href="/2019/10/11/2019-9-20/%E7%88%B1%E6%95%B0%E7%A4%BE%E6%8B%9B%E6%96%B0%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/">爱数社招新试题解答</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/02/03/2021-02-03/%E5%AE%89%E8%A3%85obs-studio%E6%8A%A5%E9%94%99/">安装obs-studio报错</a>
+                    <a href="/2020/10/28/2020-10-28/fcitx%E9%87%8D%E5%90%AF%E5%90%8E%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88/">fcitx重启后快捷键失效</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/02/16/2021-02-16/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E8%BF%BD%E7%95%AA(%E8%A1%A5%E7%95%AA)%E7%9A%84%E6%96%B9%E6%B3%95/">推荐一个追番(补番)的方法</a>
+                    <a href="/2020/11/17/2020-11-17/sql%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%8A%A5%E9%94%99/">sql创建函数过程中的报错</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/27/2021-02-17/%E6%8E%A8%E8%8D%90github%E7%8A%B6%E6%80%81%E5%8D%A1%E7%89%87/">推荐github状态卡片</a>
+                    <a href="/2020/12/17/2020-12-17/%E5%85%B3%E7%B3%BB%E5%9B%BEgraph/">关系图graph</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/02/28/2021-02-28/hexo%E5%8D%9A%E5%AE%A2%E5%8E%8B%E7%BC%A9css%E3%80%81js%E7%AD%89%E6%96%87%E4%BB%B6/">hexo博客压缩css、js等文件</a>
+                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEodbc/">ubuntu上配置odbc</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/12/2021-03-12/%E5%8A%9E%E7%90%86visa%E5%8D%A1%E7%BB%8F%E5%8E%86/">办理visa卡经历</a>
+                    <a href="/2020/09/26/2020-9-26/vscode%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95c++/">vscode快速配置调试c++</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/04/24/2021-04-24/ssh%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95%E6%9C%AC%E5%9C%B0localhost/">ssh无法登录本地localhost</a>
+                    <a href="/2020/09/28/2020-9-28/linux%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/">linux中的查找</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/03/17/2021-03-17/git_clone%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">git_clone加速方法整理</a>
                 </span>
             </li>
             
@@ -682,123 +677,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 17.98373382375038px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13.502506202241728px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 8.946215292358517px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 11.74029750743168px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19.153989508568273px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 11.163772786991565px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 14.606542911210127px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 12.13858747294628px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 15.101601070793546px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 8.212867437371123px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 16.94587895456493px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 19.35496475728766px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 15.526824290621152px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 15.396018152121156px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 17.345641395550917px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 17.509719341061874px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/vscode/" style="font-size: 13.818732894606391px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 19.13350877116926px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/linux/" style="font-size: 12.178819967493713px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/vscode/" style="font-size: 11.90921454858023px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 17.06439431949576px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/linux/" style="font-size: 10.132229902511554px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 17.42662618341262px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 12.03956864887785px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 19.743811056800602px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 13.969741843886588px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 14.35183244234166px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 14.443041741938348px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 11.666817474299162px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 9.10631162872895px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 16.60807346239334px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 18.949998092568798px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 17.05275901068814px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 10.57987849994062px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 16.10808160798049px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 15.081635885943456px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 13.163660071452142px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 12.44659327776908px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 15.14975550589808px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 17.772988462993652px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/bug/" style="font-size: 18.25951410332859px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/mysql/" style="font-size: 18.645323412788038px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14.736644465099438px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/sql/" style="font-size: 16.63836032436209px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/mysql/" style="font-size: 13.955891846124672px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/x-org/" style="font-size: 13.87247011488131px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/sql/" style="font-size: 18.21271776447388px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/bug/" style="font-size: 8.59361475139272px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/javafx/" style="font-size: 14.480155719052192px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 13.72230631852084px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 11.764142056963166px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 14.70484730062593px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 16.21451967936732px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 12.86047683656657px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 10.801068451435492px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 15.452723687146072px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 19.12473222057996px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 15.792804774523342px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 16.685066371330677px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/mapreduce/" style="font-size: 8.48250035869891px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 14.624193452074767px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 19.563448459976968px;" class="tag-cloud-link">爬虫</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 16.725671609336615px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/hadoop/" style="font-size: 17.310866204665295px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 17.98605711656452px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/kafka/" style="font-size: 8.340479206112484px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 8.555320827031183px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/navicat/" style="font-size: 12.18418111259767px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/navicat/" style="font-size: 8.16941957157097px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/pyecharts/" style="font-size: 16.982424566297727px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/hadoop/" style="font-size: 15.808103107887067px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 16.121434634375294px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 10.530209397676579px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 13.408356734573385px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 13.881171603447974px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 18.519535412804526px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/cuda/" style="font-size: 16.68641463904583px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/tenserflow/" style="font-size: 16.372437664799058px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/wine/" style="font-size: 16.171595691261487px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 8.780564678735054px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/hexo/" style="font-size: 10.185345494237897px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/cuda/" style="font-size: 8.284798585782985px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 17.319794093023823px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/wine/" style="font-size: 8.11098921068248px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 18.109588026471663px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/hexo/" style="font-size: 9.84410114829413px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/win7/" style="font-size: 12.011902717503313px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 18.41842791790166px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/telegram/" style="font-size: 14.973659166907437px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 18.124472403388893px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/ACGN/" style="font-size: 19.312045842443776px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/win7/" style="font-size: 11.01212972024909px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/github/" style="font-size: 9.463568419303979px;" class="tag-cloud-link">github</a>
+    <a href="/tags/telegram/" style="font-size: 14.702926300033242px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/github-action/" style="font-size: 12.173867296688012px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/ACGN/" style="font-size: 12.539869329303983px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/js/" style="font-size: 18.43324460439882px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 13.125534792417174px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 15.900068546088502px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 15.4741800890267px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 19.04944317212489px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 19.990610200354897px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 14.047189367159653px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/github/" style="font-size: 17.23809382504755px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 14.962120523194773px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/github-action/" style="font-size: 19.356229472602784px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 12.505842865971355px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/ssh/" style="font-size: 19.489195478835494px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 14.448320133819923px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 16.135548592440173px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/android/" style="font-size: 10.142914437998638px;" class="tag-cloud-link">android</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 9.307208915057247px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 15.308605073784213px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 13.256220971967998px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 15.690765959940748px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/android/" style="font-size: 17.308081641684993px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14.494906485786505px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 12.316622614751203px;" class="tag-cloud-link">计算机组成原理</a>
     
 </div>
                 

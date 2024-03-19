@@ -64,17 +64,12 @@
         }
       }
     </script>-->
-<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
 }
 
 mjx-container[jax="SVG"][display="true"] {
@@ -406,14 +401,14 @@ mjx-container[display="true"] + br {
     </div>
     <div class="content-article">
         <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/03/29/Dzf7GhLV4AAjY9E-718b9d.jpeg" alt="ILLUSTRATION"></p>
-<h1><span id="推荐github状态卡片">推荐github状态卡片</span></h1><h2><span id="前言">前言</span></h2><p>在github上, 创建与用户名同名的仓库时, 该仓库的README会作为personal profile展示出来, 我们经常看到许多人的主页里会有这样的自我介绍, 以及一些统计的小卡片:</p>
+<h1 id="推荐github状态卡片"><a href="#推荐github状态卡片" class="headerlink" title="推荐github状态卡片"></a>推荐github状态卡片</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在github上, 创建与用户名同名的仓库时, 该仓库的README会作为personal profile展示出来, 我们经常看到许多人的主页里会有这样的自我介绍, 以及一些统计的小卡片:</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/17/image-20210217171510732-b5cfa3.png" alt="image-20210217171510732"></p>
 <p>这些小卡片是通过github action来制作的, 统计个人的star, commit, issus等信息,展示给别人看</p>
 <p>上图的卡片来自项目: <a target="_blank" rel="noopener" href="https://github.com/anuraghazra/github-readme-stats">https://github.com/anuraghazra/github-readme-stats</a>, 我也曾试着配过, 可以看视频: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=n6d4KHSKqGk&amp;t=302s">https://www.youtube.com/watch?v=n6d4KHSKqGk&amp;t=302s</a> 跟着做</p>
 <p>今天, 我要介绍的是另一种小卡片, 有各种各样的插件, 可以按照自己的喜好展示不同的内容, 功能丰富,项目地址: <a target="_blank" rel="noopener" href="https://github.com/lowlighter/metrics">https://github.com/lowlighter/metrics</a></p>
 <p>我的状态卡片( github地址: <a target="_blank" rel="noopener" href="https://github.com/fnsflm/">https://github.com/fnsflm/</a>):</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/17/github-metrics-3f9006.svg" alt="github-metrics"></p>
-<h2><span id="介绍">介绍</span></h2><p>项目地址: <a target="_blank" rel="noopener" href="https://github.com/lowlighter/metrics">https://github.com/lowlighter/metrics</a></p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>项目地址: <a target="_blank" rel="noopener" href="https://github.com/lowlighter/metrics">https://github.com/lowlighter/metrics</a></p>
 <p>通过github action能在每次提交(git push)后, 自动生成卡片, 不仅限于profile readme, 也可展示到其它你想展示的地方.</p>
 <p>这些卡片也完全可以分开生成, 比如<code>Website performances</code>, <code>Music plugin</code>等可以在github外单独展示</p>
 <p><strong>基本卡片:</strong></p>
@@ -424,44 +419,44 @@ mjx-container[display="true"] + br {
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/17/image-20210217150246536-f09af9.png" alt="image-20210217150246536"></p>
 <p><strong>3种模板(外观)</strong>:</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/17/image-20210217155810417-d35712.png" alt="image-20210217155810417"></p>
-<h2><span id="使用">使用</span></h2><p>项目里的<a target="_blank" rel="noopener" href="https://github.com/lowlighter/metrics/blob/master/README.md">README</a>说的十分清楚, 这里只做一些举例和自己碰到的一些坑</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>项目里的<a target="_blank" rel="noopener" href="https://github.com/lowlighter/metrics/blob/master/README.md">README</a>说的十分清楚, 这里只做一些举例和自己碰到的一些坑</p>
 <ul>
 <li><p>如果只需要最基础的卡片,而不需要扩展的插件, 可以这样生成:</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">Metrics</span>](<span class="link">https://metrics.lecoq.io/my-github-user</span>)</span><br></pre></td></tr></table></figure>
-<p>比如我的是: <a target="_blank" rel="noopener" href="https://metrics.lecoq.io/fnsflm">https://metrics.lecoq.io/fnsflm</a></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">Metrics</span>](<span class="link">https://metrics.lecoq.io/my-github-user</span>)</span><br></pre></td></tr></table></figure>
+<p>  比如我的是: <a target="_blank" rel="noopener" href="https://metrics.lecoq.io/fnsflm">https://metrics.lecoq.io/fnsflm</a></p>
 </li>
 <li><p>如果考虑添加插件, 更改模板(templates), 那么需要使用github action</p>
 <ul>
 <li><p>首先要获取<code>personal token</code></p>
-<p><code>settings</code>–&gt; <code>developer settings</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/17/031-2941d1.jpg" alt="031"></p>
-<p><code>personal access tokens</code> –&gt; <code>generate token</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/17/032-863ad8.jpg" alt="032"></p>
-<p>名字(Note)随意, 不需要勾选任何选项, 然后点下方的<code>Generate token</code>即可.</p>
-<p>github token只会显示一次,  复制后保存好, 离开页面后不会再显示出token</p>
-<p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/17/image-20210217162119516-74c021.png" alt="image-20210217162119516"></p>
-<p>在想要存卡片图的项目里, 往往是<code>my-github-user/my-github-user</code>, 比如我的是<a target="_blank" rel="noopener" href="https://github.com/fnsflm/fnsflm">fnsflm/fnsflm</a>, 的setting中:</p>
-<p><code>settings</code> –&gt; <code>secrets</code> –&gt; <code>new repository secret</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/17/034-ec6de0.jpg" alt="034"></p>
-<p>名字随意, 但是要写入action的, value是刚刚复制的token, 这里以METRICS_TOKEN 为例</p>
+<p>  <code>settings</code>–&gt; <code>developer settings</code></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/17/031-2941d1.jpg" alt="031"></p>
+<p>  <code>personal access tokens</code> –&gt; <code>generate token</code></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/17/032-863ad8.jpg" alt="032"></p>
+<p>  名字(Note)随意, 不需要勾选任何选项, 然后点下方的<code>Generate token</code>即可.</p>
+<p>  github token只会显示一次,  复制后保存好, 离开页面后不会再显示出token</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/17/image-20210217162119516-74c021.png" alt="image-20210217162119516"></p>
+<p>  在想要存卡片图的项目里, 往往是<code>my-github-user/my-github-user</code>, 比如我的是<a target="_blank" rel="noopener" href="https://github.com/fnsflm/fnsflm">fnsflm/fnsflm</a>, 的setting中:</p>
+<p>  <code>settings</code> –&gt; <code>secrets</code> –&gt; <code>new repository secret</code></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/17/034-ec6de0.jpg" alt="034"></p>
+<p>  名字随意, 但是要写入action的, value是刚刚复制的token, 这里以METRICS_TOKEN 为例</p>
 </li>
 <li><p>在项目<code>.github/workflows/</code>下新建<code>action.yml</code>配置文件:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Metrics</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="comment"># 一小时执行一次action</span></span><br><span class="line">  <span class="attr">schedule:</span> [{<span class="attr">cron:</span> <span class="string">"0 * * * *"</span>}]</span><br><span class="line">  <span class="comment"># 每次提交执行action</span></span><br><span class="line">  <span class="attr">push:</span> {<span class="attr">branches:</span> [<span class="string">"master"</span>, <span class="string">"main"</span>]}</span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">github-metrics:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">        <span class="comment"># 仓库位置, 可以fork后用自己的仓库</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">lowlighter/metrics@latest</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="comment"># GitHub token</span></span><br><span class="line">          <span class="attr">token:</span> <span class="string">${{</span> <span class="string">secrets.METRICS_TOKEN</span> <span class="string">}}</span></span><br><span class="line">          <span class="comment"># GITHUB_TOKEN is a special auto-generated token restricted to current repository, which is used to push files in it</span></span><br><span class="line">          <span class="attr">committer_token:</span> <span class="string">${{</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">}}</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Metrics</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="comment"># 一小时执行一次action</span></span><br><span class="line">  <span class="attr">schedule:</span> [{<span class="attr">cron:</span> <span class="string">"0 * * * *"</span>}]</span><br><span class="line">  <span class="comment"># 每次提交执行action</span></span><br><span class="line">  <span class="attr">push:</span> {<span class="attr">branches:</span> [<span class="string">"master"</span>, <span class="string">"main"</span>]}</span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">github-metrics:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">        <span class="comment"># 仓库位置, 可以fork后用自己的仓库</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">lowlighter/metrics@latest</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="comment"># GitHub token</span></span><br><span class="line">          <span class="attr">token:</span> <span class="string">${{</span> <span class="string">secrets.METRICS_TOKEN</span> <span class="string">}}</span></span><br><span class="line">          <span class="comment"># GITHUB_TOKEN is a special auto-generated token restricted to current repository, which is used to push files in it</span></span><br><span class="line">          <span class="attr">committer_token:</span> <span class="string">${{</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">}}</span></span><br></pre></td></tr></table></figure>
 
-<p>提交后会执行action, 在项目下生成svg图片(5 - 10min), 扩展插件根据<a target="_blank" rel="noopener" href="https://github.com/lowlighter/metrics/blob/master/README.md">README</a>里插件说明, 并排着<code>committer_token</code>顺着添加即可:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/17/image-20210217170105452-b02983.png" alt="image-20210217170105452"></p>
-<p>然后README.md引用即可展示: </p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">METRICS</span>](<span class="link">https://github.com/my-github-user/my-github-user/blob/main/github-metrics.svg</span>)</span><br></pre></td></tr></table></figure>
+<p>  提交后会执行action, 在项目下生成svg图片(5 - 10min), 扩展插件根据<a target="_blank" rel="noopener" href="https://github.com/lowlighter/metrics/blob/master/README.md">README</a>里插件说明, 并排着<code>committer_token</code>顺着添加即可:</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/17/image-20210217170105452-b02983.png" alt="image-20210217170105452"></p>
+<p>  然后README.md引用即可展示: </p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">METRICS</span>](<span class="link">https://github.com/my-github-user/my-github-user/blob/main/github-metrics.svg</span>)</span><br></pre></td></tr></table></figure>
 
-<p>比如我的:</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">Metrics</span>](<span class="link">https://github.com/fnsflm/fnsflm/blob/main/github-metrics.svg</span>)</span><br><span class="line">![<span class="string">Metrics</span>](<span class="link">https://cdn.jsdelivr.net/gh/fnsflm/fnsflm/github-metrics.svg</span>)</span><br></pre></td></tr></table></figure>
+<p>  比如我的:</p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">Metrics</span>](<span class="link">https://github.com/fnsflm/fnsflm/blob/main/github-metrics.svg</span>)</span><br><span class="line">![<span class="string">Metrics</span>](<span class="link">https://cdn.jsdelivr.net/gh/fnsflm/fnsflm/github-metrics.svg</span>)</span><br></pre></td></tr></table></figure>
 
-<p>我的action配置: <a target="_blank" rel="noopener" href="https://github.com/fnsflm/fnsflm/blob/main/.github/workflows/action.yml">https://github.com/fnsflm/fnsflm/blob/main/.github/workflows/action.yml</a></p>
+<p>  我的action配置: <a target="_blank" rel="noopener" href="https://github.com/fnsflm/fnsflm/blob/main/.github/workflows/action.yml">https://github.com/fnsflm/fnsflm/blob/main/.github/workflows/action.yml</a></p>
 </li>
 <li><p>单个卡片(举例)</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">fnsflm/metrics@latest</span></span><br><span class="line">  <span class="attr">with:</span></span><br><span class="line">    <span class="attr">filename:</span> <span class="string">pagespeed.svg</span></span><br><span class="line">    <span class="attr">committer_token:</span> <span class="string">${{</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">}}</span></span><br><span class="line">    <span class="attr">token:</span> <span class="string">${{</span> <span class="string">secrets.METRICS_TOKEN</span> <span class="string">}}</span></span><br><span class="line">    <span class="attr">plugin_pagespeed_token:</span> <span class="string">${{</span> <span class="string">secrets.PAGESPEED_TOKEN</span> <span class="string">}}</span></span><br><span class="line">    <span class="attr">base:</span> <span class="string">""</span></span><br><span class="line">    <span class="attr">plugin_pagespeed:</span> <span class="literal">yes</span></span><br><span class="line">    <span class="attr">plugin_pagespeed_url:</span> <span class="string">https://fnsflm.xyz</span></span><br><span class="line">    <span class="attr">plugin_pagespeed_screenshot:</span> <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">fnsflm/metrics@latest</span></span><br><span class="line">  <span class="attr">with:</span></span><br><span class="line">    <span class="attr">filename:</span> <span class="string">pagespeed.svg</span></span><br><span class="line">    <span class="attr">committer_token:</span> <span class="string">${{</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">}}</span></span><br><span class="line">    <span class="attr">token:</span> <span class="string">${{</span> <span class="string">secrets.METRICS_TOKEN</span> <span class="string">}}</span></span><br><span class="line">    <span class="attr">plugin_pagespeed_token:</span> <span class="string">${{</span> <span class="string">secrets.PAGESPEED_TOKEN</span> <span class="string">}}</span></span><br><span class="line">    <span class="attr">base:</span> <span class="string">""</span></span><br><span class="line">    <span class="attr">plugin_pagespeed:</span> <span class="literal">yes</span></span><br><span class="line">    <span class="attr">plugin_pagespeed_url:</span> <span class="string">https://fnsflm.xyz</span></span><br><span class="line">    <span class="attr">plugin_pagespeed_screenshot:</span> <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
 
-<p>这里以<a target="_blank" rel="noopener" href="https://github.com/lowlighter/metrics/blob/master/source/plugins/pagespeed/README.md">Website performances</a>为例加上<code>base:""</code>即可生成单独卡片, 最好能给生成的图片命名<code>filename: pagespeed.svg</code></p>
+<p>  这里以<a target="_blank" rel="noopener" href="https://github.com/lowlighter/metrics/blob/master/source/plugins/pagespeed/README.md">Website performances</a>为例加上<code>base:""</code>即可生成单独卡片, 最好能给生成的图片命名<code>filename: pagespeed.svg</code></p>
 </li>
 </ul>
 </li>
@@ -630,25 +625,19 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/21/2019-10-19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%95%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">数据结构试验报告-栈和队列</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2019/11/18/2019-11-18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%91/">数据结构实验报告-树</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/15/2019-12-15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%8E%92%E5%BA%8F/">数据结构实验报告-排序</a>
+                    <a href="/2020/10/02/2020-10-2/%E6%8E%A8%E8%8D%90%E4%B8%80%E6%AC%BE%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%B7%A5%E5%85%B7/">推荐一款图片压缩工具</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/05/2020-10-5/linux%E5%AE%89%E8%A3%85latex/">linux安装latex</a>
+                    <a href="/2020/10/28/2020-10-28/fcitx%E9%87%8D%E5%90%AF%E5%90%8E%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88/">fcitx重启后快捷键失效</a>
                 </span>
             </li>
             
@@ -660,7 +649,13 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/12/17/2020-12-17/%E5%85%B3%E7%B3%BB%E5%9B%BEgraph/">关系图graph</a>
+                    <a href="/2020/10/07/2020-10-7/ubuntu%E5%BC%80%E6%9C%BA%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AFlocale-check%20%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/">ubuntu开机提示错误locale-check: 没有那个文件或目录</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/16/2020-9-16/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8navicat/">尝试使用navicat</a>
                 </span>
             </li>
             
@@ -672,13 +667,13 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/01/2019-12-1/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%95%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%9F%A5%E6%89%BE/">数据结构试验报告-查找</a>
+                    <a href="/2021/03/17/2021-03-16/jupyter-lab-build%E6%8A%A5%E9%94%99/">jupyter lab build报错</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/12/12/2020-12-12/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B0%8F%E9%A1%B9%E7%9B%AE-%E6%96%B0%E9%97%BB%E7%88%AC%E5%8F%96%E4%B8%8E%E5%A4%84%E7%90%86/">大数据小项目-新闻爬取与处理</a>
+                    <a href="/2021/03/17/2021-03-17/git_clone%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">git_clone加速方法整理</a>
                 </span>
             </li>
             
@@ -711,123 +706,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 19.473398284746196px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 11.611702833184372px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 8.83225822417442px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 11.116820340969067px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 11.453375827491183px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 17.961397923262798px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 15.72481773412805px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 19.50662000956708px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 12.729404741041307px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 13.004898014911742px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 18.793958878598346px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 15.209753549363732px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 8.495784566905211px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 19.31987334673629px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 11.429481957090086px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 8.826269826356388px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/vscode/" style="font-size: 8.549039289627018px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 13.37382160019516px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/linux/" style="font-size: 15.586471397136732px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/vscode/" style="font-size: 12.566826356992262px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 12.77540895094124px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/linux/" style="font-size: 12.731400201948775px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 15.962380546496874px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 13.004856731408346px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 16.336436498326936px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 8.852377571294568px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 16.022219228351965px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 17.26275168419499px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 8.83065945245859px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 11.401546890733888px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 8.200769060276848px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 9.495596276197142px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 10.198956819813578px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 13.688117285366612px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 14.28075030088306px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 10.468408089648896px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 16.554364368772045px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 15.328186729820146px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 12.872950549055826px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 19.69725558981781px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/bug/" style="font-size: 14.088244410714616px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/mysql/" style="font-size: 12.795938511711752px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 15.83389032468082px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/sql/" style="font-size: 14.028915103212178px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/mysql/" style="font-size: 13.769957113512572px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/x-org/" style="font-size: 11.469344627896884px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/sql/" style="font-size: 9.239579356133248px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/bug/" style="font-size: 18.484806656103565px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/javafx/" style="font-size: 18.265272711933925px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 11.031562564941982px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 11.526773756558804px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 12.565463057120773px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 9.772434763902648px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 19.24559374626851px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 15.393574166791062px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 18.138577469334706px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 11.657777733105842px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 11.936593616414775px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 14.969107548438384px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/mapreduce/" style="font-size: 12.977258512497691px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 15.120973542186778px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 19.46799965269665px;" class="tag-cloud-link">爬虫</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 11.07479466611918px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/hadoop/" style="font-size: 8.30081739025889px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 18.531460114851427px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/kafka/" style="font-size: 13.062018773665866px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 15.41164481182672px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/navicat/" style="font-size: 17.76184855684565px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/navicat/" style="font-size: 19.82776858042005px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/pyecharts/" style="font-size: 19.559061004772946px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/hadoop/" style="font-size: 10.973477407147826px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 18.644013556312064px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 10.16278733195781px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 14.730650332244764px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 19.039118260890536px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 8.299725652905355px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/cuda/" style="font-size: 8.729380306838662px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/tenserflow/" style="font-size: 9.636976721439364px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/wine/" style="font-size: 18.981068214200132px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10.377068167022731px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/hexo/" style="font-size: 10.510158272007482px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/cuda/" style="font-size: 11.476845769921617px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 15.187971509586887px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/wine/" style="font-size: 16.010865434072688px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 11.517733438776077px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/hexo/" style="font-size: 18.63929034508203px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/win7/" style="font-size: 9.636517916112858px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 8.87481835511964px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/telegram/" style="font-size: 13.03292848209061px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 19.03558221780139px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/ACGN/" style="font-size: 18.041109976422497px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/win7/" style="font-size: 15.151462145156977px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/github/" style="font-size: 18.208056058821008px;" class="tag-cloud-link">github</a>
+    <a href="/tags/telegram/" style="font-size: 9.982607865995554px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/github-action/" style="font-size: 14.215398786868597px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/ACGN/" style="font-size: 14.574862829954505px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/js/" style="font-size: 9.277141584144012px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 11.050612787397323px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 10.394428264514076px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 12.62023404116533px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 11.912986013925568px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 18.692424935948914px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 19.430693021252694px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/github/" style="font-size: 18.091472128934672px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 17.08994681367012px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/github-action/" style="font-size: 17.379846546517392px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 16.877819385378743px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/ssh/" style="font-size: 12.408550021243652px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 18.043913841944363px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 16.63344987854901px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/android/" style="font-size: 12.48134928605971px;" class="tag-cloud-link">android</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10.478644118231411px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 8.469145558018745px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 19.182162833938442px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 16.816741341122317px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/android/" style="font-size: 10.89069734387888px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 15.972077526315143px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 10.561307759084684px;" class="tag-cloud-link">计算机组成原理</a>
     
 </div>
                 

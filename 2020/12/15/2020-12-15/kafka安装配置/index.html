@@ -64,17 +64,12 @@
         }
       }
     </script>-->
-<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
 }
 
 mjx-container[jax="SVG"][display="true"] {
@@ -410,19 +405,19 @@ mjx-container[display="true"] + br {
     </div>
     <div class="content-article">
         <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/03/29/illust_69608125_20200530_153930-adc21a.jpg" alt="illustration"></p>
-<h1><span id="kafka安装配置">kafka安装配置</span></h1><h2><span id="系统环境">系统环境</span></h2><ul>
-<li>操作系统:Ubuntu 18.04LTS</li>
-<li>java: 1.8.0_201</li>
-<li>生产者:master节点:10.177.82.86</li>
-<li>消费者:slave1节点:10.177.82.88</li>
+<h1 id="kafka安装配置"><a href="#kafka安装配置" class="headerlink" title="kafka安装配置"></a>kafka安装配置</h1><h2 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h2><ul>
+<li>  操作系统:Ubuntu 18.04LTS</li>
+<li>  java: 1.8.0_201</li>
+<li>  生产者:master节点:10.177.82.86</li>
+<li>  消费者:slave1节点:10.177.82.88</li>
 </ul>
-<h2><span id="下载kafka">下载kafka</span></h2><p>官网上下载:<a target="_blank" rel="noopener" href="http://kafka.apache.org/downloads">http://kafka.apache.org/downloads</a></p>
+<h2 id="下载kafka"><a href="#下载kafka" class="headerlink" title="下载kafka"></a>下载kafka</h2><p>官网上下载:<a target="_blank" rel="noopener" href="http://kafka.apache.org/downloads">http://kafka.apache.org/downloads</a></p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/image-20201215132254397-c08d90.png" alt="image-20201215132254397"></p>
 <p>没有查到有版本依赖的关系,下载最新版本</p>
 <p>使用清华源,速度很快</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/image-20201215132347329-cc85cd.png" alt="image-20201215132347329"></p>
 <p>解压到自定义的位置,我解压到<code>~/software</code></p>
-<h2><span id="配置kafka">配置kafka</span></h2><p>配置环境变量,打开<code>~/.bashrc</code></p>
+<h2 id="配置kafka"><a href="#配置kafka" class="headerlink" title="配置kafka"></a>配置kafka</h2><p>配置环境变量,打开<code>~/.bashrc</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> KAFKA_HOME=/home/hjy/software/kafka_2.13-2.6.0</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$KAFKA_HOME</span>/bin</span><br></pre></td></tr></table></figure>
 
 <p><code>source ~/.bashrc</code>更新配置</p>
@@ -432,19 +427,19 @@ mjx-container[display="true"] + br {
 
 <p>修改配置文件(只给出修改的部分)</p>
 <p>master节点conf/server.properties</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">broker.id</span>=<span class="string">0</span></span><br><span class="line"><span class="attr">listeners</span>=<span class="string">PLAINTEXT://master:9092</span></span><br><span class="line"><span class="meta">zookeeper.connect</span>=<span class="string">master:2181,slave1:2181</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">broker.id</span>=<span class="string">0</span></span><br><span class="line"><span class="attr">listeners</span>=<span class="string">PLAINTEXT://master:9092</span></span><br><span class="line"><span class="attr">zookeeper.connect</span>=<span class="string">master:2181,slave1:2181</span></span><br></pre></td></tr></table></figure>
 
 <p>slave1节点conf/server.properties</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">broker.id</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">listeners</span>=<span class="string">PLAINTEXT://slave1:9092</span></span><br><span class="line"><span class="meta">zookeeper.connect</span>=<span class="string">master:2181,slave1:2181</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">broker.id</span>=<span class="string">1</span></span><br><span class="line"><span class="attr">listeners</span>=<span class="string">PLAINTEXT://slave1:9092</span></span><br><span class="line"><span class="attr">zookeeper.connect</span>=<span class="string">master:2181,slave1:2181</span></span><br></pre></td></tr></table></figure>
 
 <p>所有节点都需要修改的部分(可以选择修改之后再复制到其它节点上):</p>
 <p>conf/producer.properties</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">bootstrap.servers</span>=<span class="string">master:9092,slave1:9092</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bootstrap.servers</span>=<span class="string">master:9092,slave1:9092</span></span><br></pre></td></tr></table></figure>
 
 <p>conf/consumer.properties</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">bootstrap.servers</span>=<span class="string">master:9092,slave1:9092</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bootstrap.servers</span>=<span class="string">master:9092,slave1:9092</span></span><br></pre></td></tr></table></figure>
 
-<h2><span id="启动kafka">启动kafka</span></h2><p>启动zookeeper(所有节点都启动),可以使用已经安装好的zookeeper</p>
+<h2 id="启动kafka"><a href="#启动kafka" class="headerlink" title="启动kafka"></a>启动kafka</h2><p>启动zookeeper(所有节点都启动),可以使用已经安装好的zookeeper</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zkServer.sh start</span><br></pre></td></tr></table></figure>
 
 <p>也能使用自带的zookeeper:</p>
@@ -622,61 +617,61 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/1999/04/14/1999-4-14/hello-world/">Hello World</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/11/03/2019-11-3/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E4%B8%B2/">数据结构实验报告-串</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2020/10/05/2020-10-5/%E7%A6%81%E7%94%A8%E9%94%AE%E7%9B%98%E4%B8%8A%E7%9A%84%E6%8C%89%E9%94%AE/">禁用键盘上的按键</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/11/17/2020-11-17/sql%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%8A%A5%E9%94%99/">sql创建函数过程中的报错</a>
+                    <a href="/2020/12/15/2020-12-15/kafka%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">kafka安装配置</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/11/22/2020-11-22/javafx%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/">javafx设置背景图片</a>
+                    <a href="/2020/12/17/2020-12-17/%E5%85%B3%E7%B3%BB%E5%9B%BEgraph/">关系图graph</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/15/2020-9-15/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
+                    <a href="/2021/01/27/2021-01-27/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85live2d(gal%E4%B8%BB%E9%A2%98)/">hexo博客安装live2d(gal主题)</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/22/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
+                    <a href="/2021/02/03/2021-02-03/%E5%AE%89%E8%A3%85obs-studio%E6%8A%A5%E9%94%99/">安装obs-studio报错</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/22/2020-9-23/tensorflow-gpu%E6%8A%A5%E9%94%99%E2%80%9CCould-not-load-dynamic-library-libcudart-so-10-1-%E2%80%9D/">tensorflow-gpu报错“Could not load dynamic library &#39;libcudart.so.10.1&#39;”</a>
+                    <a href="/2020/09/27/2021-02-17/%E6%8E%A8%E8%8D%90github%E7%8A%B6%E6%80%81%E5%8D%A1%E7%89%87/">推荐github状态卡片</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/12/2021-03-12/%E5%8A%9E%E7%90%86visa%E5%8D%A1%E7%BB%8F%E5%8E%86/">办理visa卡经历</a>
+                    <a href="/2021/03/05/2021-03-05/pdftk%E5%B7%A5%E5%85%B7/">pdftk工具</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/17/2021-03-17/git_clone%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">git_clone加速方法整理</a>
+                    <a href="/2021/01/10/2021-1-11/%E5%BA%9F%E7%89%A9%E5%88%A9%E7%94%A8--%E6%97%A7%E6%89%8B%E6%9C%BA%E6%90%AD%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/">废物利用--旧手机搭建服务器</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/01/06/2021-1-7/%E8%A5%BF%E7%94%B5%E8%BD%AF%E5%B7%A5%E8%AE%A1%E7%BB%84II%E7%AD%94%E6%A1%88/">西电软工计组II答案</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2022/11/29/2022-11-29/pycharm-opencv%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">pycharm opencv无法自动补全</a>
                 </span>
             </li>
             
@@ -709,123 +704,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 17.528762651754572px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 11.992979033906373px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 15.016721958676133px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 12.338742093432302px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 9.106811456867689px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 9.135462859250028px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 14.904923059330082px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 9.220544390837503px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 19.73825430155142px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 15.999814498790682px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 14.41103012418293px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 12.029550403382387px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 15.725846058668925px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 13.954403163957874px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 8.075752989564824px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 17.59495386996551px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/vscode/" style="font-size: 15.94676597115534px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 11.332978662156972px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/linux/" style="font-size: 14.445040889417282px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/vscode/" style="font-size: 8.745498919668329px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 12.874516883957131px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/linux/" style="font-size: 10.991720865575738px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 9.845943148543483px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 13.582343975839319px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 8.909041873950397px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 18.04243904591199px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 12.298327116572572px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 10.01399963878147px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 12.650698907000473px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 9.80457142018319px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 9.316476937154494px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 19.075986687600874px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 16.0597962454432px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 17.697352913242412px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 17.22063844267111px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 11.182177610472742px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 11.885408269149558px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 14.059027263440974px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 10.511472663481431px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 15.698142148208209px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/bug/" style="font-size: 17.131088706104244px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/mysql/" style="font-size: 12.927415797852134px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 9.093527138504696px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/sql/" style="font-size: 18.57976127746865px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/mysql/" style="font-size: 17.702409897309202px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/x-org/" style="font-size: 16.849891001627675px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/sql/" style="font-size: 19.0174749342794px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/bug/" style="font-size: 11.42533552140377px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/javafx/" style="font-size: 8.11485312611292px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 11.743286218624956px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 16.752670756084925px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 15.308754368501047px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 19.44841952405098px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 10.17183682171897px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 14.111363602168197px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 11.125698993347266px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 16.46691669699199px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 10.098044277488237px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 12.697197900833652px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/mapreduce/" style="font-size: 11.346982231596769px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 12.345515557342061px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 12.861025400972128px;" class="tag-cloud-link">爬虫</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 15.941990237279139px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/hadoop/" style="font-size: 13.599673284005055px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 17.685022208478745px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/kafka/" style="font-size: 12.86545200117298px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 19.842892084267675px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/navicat/" style="font-size: 9.103158991116633px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/navicat/" style="font-size: 11.583713760376206px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/pyecharts/" style="font-size: 8.12861649872185px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/hadoop/" style="font-size: 9.429279349767704px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 15.39860325052496px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 11.35440075494363px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 10.51890421005105px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 13.572669292226045px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 8.277331368074822px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/cuda/" style="font-size: 13.601097975294094px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/tenserflow/" style="font-size: 9.784019595096371px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/wine/" style="font-size: 16.246918222526688px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 13.083144155791222px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/hexo/" style="font-size: 13.600472002702666px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/cuda/" style="font-size: 14.69285788789427px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 9.077263555097243px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/wine/" style="font-size: 17.218173239743532px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14.40716206198344px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/hexo/" style="font-size: 19.69389157236824px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/win7/" style="font-size: 16.30572583933023px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 15.776083843239018px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/telegram/" style="font-size: 12.882756689804278px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10.697727768250868px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/ACGN/" style="font-size: 9.464834843651307px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/win7/" style="font-size: 8.24689855333761px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/github/" style="font-size: 11.712947205411707px;" class="tag-cloud-link">github</a>
+    <a href="/tags/telegram/" style="font-size: 8.954088437803744px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/github-action/" style="font-size: 9.831527421794846px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/ACGN/" style="font-size: 18.382833670568097px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/js/" style="font-size: 8.440080232548802px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 8.297201362743795px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 8.498645034560525px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 8.47426722451851px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 11.616808378560274px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 9.876104557752766px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 11.140205890659534px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/github/" style="font-size: 13.857450062000138px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 8.235013068675482px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/github-action/" style="font-size: 16.1316938039397px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 12.53939221331811px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/ssh/" style="font-size: 18.22018772853724px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 11.07429238552466px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 10.750509220134143px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/android/" style="font-size: 18.845622692890277px;" class="tag-cloud-link">android</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 19.11933000541161px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 19.47208879774242px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 12.411725335899096px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 8.057954416840637px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/android/" style="font-size: 15.303270568513952px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 16.046749164333473px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 12.413818277272018px;" class="tag-cloud-link">计算机组成原理</a>
     
 </div>
                 

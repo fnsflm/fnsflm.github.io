@@ -64,17 +64,12 @@
         }
       }
     </script>-->
-<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
 }
 
 mjx-container[jax="SVG"][display="true"] {
@@ -390,7 +385,7 @@ mjx-container[display="true"] + br {
     </div>
     <div class="content-article">
         <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/03/29/GPbQH95N19GUTSjk9ZqYwfRc-42b851.jpeg" alt="ILLASTATION"></p>
-<h1><span id="git_clone加速方法整理">git_clone加速方法整理</span></h1><p>之前有兄弟反应git clone时卡在一个地方卡着, 其实这种状况并不稀奇, 网上有许多git clone加速的办法, 整理一下:</p>
+<h1 id="git-clone加速方法整理"><a href="#git-clone加速方法整理" class="headerlink" title="git_clone加速方法整理"></a>git_clone加速方法整理</h1><p>之前有兄弟反应git clone时卡在一个地方卡着, 其实这种状况并不稀奇, 网上有许多git clone加速的办法, 整理一下:</p>
 <ol>
 <li><p>使用github的<a target="_blank" rel="noopener" href="https://github.com/RC1844/FastGithub">镜像站</a>:</p>
 <p>  使用方法也很简单, 直接将github.com替换掉即可: <a target="_blank" rel="noopener" href="https://blog.csdn.net/u013066730/article/details/107164870">教程</a>,</p>
@@ -407,18 +402,18 @@ mjx-container[display="true"] + br {
 <li><p>nginx反向代理: <a target="_blank" rel="noopener" href="https://www.bboy.app/2020/03/12/%E4%BD%BF%E7%94%A8nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86github%E5%8A%A0%E9%80%9Fclone/">教程</a></p>
 </li>
 </ol>
-<h2><span id="详细说明">详细说明</span></h2><h3><span id="配置git代理">配置git代理</span></h3><h4><span id="https协议">https协议</span></h4><p>端口自行更改</p>
-<h6><span id="走-http-代理">走 HTTP 代理</span></h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy "http://127.0.0.1:8080"</span><br><span class="line">git config --global https.proxy "http://127.0.0.1:8080"</span><br></pre></td></tr></table></figure>
+<h2 id="详细说明"><a href="#详细说明" class="headerlink" title="详细说明"></a>详细说明</h2><h3 id="配置git代理"><a href="#配置git代理" class="headerlink" title="配置git代理"></a>配置git代理</h3><h4 id="https协议"><a href="#https协议" class="headerlink" title="https协议"></a>https协议</h4><p>端口自行更改</p>
+<h6 id="走-HTTP-代理"><a href="#走-HTTP-代理" class="headerlink" title="走 HTTP 代理"></a>走 HTTP 代理</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy "http://127.0.0.1:8080"</span><br><span class="line">git config --global https.proxy "http://127.0.0.1:8080"</span><br></pre></td></tr></table></figure>
 
-<h6><span id="走-socks5-代理如-shadowsocks">走 socks5 代理（如 Shadowsocks）</span></h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy "socks5://127.0.0.1:1080"</span><br><span class="line">git config --global https.proxy "socks5://127.0.0.1:1080"</span><br></pre></td></tr></table></figure>
+<h6 id="走-socks5-代理（如-Shadowsocks）"><a href="#走-socks5-代理（如-Shadowsocks）" class="headerlink" title="走 socks5 代理（如 Shadowsocks）"></a>走 socks5 代理（如 Shadowsocks）</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy "socks5://127.0.0.1:1080"</span><br><span class="line">git config --global https.proxy "socks5://127.0.0.1:1080"</span><br></pre></td></tr></table></figure>
 
-<h6><span id="取消设置">取消设置</span></h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
+<h6 id="取消设置"><a href="#取消设置" class="headerlink" title="取消设置"></a>取消设置</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
 
-<h4><span id="git协议">git协议</span></h4><p>windows系统下<code> C:\Users\用户名\.ssh\config</code></p>
+<h4 id="git协议"><a href="#git协议" class="headerlink" title="git协议"></a>git协议</h4><p>windows系统下<code> C:\Users\用户名\.ssh\config</code></p>
 <p>linux系统下<code>~/.ssh/config</code></p>
 <p>添加如下几行:</p>
 <p>端口自行更改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line"># 走 HTTP 代理</span><br><span class="line">ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=8080</span><br><span class="line"># 走 socks5 代理</span><br><span class="line">ProxyCommand nc -v -x 127.0.0.1:1080 %h %p</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line"># 走 HTTP 代理</span><br><span class="line">ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=8080</span><br><span class="line"># 走 socks5 代理</span><br><span class="line">ProxyCommand nc -v -x 127.0.0.1:1080 %h %p</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -578,61 +573,61 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/1999/04/14/1999-4-14/hello-world/">Hello World</a>
+                    <a href="/2020/10/28/2020-10-28/fcitx%E9%87%8D%E5%90%AF%E5%90%8E%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88/">fcitx重启后快捷键失效</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/29/2019-12-29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">数据结构实验报告-图的遍历</a>
+                    <a href="/2020/11/24/2020-11-24/hbase%E9%85%8D%E7%BD%AE/">hbase配置</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/05/2020-10-5/%E7%A6%81%E7%94%A8%E9%94%AE%E7%9B%98%E4%B8%8A%E7%9A%84%E6%8C%89%E9%94%AE/">禁用键盘上的按键</a>
+                    <a href="/2020/12/12/2020-12-12/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B0%8F%E9%A1%B9%E7%9B%AE-%E6%96%B0%E9%97%BB%E7%88%AC%E5%8F%96%E4%B8%8E%E5%A4%84%E7%90%86/">大数据小项目-新闻爬取与处理</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/07/2020-10-7/ubuntu%E5%BC%80%E6%9C%BA%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AFlocale-check%20%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/">ubuntu开机提示错误locale-check: 没有那个文件或目录</a>
+                    <a href="/2020/09/16/2020-9-16/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8navicat/">尝试使用navicat</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/11/17/2020-11-17/sql%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%8A%A5%E9%94%99/">sql创建函数过程中的报错</a>
+                    <a href="/2020/12/17/2020-12-17/%E5%85%B3%E7%B3%BB%E5%9B%BEgraph/">关系图graph</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/15/2020-9-15/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
+                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/02/03/2021-02-03/%E5%AE%89%E8%A3%85obs-studio%E6%8A%A5%E9%94%99/">安装obs-studio报错</a>
+                    <a href="/2021/03/12/2021-03-12/%E5%8A%9E%E7%90%86visa%E5%8D%A1%E7%BB%8F%E5%8E%86/">办理visa卡经历</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/02/28/2021-02-28/hexo%E5%8D%9A%E5%AE%A2%E5%8E%8B%E7%BC%A9css%E3%80%81js%E7%AD%89%E6%96%87%E4%BB%B6/">hexo博客压缩css、js等文件</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/03/17/2021-03-16/jupyter-lab-build%E6%8A%A5%E9%94%99/">jupyter lab build报错</a>
+                    <a href="/2021/03/29/2021-03-29/vscode%E6%BA%90%E6%96%87%E4%BB%B6%E5%92%8C%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E5%88%86%E7%A6%BB/">vscode源文件和可执行文件分离</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2021/04/24/2021-04-24/ssh%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95%E6%9C%AC%E5%9C%B0localhost/">ssh无法登录本地localhost</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2022/01/31/2022-01-31/linux%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">linux传输文件解决方案</a>
                 </span>
             </li>
             
@@ -665,123 +660,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10.27384479068467px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10.491686105756392px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 16.27199675030545px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 13.117619288885582px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 11.574355792608603px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 9.901715431023238px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 19.407384958425393px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 8.564627582484459px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 12.89415432207064px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 15.859695690931506px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 14.991717894225431px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 9.949508917662634px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 18.506916687239343px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 10.871109058036135px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 17.52675258102987px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 9.222170435452831px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/vscode/" style="font-size: 18.308335097507744px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 8.609833000114847px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/linux/" style="font-size: 13.67962384837622px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/vscode/" style="font-size: 19.329095699354813px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 19.17509884748926px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/linux/" style="font-size: 19.336685402985644px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 9.178893885111366px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 11.97641378818254px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 16.742475467296746px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 13.622090088152273px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 13.571540118099604px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 9.688964883838192px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 9.690601216448853px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 12.474465440305572px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 8.263965618389225px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 10.68482865147364px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 9.473581665403614px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 16.361789936094635px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 8.06399265439525px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 12.25949214015411px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 10.202437196719062px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 9.572746924268001px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 18.588548382338736px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13.791853432706281px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/bug/" style="font-size: 11.887347150284947px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/mysql/" style="font-size: 12.434389616973121px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.099404512533997px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/sql/" style="font-size: 14.413118379802182px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/mysql/" style="font-size: 14.558214845938677px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/x-org/" style="font-size: 8.187112095039023px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/sql/" style="font-size: 10.698588542776008px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/bug/" style="font-size: 18.56441509600549px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/javafx/" style="font-size: 11.211064765089649px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 16.85038905455542px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 11.696413329559434px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 16.100909150688558px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 17.06991023094734px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 10.21415459627545px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 8.188001459328376px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 13.75549837096465px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 18.947879088717034px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 15.89894102585304px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 15.005634507007919px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/mapreduce/" style="font-size: 18.139721450032177px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 10.369634113088672px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 10.909517728328282px;" class="tag-cloud-link">爬虫</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 14.820759124022112px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/hadoop/" style="font-size: 13.681882318853233px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 16.735594414156655px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/kafka/" style="font-size: 9.918453841223903px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 17.666759821840827px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/navicat/" style="font-size: 10.913267284578339px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/navicat/" style="font-size: 10.653437567742404px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/pyecharts/" style="font-size: 12.049715403579903px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/hadoop/" style="font-size: 9.733948452630642px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 14.000941144003068px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 15.527290923256299px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 17.009458666599393px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 15.184171839641774px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 10.092631469876753px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/cuda/" style="font-size: 18.5107257622732px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/tenserflow/" style="font-size: 11.484898545649397px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/wine/" style="font-size: 8.733692833443673px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 13.633045368874896px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/hexo/" style="font-size: 10.572304033589813px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/cuda/" style="font-size: 13.915438601324364px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 17.383049406631592px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/wine/" style="font-size: 19.62911986221226px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 11.230539408294797px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/hexo/" style="font-size: 8.617634119663194px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/win7/" style="font-size: 18.8672128939166px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 13.130394356074241px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/telegram/" style="font-size: 15.34133803642224px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14.86945478707292px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/ACGN/" style="font-size: 12.800065680500984px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/win7/" style="font-size: 18.527201351237224px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/github/" style="font-size: 17.762349844285218px;" class="tag-cloud-link">github</a>
+    <a href="/tags/telegram/" style="font-size: 12.594967455336313px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/github-action/" style="font-size: 10.843099414435613px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/ACGN/" style="font-size: 11.890674808459345px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/js/" style="font-size: 15.37282244308328px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 12.710647583776936px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 10.991168905791035px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 15.182345887335595px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 9.954176727010477px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 18.605474645429066px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 10.492586333264569px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/github/" style="font-size: 8.330558995461168px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 8.214429512962152px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/github-action/" style="font-size: 18.699655061922133px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 13.506582644446507px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/ssh/" style="font-size: 17.323191376395854px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 13.212309056026221px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 15.327437037404108px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/android/" style="font-size: 10.370868434419421px;" class="tag-cloud-link">android</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 14.511580677878037px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 8.659464827089044px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 19.67596331060052px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 15.159597837689429px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/android/" style="font-size: 15.057546944010804px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 19.12665913226349px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 17.993125051511516px;" class="tag-cloud-link">计算机组成原理</a>
     
 </div>
                 

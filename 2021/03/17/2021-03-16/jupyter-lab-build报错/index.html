@@ -64,17 +64,12 @@
         }
       }
     </script>-->
-<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
 }
 
 mjx-container[jax="SVG"][display="true"] {
@@ -390,7 +385,7 @@ mjx-container[display="true"] + br {
     </div>
     <div class="content-article">
         <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/03/29/JJ39w9zuRMoyF1AslEgF8CQm-8faca0.jpeg" alt="ILLUSTRATION"></p>
-<h1><span id="jupyter-lab-build报错">jupyter lab build报错</span></h1><p>因为jupyter notebook的代码补全不好使, 打算装一个kite</p>
+<h1 id="jupyter-lab-build报错"><a href="#jupyter-lab-build报错" class="headerlink" title="jupyter lab build报错"></a>jupyter lab build报错</h1><p>因为jupyter notebook的代码补全不好使, 打算装一个kite</p>
 <p>在jupyter lab安装好了kite后, 需要编译(build)</p>
 <p><code>jupyter lab build</code>报错<code>RuntimeError: npm dependencies failed to install</code></p>
 <blockquote>
@@ -410,47 +405,47 @@ mjx-container[display="true"] + br {
 </li>
 </ul>
 </blockquote>
-<h2><span id="环境版本">环境/版本</span></h2><ul>
-<li>操作系统: ubuntu 18.04 LTS</li>
-<li>python-3.6.9</li>
-<li>jupyter-1.0.0</li>
-<li>jupyterlab-3.0.10</li>
-<li>jupyterlab-kite-2.0.2</li>
-<li>node-v14.16.0</li>
-<li>npm-7.6.3</li>
-<li>yarn-1.22.10</li>
+<h2 id="环境-版本"><a href="#环境-版本" class="headerlink" title="环境/版本"></a>环境/版本</h2><ul>
+<li>  操作系统: ubuntu 18.04 LTS</li>
+<li>  python-3.6.9</li>
+<li>  jupyter-1.0.0</li>
+<li>  jupyterlab-3.0.10</li>
+<li>  jupyterlab-kite-2.0.2</li>
+<li>  node-v14.16.0</li>
+<li>  npm-7.6.3</li>
+<li>  yarn-1.22.10</li>
 </ul>
-<h2><span id="报错日志">报错日志</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">[LabBuildApp] Building in /home/hjy/.local/share/jupyter/lab</span><br><span class="line">[LabBuildApp] Node v14.16.0</span><br><span class="line"></span><br><span class="line">[LabBuildApp] Yarn configuration loaded.</span><br><span class="line">[LabBuildApp] Building jupyterlab assets (production, minimized)</span><br><span class="line">[LabBuildApp] &gt; node /home/hjy/.local/lib/python3.6/site-packages/jupyterlab/staging/yarn.js install --non-interactive</span><br><span class="line">[LabBuildApp] yarn install v1.21.1</span><br><span class="line">[1/5] Validating package.json...</span><br><span class="line">[2/5] Resolving packages...</span><br><span class="line">[3/5] Fetching packages...</span><br><span class="line">error An unexpected error occurred: "https://registry.npm.taobao.org/@jupyterlab/application/-/application-3.0.6.tgz: Request failed \"404 Not Found\"".</span><br><span class="line">info If you think this is a bug, please open a bug report with the information provided in "/home/hjy/.local/share/jupyter/lab/staging/yarn-error.log".</span><br><span class="line">info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.</span><br><span class="line"></span><br><span class="line">[LabBuildApp] npm dependencies failed to install</span><br><span class="line">[LabBuildApp] Traceback (most recent call last):</span><br><span class="line"></span><br><span class="line">[LabBuildApp]   File "/home/hjy/.local/lib/python3.6/site-packages/jupyterlab/debuglog.py", line 47, in debug_logging</span><br><span class="line">    yield</span><br><span class="line"></span><br><span class="line">[LabBuildApp]   File "/home/hjy/.local/lib/python3.6/site-packages/jupyterlab/labapp.py", line 166, in start</span><br><span class="line">    raise e</span><br><span class="line"></span><br><span class="line">[LabBuildApp]   File "/home/hjy/.local/lib/python3.6/site-packages/jupyterlab/labapp.py", line 163, in start</span><br><span class="line">    app_options=app_options, production = production, minimize=self.minimize)</span><br><span class="line"></span><br><span class="line">[LabBuildApp]   File "/home/hjy/.local/lib/python3.6/site-packages/jupyterlab/commands.py", line 470, in build</span><br><span class="line">    production=production, minimize=minimize, clean_staging=clean_staging)</span><br><span class="line"></span><br><span class="line">[LabBuildApp]   File "/home/hjy/.local/lib/python3.6/site-packages/jupyterlab/commands.py", line 669, in build</span><br><span class="line">    raise RuntimeError(msg)</span><br><span class="line"></span><br><span class="line">[LabBuildApp] RuntimeError: npm dependencies failed to install</span><br><span class="line"></span><br><span class="line">[LabBuildApp] Exiting application: JupyterLab</span><br></pre></td></tr></table></figure>
+<h2 id="报错日志"><a href="#报错日志" class="headerlink" title="报错日志"></a>报错日志</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">[LabBuildApp] Building in /home/hjy/.local/share/jupyter/lab</span><br><span class="line">[LabBuildApp] Node v14.16.0</span><br><span class="line"></span><br><span class="line">[LabBuildApp] Yarn configuration loaded.</span><br><span class="line">[LabBuildApp] Building jupyterlab assets (production, minimized)</span><br><span class="line">[LabBuildApp] &gt; node /home/hjy/.local/lib/python3.6/site-packages/jupyterlab/staging/yarn.js install --non-interactive</span><br><span class="line">[LabBuildApp] yarn install v1.21.1</span><br><span class="line">[1/5] Validating package.json...</span><br><span class="line">[2/5] Resolving packages...</span><br><span class="line">[3/5] Fetching packages...</span><br><span class="line">error An unexpected error occurred: "https://registry.npm.taobao.org/@jupyterlab/application/-/application-3.0.6.tgz: Request failed \"404 Not Found\"".</span><br><span class="line">info If you think this is a bug, please open a bug report with the information provided in "/home/hjy/.local/share/jupyter/lab/staging/yarn-error.log".</span><br><span class="line">info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.</span><br><span class="line"></span><br><span class="line">[LabBuildApp] npm dependencies failed to install</span><br><span class="line">[LabBuildApp] Traceback (most recent call last):</span><br><span class="line"></span><br><span class="line">[LabBuildApp]   File "/home/hjy/.local/lib/python3.6/site-packages/jupyterlab/debuglog.py", line 47, in debug_logging</span><br><span class="line">    yield</span><br><span class="line"></span><br><span class="line">[LabBuildApp]   File "/home/hjy/.local/lib/python3.6/site-packages/jupyterlab/labapp.py", line 166, in start</span><br><span class="line">    raise e</span><br><span class="line"></span><br><span class="line">[LabBuildApp]   File "/home/hjy/.local/lib/python3.6/site-packages/jupyterlab/labapp.py", line 163, in start</span><br><span class="line">    app_options=app_options, production = production, minimize=self.minimize)</span><br><span class="line"></span><br><span class="line">[LabBuildApp]   File "/home/hjy/.local/lib/python3.6/site-packages/jupyterlab/commands.py", line 470, in build</span><br><span class="line">    production=production, minimize=minimize, clean_staging=clean_staging)</span><br><span class="line"></span><br><span class="line">[LabBuildApp]   File "/home/hjy/.local/lib/python3.6/site-packages/jupyterlab/commands.py", line 669, in build</span><br><span class="line">    raise RuntimeError(msg)</span><br><span class="line"></span><br><span class="line">[LabBuildApp] RuntimeError: npm dependencies failed to install</span><br><span class="line"></span><br><span class="line">[LabBuildApp] Exiting application: JupyterLab</span><br></pre></td></tr></table></figure>
 
 <p>可以看到这样一段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"https://registry.npm.taobao.org/@jupyterlab/application/-/application-3.0.6.tgz: Request failed \"404 Not Found\"".</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"https://registry.npm.taobao.org/@jupyterlab/application/-/application-3.0.6.tgz: Request failed \"404 Not Found\"".</span><br></pre></td></tr></table></figure>
 
 <p>用浏览器打开也发现: </p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/03/17/image-20210317153828545-dab67e.png" alt="image-20210317153828545"></p>
 <p>无法访问, 看来是taobao源出现了问题, 现在需要换源</p>
-<h2><span id="解决">解决</span></h2><p>npm/yarn的源网上有很多, 这里以最不好找的官方源为例(没错, 官方默认的源反而最难找)</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>npm/yarn的源网上有很多, 这里以最不好找的官方源为例(没错, 官方默认的源反而最难找)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo yarn config <span class="built_in">set</span> registry https://registry.yarnpkg.com --global</span><br><span class="line">sudo yarn config <span class="built_in">set</span> disturl https://registry.yarnpkg.com --global</span><br><span class="line">sudo npm config <span class="built_in">set</span> registry https://registry.yarnpkg.com --global</span><br></pre></td></tr></table></figure>
 
 <p>查看<code>yarn</code>版本信息:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config list </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config list </span><br></pre></td></tr></table></figure>
 
 <p>显示:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">yarn config v1.22.10</span><br><span class="line">info yarn config</span><br><span class="line">{</span><br><span class="line">  <span class="string">'version-tag-prefix'</span>: <span class="string">'v'</span>,</span><br><span class="line">  <span class="string">'version-git-tag'</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">'version-commit-hooks'</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">'version-git-sign'</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">'version-git-message'</span>: <span class="string">'v%s'</span>,</span><br><span class="line">  <span class="string">'init-version'</span>: <span class="string">'1.0.0'</span>,</span><br><span class="line">  <span class="string">'init-license'</span>: <span class="string">'MIT'</span>,</span><br><span class="line">  <span class="string">'save-prefix'</span>: <span class="string">'^'</span>,</span><br><span class="line">  <span class="string">'bin-links'</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">'ignore-scripts'</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">'ignore-optional'</span>: <span class="literal">false</span>,</span><br><span class="line">  registry: <span class="string">'https://registry.yarnpkg.com'</span>,</span><br><span class="line">  <span class="string">'strict-ssl'</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">'user-agent'</span>: <span class="string">'yarn/1.22.10 npm/? node/v14.16.0 linux x64'</span>,</span><br><span class="line">  disturl: <span class="string">'https://registry.yarnpkg.com/dist'</span>,</span><br><span class="line">  lastUpdateCheck: 1615890770522</span><br><span class="line">}</span><br><span class="line">info npm config</span><br><span class="line">{</span><br><span class="line">  registry: <span class="string">'https://registry.yarnpkg.com/'</span></span><br><span class="line">}</span><br><span class="line">Done <span class="keyword">in</span> 0.03s.</span><br></pre></td></tr></table></figure>
 
 <p>找到安装<code>yarn</code>的地方</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">whereis yarn</span><br><span class="line">ll /usr/bin/yarn</span><br><span class="line"><span class="built_in">cd</span> /usr/lib/node_modules/yarn/</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">whereis yarn</span><br><span class="line">ll /usr/bin/yarn</span><br><span class="line"><span class="built_in">cd</span> /usr/lib/node_modules/yarn/</span><br><span class="line"><span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/03/17/image-20210317161011766-36fddd.png" alt="image-20210317161011766"></p>
 <p>删掉<code>node_modules</code>和<code>yarn.lock</code>, 重新下载</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo rm yarn.lock</span><br><span class="line">sudo rm -rf node_modules/</span><br><span class="line">sudo yarn install</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">rm</span> yarn.lock</span><br><span class="line">sudo <span class="built_in">rm</span> -rf node_modules/</span><br><span class="line">sudo yarn install</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/03/17/image-20210317161839816-d86e80.png" alt="image-20210317161839816"></p>
 <p>同样, 再找到jupyter lab在哪儿</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">whereis jupyter</span><br><span class="line"><span class="built_in">cd</span> /home/hjy/.<span class="built_in">local</span>/</span><br><span class="line"><span class="built_in">cd</span> share/jupyter/lab</span><br><span class="line"><span class="built_in">cd</span> staging/ &amp;&amp; ls</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">whereis jupyter</span><br><span class="line"><span class="built_in">cd</span> /home/hjy/.local/</span><br><span class="line"><span class="built_in">cd</span> share/jupyter/lab</span><br><span class="line"><span class="built_in">cd</span> staging/ &amp;&amp; <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/03/17/image-20210317162536517-9dd051.png" alt="image-20210317162536517"></p>
 <p>重复上面工作, 删除后再下载:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm yarn.lock</span><br><span class="line">rm -rf node_modules/</span><br><span class="line">node yarn.js install</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> yarn.lock</span><br><span class="line"><span class="built_in">rm</span> -rf node_modules/</span><br><span class="line">node yarn.js install</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/03/17/image-20210317162654410-26de2f.png" alt="image-20210317162654410"></p>
 <p>出现了一堆warning, 不用管</p>
@@ -617,49 +612,25 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/1999/04/14/1999-4-14/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/11/18/2019-11-18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%91/">数据结构实验报告-树</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/29/2019-12-29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">数据结构实验报告-图的遍历</a>
+                    <a href="/2019/12/15/2019-12-15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%8E%92%E5%BA%8F/">数据结构实验报告-排序</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/09/21/2019-9-21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E9%93%BE%E8%A1%A8/">数据结构实验报告-链表</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/10/18/2020-10-17/kdenlive%E6%97%A0%E6%B3%95%E5%AF%BC%E5%87%BA%E5%A4%9A%E5%B1%82%E8%A7%86%E9%A2%91/">kdenlive无法导出多层视频</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/12/15/2020-12-15/kafka%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">kafka安装配置</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/09/15/2020-9-15/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/09/16/2020-9-16/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8navicat/">尝试使用navicat</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/09/18/2020-9-18/%E5%B0%9D%E8%AF%95%E9%85%8D%E7%BD%AEhadoop%E7%8E%AF%E5%A2%83/">尝试配置hadoop环境</a>
+                    <a href="/2020/11/24/2020-11-24/hbase%E9%85%8D%E7%BD%AE/">hbase配置</a>
                 </span>
             </li>
             
@@ -671,7 +642,31 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2020/09/28/2020-9-28/linux%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/">linux中的查找</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/30/2020-9-30/ubuntu%E5%AE%89%E8%A3%85%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8/">ubuntu安装植物大战僵尸</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/03/17/2021-03-16/jupyter-lab-build%E6%8A%A5%E9%94%99/">jupyter lab build报错</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2021/03/29/2021-03-29/vscode%E6%BA%90%E6%96%87%E4%BB%B6%E5%92%8C%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E5%88%86%E7%A6%BB/">vscode源文件和可执行文件分离</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/15/2020-9-15/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
                 </span>
             </li>
             
@@ -704,123 +699,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 19.800781027173446px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 8.964031394284323px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 8.650095916966297px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 15.891862059313612px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 15.542066103873921px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.70636895358931px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 14.065679321237981px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 16.87657357421051px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 16.521028393658344px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 19.735720150575695px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 12.738319376841417px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 14.019959610458718px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 11.297956354136444px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 15.29192478438613px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 11.285406202137859px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14.308473513243424px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/vscode/" style="font-size: 17.505516707080822px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 11.309759174488665px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/linux/" style="font-size: 16.1377493810022px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/vscode/" style="font-size: 13.67940481649665px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 9.098547609003278px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/linux/" style="font-size: 14.36969097136973px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 15.113128438345385px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 11.165804490066154px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 9.953773491990628px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 16.527870335778072px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 16.037845254354078px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 16.735443064462977px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 16.25114915884059px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 18.44142029507283px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 18.840456699760765px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 19.408149613636716px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 17.01783789214905px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 12.43473780550358px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 17.673175686002168px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 18.923601605999735px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 14.479538224810156px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 15.209261676497746px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 11.611284785484557px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.552107967652525px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/bug/" style="font-size: 11.852893231459266px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/mysql/" style="font-size: 14.197109704116949px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10.545645468629647px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/sql/" style="font-size: 17.832909424816542px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/mysql/" style="font-size: 17.900394987069614px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/x-org/" style="font-size: 19.610122157453112px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/sql/" style="font-size: 11.360255197610423px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/bug/" style="font-size: 19.64078693596049px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/javafx/" style="font-size: 16.120965326084274px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 10.08244868133239px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 17.601288532450845px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 8.000806563972922px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 9.652089492349756px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 11.268396015191147px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 12.55859597777983px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 13.760242339436314px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 19.66786488842602px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 16.559906775767335px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 17.910981596101415px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/mapreduce/" style="font-size: 13.44737155900464px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 18.253698743326645px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14.918848014622274px;" class="tag-cloud-link">爬虫</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 17.33192702440745px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/hadoop/" style="font-size: 9.872948290913737px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 19.234142702148358px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/kafka/" style="font-size: 9.13002778101744px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 11.507221295141633px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/navicat/" style="font-size: 10.868473069001638px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/navicat/" style="font-size: 18.599438112554452px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/pyecharts/" style="font-size: 15.340566242307945px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/hadoop/" style="font-size: 17.066499346775124px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 13.134952255358037px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 9.48007760701418px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 11.0732674925246px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 14.68825814317274px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 13.61554483236486px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/cuda/" style="font-size: 15.71617061065172px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/tenserflow/" style="font-size: 14.341150796636342px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/wine/" style="font-size: 11.93108912892129px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 17.615931378636486px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/hexo/" style="font-size: 15.584563738967248px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/cuda/" style="font-size: 14.675974987784363px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 14.037766144823443px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/wine/" style="font-size: 11.89163503220672px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 13.816872163189514px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/hexo/" style="font-size: 15.007310793219993px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/win7/" style="font-size: 14.499898618751338px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 18.97861791570738px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/telegram/" style="font-size: 16.25451508897501px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 13.033455007694453px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/ACGN/" style="font-size: 8.951613688835774px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/win7/" style="font-size: 15.969368223151312px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/github/" style="font-size: 8.16248414927165px;" class="tag-cloud-link">github</a>
+    <a href="/tags/telegram/" style="font-size: 19.03135514008028px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/github-action/" style="font-size: 19.432925072676646px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/ACGN/" style="font-size: 19.549215386840896px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/js/" style="font-size: 16.232184941269534px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 10.227136418445692px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 10.400012638191388px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 8.597547292902988px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 12.824402777145263px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 19.766587511951048px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 17.24706587539279px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/github/" style="font-size: 18.88592499219451px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 9.85358741216756px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/github-action/" style="font-size: 19.54566940724253px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 9.607152107324573px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/ssh/" style="font-size: 18.099339177979463px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 11.47730490522778px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 17.779651561445043px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/android/" style="font-size: 14.882958859356858px;" class="tag-cloud-link">android</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 15.084072446151527px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 8.5055353465737px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 11.800564415292317px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 12.358241704684344px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/android/" style="font-size: 10.465589448868219px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 18.323331173730892px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 14.818086562648624px;" class="tag-cloud-link">计算机组成原理</a>
     
 </div>
                 

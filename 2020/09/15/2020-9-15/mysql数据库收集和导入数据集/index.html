@@ -64,17 +64,12 @@
         }
       }
     </script>-->
-<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
 }
 
 mjx-container[jax="SVG"][display="true"] {
@@ -405,18 +400,18 @@ mjx-container[display="true"] + br {
         </center>
     </div>
     <div class="content-article">
-        <h1><span id="mysql数据库收集和导入数据集">mysql数据库收集和导入数据集</span></h1><!-- toc -->
+        <h1 id="mysql数据库收集和导入数据集"><a href="#mysql数据库收集和导入数据集" class="headerlink" title="mysql数据库收集和导入数据集"></a>mysql数据库收集和导入数据集</h1><!-- toc -->
 
 <ul>
-<li><a href="#%E7%8E%AF%E5%A2%83">环境</a></li>
-<li><a href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E6%94%B6%E9%9B%86">数据集的收集</a></li>
-<li><a href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E5%AF%BC%E5%85%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93">数据集导入mysql数据库</a></li>
+<li><a href="#--">环境</a></li>
+<li><a href="#------">数据集的收集</a></li>
+<li><a href="#-----mysql---">数据集导入mysql数据库</a></li>
 </ul>
 <!-- tocstop -->
 
 <p> </p>
-<h2><span id="环境">环境</span></h2><p>linux ubuntu 18.04LTS<br>mysql-5.7.31<br> </p>
-<h2><span id="数据集的收集">数据集的收集</span></h2><blockquote>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>linux ubuntu 18.04LTS<br>mysql-5.7.31<br> </p>
+<h2 id="数据集的收集"><a href="#数据集的收集" class="headerlink" title="数据集的收集"></a>数据集的收集</h2><blockquote>
 <p>原贴<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40975029/article/details/88918624">【资源】史上最全数据集汇总</a></p>
 </blockquote>
 <ol>
@@ -427,7 +422,7 @@ mjx-container[display="true"] + br {
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/6-a7dcee.png" alt="在这里插入图片描述"> <br>点击pdf的图标，再点击pdf里的超链接，可以直接下载到数据集</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/7-04ab94.png" alt="在这里插入图片描述">随便下一个，数据集如图所示：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/8-59918e.png" alt="在这里插入图片描述"><br>再将该表转为csv格式，方便后续数据库读取<br><a target="_blank" rel="noopener" href="https://kdocs.cn/l/caQ1D5D06nWy%20%5B%E9%87%91%E5%B1%B1%E6%96%87%E6%A1%A3%5D%20ELECT07022016_FEB18.csv">ELECT07022016_FEB18.csv</a><br> </p>
-<h2><span id="数据集导入mysql数据库">数据集导入mysql数据库</span></h2><ol>
+<h2 id="数据集导入mysql数据库"><a href="#数据集导入mysql数据库" class="headerlink" title="数据集导入mysql数据库"></a>数据集导入mysql数据库</h2><ol>
 <li>mysql小数类型的使用</li>
 </ol>
 <blockquote>
@@ -436,11 +431,11 @@ mjx-container[display="true"] + br {
 <ol start="2">
 <li>在数据库中创建表</li>
 </ol>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> ELECT07022016_FEB18(</span><br><span class="line"><span class="keyword">data</span> <span class="built_in">varchar</span>(<span class="number">200</span>), </span><br><span class="line">rtgs_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),rtgs_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">neft_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),neft_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">cts_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),cts_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),</span><br><span class="line">imps_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),imps_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">nach_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),nach_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">upi_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),upi_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">ussd_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),ussd_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">dccp_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),dccp_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),</span><br><span class="line">ppi_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),ppi_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),</span><br><span class="line">mb_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),mb_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),</span><br><span class="line">total_vo <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),total_va <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> ELECT07022016_FEB18(</span><br><span class="line">data <span class="type">varchar</span>(<span class="number">200</span>), </span><br><span class="line">rtgs_vo <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),rtgs_va <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">neft_vo <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),neft_va <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">cts_vo <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),cts_va <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),</span><br><span class="line">imps_vo <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),imps_va <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">nach_vo <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),nach_va <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">upi_vo <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),upi_va <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">ussd_vo <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),ussd_va <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">dccp_vo <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),dccp_va <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),</span><br><span class="line">ppi_vo <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),ppi_va <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),</span><br><span class="line">mb_vo <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),mb_va <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),</span><br><span class="line">total_vo <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),total_va <span class="type">decimal</span>(<span class="number">10</span>,<span class="number">2</span>));</span><br></pre></td></tr></table></figure>
 <p>查了下load data infile的用法，暂时没找到忽略最后几行的办法，因此使用了较大的varchar来存储第一格<br>下图是看最长的一个有多少字符<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/9-700161.png" alt="在这里插入图片描述"></p>
 <p>看看创建的表<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/10-3e0c13.png" alt="在这里插入图片描述"></p>
 <p>创建成功，然后感觉名字太复杂了，不好操作，改一下名：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rename</span> <span class="keyword">table</span> ELECT07022016_FEB18 <span class="keyword">to</span> eps_rd;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rename <span class="keyword">table</span> ELECT07022016_FEB18 <span class="keyword">to</span> eps_rd;</span><br></pre></td></tr></table></figure>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/11-852de4.png" alt="在这里插入图片描述"></p>
 <ol start="3">
 <li>用<code>load</code>导入到数据库中</li>
@@ -448,43 +443,42 @@ mjx-container[display="true"] + br {
 <blockquote>
 <p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xj2015/p/6656287.html">mysql中的load data infile用法</a></p>
 </blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">load</span> <span class="keyword">data</span> <span class="keyword">infile</span> <span class="string">'/home/hjy/桌面/everyday-learning2/2020-9-15/ELECT07022016_FEB18.csv'</span>  </span><br><span class="line"><span class="keyword">into</span> <span class="keyword">table</span> mysql_learning.eps_rd </span><br><span class="line"><span class="built_in">character</span> <span class="keyword">set</span> gb2312 </span><br><span class="line"><span class="keyword">fields</span> <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">','</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">load data infile <span class="string">'/home/hjy/桌面/everyday-learning2/2020-9-15/ELECT07022016_FEB18.csv'</span>  </span><br><span class="line"><span class="keyword">into</span> <span class="keyword">table</span> mysql_learning.eps_rd </span><br><span class="line"><span class="type">character</span> <span class="keyword">set</span> gb2312 </span><br><span class="line">fields terminated <span class="keyword">by</span> <span class="string">','</span>;</span><br></pre></td></tr></table></figure>
 <p>出现报错：<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/12-89425d.png" alt="在这里插入图片描述"></p>
 <p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44595372/article/details/88723191">将csv 文件存入mysql 报错The MySQL server is running with the –secure-file-priv option so it cannot execute</a>，显示secure_file_priv文件路径</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">'%secure%'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> variables <span class="keyword">like</span> <span class="string">'%secure%'</span>;</span><br></pre></td></tr></table></figure>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/13-ebd52f.png" alt="在这里插入图片描述"></p>
 <p>然后将文件拷贝至该路径下（文章中可以永久修改，解决该问题，但要重启mysql，为了简单起见，直接复制）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /home/hjy/桌面/everyday-learning2/2020-9-15/ELECT07022016_FEB18.csv /var/lib/mysql-files/</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> /home/hjy/桌面/everyday-learning2/2020-9-15/ELECT07022016_FEB18.csv /var/lib/mysql-files/</span><br></pre></td></tr></table></figure>
 <p>再次导入，发生如下报错：<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/14-3b30f2.png" alt="在这里插入图片描述"><br>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/stormlovetao/article/details/7265002">mysql 用load data 导入数据时，数据被截断问题</a> </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> sql_mode=<span class="string">''</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> sql_mode<span class="operator">=</span><span class="string">''</span>;</span><br></pre></td></tr></table></figure>
 
 <p>再次运行，导入成功：<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/15-b03798.png" alt="在这里插入图片描述"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/16-c7b8b9.png" alt="在这里插入图片描述"></p>
 <ol start="4">
-<li><p>后续操作</p>
+<li>后续操作</li>
+</ol>
 <ul>
 <li>删除为空的行</li>
 </ul>
-</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> eps_rd <span class="keyword">where</span> <span class="keyword">data</span>=<span class="string">''</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> eps_rd <span class="keyword">where</span> data<span class="operator">=</span><span class="string">''</span>;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>拆分表</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> month_eps <span class="keyword">as</span> (<span class="keyword">select</span> * <span class="keyword">from</span> eps_rd <span class="keyword">where</span> <span class="keyword">data</span> <span class="keyword">like</span> <span class="string">'___-%'</span>);</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> month_eps <span class="keyword">where</span> <span class="keyword">data</span>=<span class="string">'Feb-18'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> month_eps <span class="keyword">as</span> (<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> eps_rd <span class="keyword">where</span> data <span class="keyword">like</span> <span class="string">'___-%'</span>);</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> month_eps <span class="keyword">where</span> data<span class="operator">=</span><span class="string">'Feb-18'</span>;</span><br></pre></td></tr></table></figure>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/17-328f0c.png" alt="在这里插入图片描述"></p>
 <p>把18年每天的数据分出来还有点麻烦，这里用了正则表达式</p>
 <blockquote>
 <p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_22238021/article/details/80929518">MySQL正则表达式</a></p>
 </blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> feb_esp <span class="keyword">as</span> </span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> eps_rd </span><br><span class="line"><span class="keyword">where</span> <span class="keyword">data</span> regexp <span class="string">'^[0-9]'</span> </span><br><span class="line"><span class="keyword">and</span> <span class="keyword">data</span> <span class="keyword">not</span> <span class="keyword">like</span> <span class="string">'_.%'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> feb_esp <span class="keyword">as</span> </span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> eps_rd </span><br><span class="line"><span class="keyword">where</span> data regexp <span class="string">'^[0-9]'</span> </span><br><span class="line"><span class="keyword">and</span> data <span class="keyword">not</span> <span class="keyword">like</span> <span class="string">'_.%'</span>;</span><br></pre></td></tr></table></figure>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/18-98bf9d.png" alt="在这里插入图片描述"></p>
 <p>再将其它信息存起来</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> note <span class="keyword">as</span> <span class="keyword">select</span> <span class="keyword">data</span> <span class="keyword">from</span> eps_rd <span class="keyword">where</span> <span class="keyword">data</span> <span class="keyword">like</span> <span class="string">'____%'</span> <span class="keyword">and</span> <span class="keyword">data</span> <span class="keyword">not</span> <span class="keyword">like</span> <span class="string">'___-__'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> note <span class="keyword">as</span> <span class="keyword">select</span> data <span class="keyword">from</span> eps_rd <span class="keyword">where</span> data <span class="keyword">like</span> <span class="string">'____%'</span> <span class="keyword">and</span> data <span class="keyword">not</span> <span class="keyword">like</span> <span class="string">'___-__'</span>;</span><br></pre></td></tr></table></figure>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/19-e26940.png" alt="在这里插入图片描述"></p>
 <p>最后，我想给更改一下列名，把<code>data</code>改成<code>notes</code>可在网上没查到方法（好多写的是用sp_name更改，但我不会用），说来惭愧。<br>我的java IDE：IntelliJ IDEA里有连结数据库的功能，然后用里面的工具成功更改列名。<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/20-28f91b.png" alt="在这里插入图片描述"></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> note <span class="keyword">change</span> <span class="keyword">data</span> notes <span class="built_in">varchar</span>(<span class="number">200</span>) <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> note change data notes <span class="type">varchar</span>(<span class="number">200</span>) <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
 <p>over！</p>
 
     </div>
@@ -644,49 +638,37 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/18/2019-11-18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%91/">数据结构实验报告-树</a>
+                    <a href="/2020/09/20/2019-9-20/%E7%88%B1%E6%95%B0%E7%A4%BE%E6%8B%9B%E6%96%B0%E8%AF%95%E9%A2%98/">爱数社招新试题</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/03/2019-11-3/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E4%B8%B2/">数据结构实验报告-串</a>
+                    <a href="/2020/10/18/2020-10-18/ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85pixiv-nginx/">ubuntu上安装pixiv-nginx</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/15/2019-12-15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%8E%92%E5%BA%8F/">数据结构实验报告-排序</a>
+                    <a href="/2020/11/22/2020-11-22/javafx%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/">javafx设置背景图片</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/28/2020-10-28/fcitx%E9%87%8D%E5%90%AF%E5%90%8E%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88/">fcitx重启后快捷键失效</a>
+                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/07/2020-10-7/ubuntu%E5%BC%80%E6%9C%BA%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AFlocale-check%20%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/">ubuntu开机提示错误locale-check: 没有那个文件或目录</a>
+                    <a href="/2020/09/30/2020-9-30/ubuntu%E5%AE%89%E8%A3%85%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8/">ubuntu安装植物大战僵尸</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/26/2020-9-26/vscode%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95c++/">vscode快速配置调试c++</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/09/27/2021-02-17/%E6%8E%A8%E8%8D%90github%E7%8A%B6%E6%80%81%E5%8D%A1%E7%89%87/">推荐github状态卡片</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/03/12/2021-03-12/%E5%8A%9E%E7%90%86visa%E5%8D%A1%E7%BB%8F%E5%8E%86/">办理visa卡经历</a>
+                    <a href="/2021/02/28/2021-02-28/hexo%E5%8D%9A%E5%AE%A2%E5%8E%8B%E7%BC%A9css%E3%80%81js%E7%AD%89%E6%96%87%E4%BB%B6/">hexo博客压缩css、js等文件</a>
                 </span>
             </li>
             
@@ -698,7 +680,19 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2022/11/29/2022-11-29/pycharm-opencv%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">pycharm opencv无法自动补全</a>
+                    <a href="/2021/03/29/2021-03-29/vscode%E6%BA%90%E6%96%87%E4%BB%B6%E5%92%8C%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E5%88%86%E7%A6%BB/">vscode源文件和可执行文件分离</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/04/24/2021-04-24/ssh%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95%E6%9C%AC%E5%9C%B0localhost/">ssh无法登录本地localhost</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/01/06/2021-1-7/%E8%A5%BF%E7%94%B5%E8%BD%AF%E5%B7%A5%E8%AE%A1%E7%BB%84II%E7%AD%94%E6%A1%88/">西电软工计组II答案</a>
                 </span>
             </li>
             
@@ -731,123 +725,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 18.48526907769286px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10.295843563851204px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 13.415549103142009px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 11.291127090299781px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14.089271324227743px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 11.316957265413333px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 11.962479093509138px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 11.115946187982527px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 11.86895208004336px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 19.893601378443975px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 10.900439597001803px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 9.426554152802503px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 19.592097655759964px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 16.913310099108674px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 17.52509785606135px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 17.824301402272773px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/vscode/" style="font-size: 11.232516008652095px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 19.295712884286434px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/linux/" style="font-size: 13.260162353196133px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/vscode/" style="font-size: 17.802870185858637px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 15.40760564863417px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/linux/" style="font-size: 10.754003676211328px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 14.304939855029652px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 10.64456628751812px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 15.42960385405248px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 11.024011504809575px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 10.354318857819619px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 18.66074029085835px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 19.622997796354902px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 16.022058059291318px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 19.46845368331796px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 14.961469453560758px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 13.744132245916576px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 16.106469023899603px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 15.341364965274497px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 10.488080099608501px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 8.942799967038134px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 10.242489402357023px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 9.251782757465772px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10.694830617392569px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/bug/" style="font-size: 16.709680151577825px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/mysql/" style="font-size: 15.630353505292852px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 9.947356046790286px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/sql/" style="font-size: 13.062937690249031px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/mysql/" style="font-size: 11.376128451503963px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/x-org/" style="font-size: 17.87562052396087px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/sql/" style="font-size: 12.989897318147403px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/bug/" style="font-size: 18.354960990862402px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/javafx/" style="font-size: 15.99941520851822px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 15.48504338733046px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 17.86955080747197px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 16.368364731664215px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 14.281895150375782px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 13.540998014325066px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 17.43450872858493px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 9.01797459097651px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 18.794072618737516px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 17.182089271256835px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 18.32883780091295px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/mapreduce/" style="font-size: 15.49562447745462px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 19.89456240760842px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 12.324770929028427px;" class="tag-cloud-link">爬虫</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 14.803786788530314px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/hadoop/" style="font-size: 11.69858534614374px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 10.305674600422321px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/kafka/" style="font-size: 17.290589566849512px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 17.960026914811962px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/navicat/" style="font-size: 10.748568578419412px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/navicat/" style="font-size: 8.523202320839609px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/pyecharts/" style="font-size: 12.83655873545641px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/hadoop/" style="font-size: 12.610137565311778px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 13.450153107505017px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 9.998258969652156px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 19.2334804356547px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 17.920838270513517px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 8.955908623613492px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/cuda/" style="font-size: 14.60058945694589px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/tenserflow/" style="font-size: 16.09680987602755px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/wine/" style="font-size: 8.611681445364201px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 14.000216325016098px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/hexo/" style="font-size: 14.862658610936975px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/cuda/" style="font-size: 17.118673701936597px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10.82853694577406px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/wine/" style="font-size: 16.283458156038296px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 12.620385836619498px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/hexo/" style="font-size: 9.833554266789715px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/win7/" style="font-size: 16.61794888111084px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 16.29624865581907px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/telegram/" style="font-size: 19.370024426529984px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 19.839942102072875px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/ACGN/" style="font-size: 9.175973930867572px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/win7/" style="font-size: 8.53601018539235px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/github/" style="font-size: 13.941811919344053px;" class="tag-cloud-link">github</a>
+    <a href="/tags/telegram/" style="font-size: 13.898088273569273px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/github-action/" style="font-size: 8.1378131796248px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/ACGN/" style="font-size: 19.640745007884085px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/js/" style="font-size: 16.436741559507116px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 8.529531800009117px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 8.274034080059712px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 15.864875313857095px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 14.895976751537347px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 18.835874503447766px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 9.579059672064691px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/github/" style="font-size: 16.244153404670413px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 10.96682151017928px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/github-action/" style="font-size: 11.977039494266297px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 14.075729015644114px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/ssh/" style="font-size: 15.477655973454088px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 12.014429383512187px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 17.28271348774962px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/android/" style="font-size: 17.887718238620245px;" class="tag-cloud-link">android</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 9.530105790958329px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 9.993584650536988px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 13.09460430992544px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 16.926995668706404px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/android/" style="font-size: 17.25556879567707px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 18.95268176516255px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 10.197433750530804px;" class="tag-cloud-link">计算机组成原理</a>
     
 </div>
                 

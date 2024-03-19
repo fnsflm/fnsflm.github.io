@@ -64,17 +64,12 @@
         }
       }
     </script>-->
-<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
 }
 
 mjx-container[jax="SVG"][display="true"] {
@@ -410,24 +405,24 @@ mjx-container[display="true"] + br {
     </div>
     <div class="content-article">
         <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/03/29/illust_84931420_20201011_133347-bc79a1.jpg" alt="illustration"></p>
-<h1><span id="ubuntu上安装pixiv-nginx">ubuntu上安装pixiv-nginx</span></h1><blockquote>
+<h1 id="ubuntu上安装pixiv-nginx"><a href="#ubuntu上安装pixiv-nginx" class="headerlink" title="ubuntu上安装pixiv-nginx"></a>ubuntu上安装pixiv-nginx</h1><blockquote>
 <p>  原文：<a target="_blank" rel="noopener" href="https://2heng.xin/2017/09/19/pixiv/">https://2heng.xin/2017/09/19/pixiv/</a></p>
 </blockquote>
-<h2><span id="安装nginx">安装nginx</span></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx</span><br></pre></td></tr></table></figure>
+<h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx</span><br></pre></td></tr></table></figure>
 
 <p>安装后文件在<code>/etc/nginx</code>下</p>
 <p><code>nginx -v</code>查看是否下载成功</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/007-3ef80d.jpg"></p>
-<h2><span id="导入证书">导入证书</span></h2><p>证书在<a target="_blank" rel="noopener" href="https://github.com/mashirozx/Pixiv-Nginx/tree/master/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88%E9%9D%9EWindows%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%EF%BC%89">这儿</a>，下载后导入浏览器，这里以火狐浏览器为例，其它浏览器百度可以搜到</p>
+<h2 id="导入证书"><a href="#导入证书" class="headerlink" title="导入证书"></a>导入证书</h2><p>证书在<a target="_blank" rel="noopener" href="https://github.com/mashirozx/Pixiv-Nginx/tree/master/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88%E9%9D%9EWindows%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%EF%BC%89">这儿</a>，下载后导入浏览器，这里以火狐浏览器为例，其它浏览器百度可以搜到</p>
 <p>首选项里搜索证书</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/003-ae3c70.jpg"></p>
 <p>点击查看证书，并导入</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/004-63ab88.jpg"></p>
-<h2><span id="配置nginx">配置nginx</span></h2><p>下载<a target="_blank" rel="noopener" href="https://github.com/mashirozx/Pixiv-Nginx/tree/master/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88%E9%9D%9EWindows%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%EF%BC%89%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%8C%E5%A4%8D%E5%88%B6%60ca%60%EF%BC%8C%60nginx.conf%60%E5%88%B0%60/etc/nginx%60">https://github.com/mashirozx/Pixiv-Nginx/tree/master/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88%E9%9D%9EWindows%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%EF%BC%89的内容，复制`ca`，`nginx.conf`到`/etc/nginx`</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.back</span><br><span class="line">sudo cp -r 配置文件（非Windows用户使用）/nginx.conf /etc/nginx/nginx.conf</span><br><span class="line">sudo cp -r 配置文件（非Windows用户使用）/ca/ /etc/nginx/ca/ </span><br></pre></td></tr></table></figure>
+<h2 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h2><p>下载<a target="_blank" rel="noopener" href="https://github.com/mashirozx/Pixiv-Nginx/tree/master/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88%E9%9D%9EWindows%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%EF%BC%89%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%8C%E5%A4%8D%E5%88%B6%60ca%60%EF%BC%8C%60nginx.conf%60%E5%88%B0%60/etc/nginx%60">https://github.com/mashirozx/Pixiv-Nginx/tree/master/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88%E9%9D%9EWindows%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%EF%BC%89的内容，复制`ca`，`nginx.conf`到`/etc/nginx`</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">mv</span> /etc/nginx/nginx.conf /etc/nginx/nginx.conf.back</span><br><span class="line">sudo <span class="built_in">cp</span> -r 配置文件（非Windows用户使用）/nginx.conf /etc/nginx/nginx.conf</span><br><span class="line">sudo <span class="built_in">cp</span> -r 配置文件（非Windows用户使用）/ca/ /etc/nginx/ca/ </span><br></pre></td></tr></table></figure>
 
-<h2><span id="配置host">配置host</span></h2><p>将<a target="_blank" rel="noopener" href="https://github.com/mashirozx/Pixiv-Nginx/blob/master/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88%E9%9D%9EWindows%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%EF%BC%89/hosts">这里</a>的内容复制到<code>/etc/hosts</code>中即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line">#Pixiv Start</span><br><span class="line">127.0.0.1       pixiv.net </span><br><span class="line">127.0.0.1       www.pixiv.net </span><br><span class="line">127.0.0.1       ssl.pixiv.net</span><br><span class="line">127.0.0.1       accounts.pixiv.net </span><br><span class="line">127.0.0.1       touch.pixiv.net</span><br><span class="line">127.0.0.1       oauth.secure.pixiv.net</span><br><span class="line">127.0.0.1       dic.pixiv.net</span><br><span class="line">127.0.0.1       en-dic.pixiv.net </span><br><span class="line">127.0.0.1       sketch.pixiv.net</span><br><span class="line">127.0.0.1       payment.pixiv.net</span><br><span class="line">127.0.0.1       factory.pixiv.net </span><br><span class="line">127.0.0.1       comic.pixiv.net  </span><br><span class="line">127.0.0.1       novel.pixiv.net </span><br><span class="line">127.0.0.1       imgaz.pixiv.net </span><br><span class="line">127.0.0.1       sensei.pixiv.net</span><br><span class="line">127.0.0.1       fanbox.pixiv.net</span><br><span class="line">127.0.0.1       source.pixiv.net</span><br><span class="line">127.0.0.1       i1.pixiv.net </span><br><span class="line">127.0.0.1       i2.pixiv.net </span><br><span class="line">127.0.0.1       i3.pixiv.net </span><br><span class="line">127.0.0.1       i4.pixiv.net</span><br><span class="line">127.0.0.1       hls1.pixivsketch.net</span><br><span class="line">127.0.0.1       hls2.pixivsketch.net</span><br><span class="line">127.0.0.1       hls3.pixivsketch.net</span><br><span class="line">127.0.0.1       hls4.pixivsketch.net</span><br><span class="line">127.0.0.1       hls5.pixivsketch.net</span><br><span class="line">127.0.0.1       hls6.pixivsketch.net</span><br><span class="line">127.0.0.1       hls7.pixivsketch.net</span><br><span class="line">127.0.0.1       hls8.pixivsketch.net</span><br><span class="line">127.0.0.1       hls9.pixivsketch.net</span><br><span class="line">127.0.0.1       hls10.pixivsketch.net</span><br><span class="line">127.0.0.1       hls11.pixivsketch.net</span><br><span class="line">127.0.0.1       hls12.pixivsketch.net</span><br><span class="line">127.0.0.1       hls13.pixivsketch.net</span><br><span class="line">127.0.0.1       hls14.pixivsketch.net</span><br><span class="line">127.0.0.1       hls15.pixivsketch.net</span><br><span class="line">127.0.0.1       hls16.pixivsketch.net</span><br><span class="line">127.0.0.1       hls17.pixivsketch.net</span><br><span class="line">127.0.0.1       hls18.pixivsketch.net</span><br><span class="line">127.0.0.1       hls19.pixivsketch.net</span><br><span class="line">127.0.0.1       hls20.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa1.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa2.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa3.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa4.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa5.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa6.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa7.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa8.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa10.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa11.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa12.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa13.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa14.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa15.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa16.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa17.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa18.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa19.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsc1.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsc2.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsc3.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsc4.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsc5.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsc6.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse1.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse2.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse3.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse4.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse5.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse6.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse7.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse8.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse9.pixivsketch.net</span><br><span class="line">127.0.0.1       hlst1.pixivsketch.net</span><br><span class="line">127.0.0.1       i.pximg.net</span><br><span class="line">127.0.0.1       app-api.pixiv.net  </span><br><span class="line">13.226.113.16    g-client-proxy.pixiv.net </span><br><span class="line">210.140.131.159 d.pixiv.org </span><br><span class="line">210.140.92.140  pixiv.pximg.net  </span><br><span class="line">210.140.92.139  s.pximg.net</span><br><span class="line">210.140.131.246  api.booth.pm</span><br><span class="line">210.140.131.220  myaccount.pixiv.net</span><br><span class="line">#Pixiv End</span><br><span class="line"></span><br><span class="line"># 顺手修一下维基百科</span><br><span class="line"># Wikipedia Start</span><br><span class="line">127.0.0.1 en.wikipedia.org</span><br><span class="line">127.0.0.1 zh.wikipedia.org #中文维基百科桌面版</span><br><span class="line">127.0.0.1 en.m.wikipedia.org</span><br><span class="line">127.0.0.1 zh.m.wikipedia.org</span><br><span class="line">127.0.0.1 zh-yue.wikipedia.org #粤文维基百科桌面版</span><br><span class="line">127.0.0.1 wuu.wikipedia.org #吴语维基百科桌面版</span><br><span class="line">127.0.0.1 ug.wikipedia.org #维吾尔文维基百科桌面版</span><br><span class="line">127.0.0.1 ja.wikipedia.org #日文维基百科桌面版</span><br><span class="line">127.0.0.1 zh.wikinews.org #中文维基新闻桌面版</span><br><span class="line"># Wikipedia End</span><br><span class="line"></span><br><span class="line"># Wikimedia Start</span><br><span class="line">127.0.0.1 wikimedia.org</span><br><span class="line">127.0.0.1 upload.wikimedia.org</span><br><span class="line"># Wikimedia End</span><br></pre></td></tr></table></figure>
+<h2 id="配置host"><a href="#配置host" class="headerlink" title="配置host"></a>配置host</h2><p>将<a target="_blank" rel="noopener" href="https://github.com/mashirozx/Pixiv-Nginx/blob/master/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88%E9%9D%9EWindows%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%EF%BC%89/hosts">这里</a>的内容复制到<code>/etc/hosts</code>中即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line">#Pixiv Start</span><br><span class="line">127.0.0.1       pixiv.net </span><br><span class="line">127.0.0.1       www.pixiv.net </span><br><span class="line">127.0.0.1       ssl.pixiv.net</span><br><span class="line">127.0.0.1       accounts.pixiv.net </span><br><span class="line">127.0.0.1       touch.pixiv.net</span><br><span class="line">127.0.0.1       oauth.secure.pixiv.net</span><br><span class="line">127.0.0.1       dic.pixiv.net</span><br><span class="line">127.0.0.1       en-dic.pixiv.net </span><br><span class="line">127.0.0.1       sketch.pixiv.net</span><br><span class="line">127.0.0.1       payment.pixiv.net</span><br><span class="line">127.0.0.1       factory.pixiv.net </span><br><span class="line">127.0.0.1       comic.pixiv.net  </span><br><span class="line">127.0.0.1       novel.pixiv.net </span><br><span class="line">127.0.0.1       imgaz.pixiv.net </span><br><span class="line">127.0.0.1       sensei.pixiv.net</span><br><span class="line">127.0.0.1       fanbox.pixiv.net</span><br><span class="line">127.0.0.1       source.pixiv.net</span><br><span class="line">127.0.0.1       i1.pixiv.net </span><br><span class="line">127.0.0.1       i2.pixiv.net </span><br><span class="line">127.0.0.1       i3.pixiv.net </span><br><span class="line">127.0.0.1       i4.pixiv.net</span><br><span class="line">127.0.0.1       hls1.pixivsketch.net</span><br><span class="line">127.0.0.1       hls2.pixivsketch.net</span><br><span class="line">127.0.0.1       hls3.pixivsketch.net</span><br><span class="line">127.0.0.1       hls4.pixivsketch.net</span><br><span class="line">127.0.0.1       hls5.pixivsketch.net</span><br><span class="line">127.0.0.1       hls6.pixivsketch.net</span><br><span class="line">127.0.0.1       hls7.pixivsketch.net</span><br><span class="line">127.0.0.1       hls8.pixivsketch.net</span><br><span class="line">127.0.0.1       hls9.pixivsketch.net</span><br><span class="line">127.0.0.1       hls10.pixivsketch.net</span><br><span class="line">127.0.0.1       hls11.pixivsketch.net</span><br><span class="line">127.0.0.1       hls12.pixivsketch.net</span><br><span class="line">127.0.0.1       hls13.pixivsketch.net</span><br><span class="line">127.0.0.1       hls14.pixivsketch.net</span><br><span class="line">127.0.0.1       hls15.pixivsketch.net</span><br><span class="line">127.0.0.1       hls16.pixivsketch.net</span><br><span class="line">127.0.0.1       hls17.pixivsketch.net</span><br><span class="line">127.0.0.1       hls18.pixivsketch.net</span><br><span class="line">127.0.0.1       hls19.pixivsketch.net</span><br><span class="line">127.0.0.1       hls20.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa1.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa2.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa3.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa4.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa5.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa6.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa7.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa8.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa10.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa11.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa12.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa13.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa14.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa15.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa16.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa17.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa18.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsa19.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsc1.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsc2.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsc3.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsc4.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsc5.pixivsketch.net</span><br><span class="line">127.0.0.1       hlsc6.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse1.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse2.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse3.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse4.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse5.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse6.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse7.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse8.pixivsketch.net</span><br><span class="line">127.0.0.1       hlse9.pixivsketch.net</span><br><span class="line">127.0.0.1       hlst1.pixivsketch.net</span><br><span class="line">127.0.0.1       i.pximg.net</span><br><span class="line">127.0.0.1       app-api.pixiv.net  </span><br><span class="line">13.226.113.16    g-client-proxy.pixiv.net </span><br><span class="line">210.140.131.159 d.pixiv.org </span><br><span class="line">210.140.92.140  pixiv.pximg.net  </span><br><span class="line">210.140.92.139  s.pximg.net</span><br><span class="line">210.140.131.246  api.booth.pm</span><br><span class="line">210.140.131.220  myaccount.pixiv.net</span><br><span class="line">#Pixiv End</span><br><span class="line"></span><br><span class="line"># 顺手修一下维基百科</span><br><span class="line"># Wikipedia Start</span><br><span class="line">127.0.0.1 en.wikipedia.org</span><br><span class="line">127.0.0.1 zh.wikipedia.org #中文维基百科桌面版</span><br><span class="line">127.0.0.1 en.m.wikipedia.org</span><br><span class="line">127.0.0.1 zh.m.wikipedia.org</span><br><span class="line">127.0.0.1 zh-yue.wikipedia.org #粤文维基百科桌面版</span><br><span class="line">127.0.0.1 wuu.wikipedia.org #吴语维基百科桌面版</span><br><span class="line">127.0.0.1 ug.wikipedia.org #维吾尔文维基百科桌面版</span><br><span class="line">127.0.0.1 ja.wikipedia.org #日文维基百科桌面版</span><br><span class="line">127.0.0.1 zh.wikinews.org #中文维基新闻桌面版</span><br><span class="line"># Wikipedia End</span><br><span class="line"></span><br><span class="line"># Wikimedia Start</span><br><span class="line">127.0.0.1 wikimedia.org</span><br><span class="line">127.0.0.1 upload.wikimedia.org</span><br><span class="line"># Wikimedia End</span><br></pre></td></tr></table></figure>
 
 <p>然后浏览器就可以直接上pixiv啦！</p>
 <p>ps：安卓/苹果客户端可以使用<a target="_blank" rel="noopener" href="https://github.com/Notsfsssf/pixez-flutter">pixez</a></p>
@@ -589,25 +584,43 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2019/11/18/2019-11-18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%91/">数据结构实验报告-树</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/03/2019-11-3/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E4%B8%B2/">数据结构实验报告-串</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/12/01/2019-12-1/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%95%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%9F%A5%E6%89%BE/">数据结构试验报告-查找</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/12/29/2019-12-29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">数据结构实验报告-图的遍历</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/02/18/2019-2-18/Linux%E4%B8%8Bvscode-C%E8%AF%AD%E8%A8%80-%E5%AF%B9pow%E3%80%81exp%E6%9C%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">Linux下vscode C语言 对pow、exp未定义引用问题</a>
+                    <a href="/2020/09/20/2019-9-20/%E7%88%B1%E6%95%B0%E7%A4%BE%E6%8B%9B%E6%96%B0%E8%AF%95%E9%A2%98/">爱数社招新试题</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/28/2020-10-28/fcitx%E9%87%8D%E5%90%AF%E5%90%8E%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88/">fcitx重启后快捷键失效</a>
+                    <a href="/2020/10/18/2020-10-17/kdenlive%E6%97%A0%E6%B3%95%E5%AF%BC%E5%87%BA%E5%A4%9A%E5%B1%82%E8%A7%86%E9%A2%91/">kdenlive无法导出多层视频</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/12/15/2020-12-15/kafka%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">kafka安装配置</a>
+                    <a href="/2020/09/16/2020-9-16/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8navicat/">尝试使用navicat</a>
                 </span>
             </li>
             
@@ -619,31 +632,13 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/30/2020-9-30/ubuntu%E5%AE%89%E8%A3%85%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8/">ubuntu安装植物大战僵尸</a>
+                    <a href="/2021/02/03/2021-02-03/%E5%AE%89%E8%A3%85obs-studio%E6%8A%A5%E9%94%99/">安装obs-studio报错</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/01/27/2021-01-27/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85live2d(gal%E4%B8%BB%E9%A2%98)/">hexo博客安装live2d(gal主题)</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/02/28/2021-02-28/hexo%E5%8D%9A%E5%AE%A2%E5%8E%8B%E7%BC%A9css%E3%80%81js%E7%AD%89%E6%96%87%E4%BB%B6/">hexo博客压缩css、js等文件</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/04/24/2021-04-24/ssh%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95%E6%9C%AC%E5%9C%B0localhost/">ssh无法登录本地localhost</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/01/06/2021-1-7/%E8%A5%BF%E7%94%B5%E8%BD%AF%E5%B7%A5%E8%AE%A1%E7%BB%84II%E7%AD%94%E6%A1%88/">西电软工计组II答案</a>
+                    <a href="/2020/09/15/2020-9-15/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
                 </span>
             </li>
             
@@ -676,123 +671,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14.59893466374482px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 18.601026401343056px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 17.363258575249134px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 11.510317310504927px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 15.057029057075095px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 8.283692859791465px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 11.436523573771535px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 15.60474195418195px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 10.2428230346214px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 19.700238274437087px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 12.967544165125148px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 17.87142401111347px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 15.329514293875427px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 16.335413844550075px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 19.999137459527102px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 12.33663022392953px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/vscode/" style="font-size: 13.205405306097786px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 11.860053176252553px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/linux/" style="font-size: 18.256691870576187px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/vscode/" style="font-size: 8.305342720908563px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 18.73420093153433px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/linux/" style="font-size: 16.17599818125236px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 15.31105038774379px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 19.140079885597387px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 17.71398785842301px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 16.240125067670657px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 17.944204097088583px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 15.929086092631358px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 12.829157092252995px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 14.67175893891001px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 15.14017367801831px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 18.863671425887404px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 12.583868913055035px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 12.187091623092442px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 12.076745536430014px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 18.953864585138497px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 9.696018802632675px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 18.244143604111997px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 18.277047153052873px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 17.786055884576804px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/bug/" style="font-size: 15.637910413825844px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/mysql/" style="font-size: 16.38965042330387px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 12.491760466868648px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/sql/" style="font-size: 12.798831010436192px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/mysql/" style="font-size: 12.898376822660225px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/x-org/" style="font-size: 18.192581731385857px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/sql/" style="font-size: 14.78101871361672px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/bug/" style="font-size: 18.87104084145924px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/javafx/" style="font-size: 16.917322555093786px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 8.096206526752521px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 14.697438183021792px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 13.939659032877191px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 12.380271094004854px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 11.488183804693396px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 19.58039256532118px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 11.044596844464063px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 19.804656961940324px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 13.90005798235204px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 12.61446585501304px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/mapreduce/" style="font-size: 8.342290250836665px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 17.864374107671733px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 19.51320632764465px;" class="tag-cloud-link">爬虫</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 11.010911776025427px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/hadoop/" style="font-size: 12.003676398043703px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 15.709723466964814px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/kafka/" style="font-size: 10.584245576518788px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 12.289471267267807px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/navicat/" style="font-size: 8.269956690486381px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/navicat/" style="font-size: 13.624714657782576px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/pyecharts/" style="font-size: 9.04403182483459px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/hadoop/" style="font-size: 8.559554798027477px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 19.662527922324095px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 11.252331101067266px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 10.211664805128638px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 9.503117702599953px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 12.5586126308501px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/cuda/" style="font-size: 14.316530546367105px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/tenserflow/" style="font-size: 14.895023753357474px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/wine/" style="font-size: 8.294830742899455px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 11.969368437096172px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/hexo/" style="font-size: 12.706481305477073px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/cuda/" style="font-size: 16.01667846386434px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 17.94406563447577px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/wine/" style="font-size: 14.420151900670348px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 19.471416382054958px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/hexo/" style="font-size: 16.208550287037404px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/win7/" style="font-size: 15.352745631270885px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10.855551393707579px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/telegram/" style="font-size: 15.640567481228553px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 9.291396426843601px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/ACGN/" style="font-size: 14.195725050010477px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/win7/" style="font-size: 8.583501579698414px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/github/" style="font-size: 9.343646853084735px;" class="tag-cloud-link">github</a>
+    <a href="/tags/telegram/" style="font-size: 16.277551155954534px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/github-action/" style="font-size: 16.266240825135732px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/ACGN/" style="font-size: 9.588249130293075px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/js/" style="font-size: 17.803094136478467px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 14.648212116062123px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 14.65300406100567px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 14.70368166573537px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 17.646400308359965px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 8.754370317346376px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 19.213648820932477px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/github/" style="font-size: 8.384641061309317px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 8.104321663039752px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/github-action/" style="font-size: 8.033660072352276px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 13.455658339275317px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/ssh/" style="font-size: 17.673741975033934px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 13.169136182102344px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 11.988434232730452px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/android/" style="font-size: 8.470784277735632px;" class="tag-cloud-link">android</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 12.313880126772162px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 9.133141735828143px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 19.25662179966956px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 11.572705794494093px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/android/" style="font-size: 14.931732534040819px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 10.242108560029578px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 18.10227447159154px;" class="tag-cloud-link">计算机组成原理</a>
     
 </div>
                 

@@ -64,17 +64,12 @@
         }
       }
     </script>-->
-<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
 }
 
 mjx-container[jax="SVG"][display="true"] {
@@ -409,20 +404,20 @@ mjx-container[display="true"] + br {
         </center>
     </div>
     <div class="content-article">
-        <h1><span id="尝试使用navicat">尝试使用navicat</span></h1><p>Navicat 是一套快速、可靠并价格相宜的数据库管理工具，专为简化数据库的管理及降低系统管理成本而设。它的设计符合数据库管理员、开发人员及中小企业的需要。Navicat 是以直觉化的图形用户界面而建的，让你可以以安全并且简单的方式创建、组织、访问并共用信息。</p>
-<h2><span id="环境">环境</span></h2><ul>
+        <h1 id="尝试使用navicat"><a href="#尝试使用navicat" class="headerlink" title="尝试使用navicat"></a>尝试使用navicat</h1><p>Navicat 是一套快速、可靠并价格相宜的数据库管理工具，专为简化数据库的管理及降低系统管理成本而设。它的设计符合数据库管理员、开发人员及中小企业的需要。Navicat 是以直觉化的图形用户界面而建的，让你可以以安全并且简单的方式创建、组织、访问并共用信息。</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
 <li>linux ubuntu 18.04LTS</li>
 <li>mysql-5.7.31</li>
 <li>navicat premium</li>
 </ul>
-<h2><span id="学生认证">学生认证</span></h2><blockquote>
+<h2 id="学生认证"><a href="#学生认证" class="headerlink" title="学生认证"></a>学生认证</h2><blockquote>
 <p>windows破解版可参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/jsut_rick/article/details/85157507">Navicat介绍及安装</a></p>
 </blockquote>
 <p>navicat的学生认证挺快的，只要你有学生邮箱，几乎立刻能注册<br><a target="_blank" rel="noopener" href="http://www.navicat.com.cn/sponsorship/education/student">学生认证链接</a><br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/1-27f1d8.png" alt="在这里插入图片描述"><br>没过多久就能在学生邮箱收到navicat的邮件，里面提供了激活码和下载地址：<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/2-b4698b.png" alt="在这里插入图片描述"></p>
 <p>里面提供了三种版本，其中有一个没有提供，但在官网上可以下载，关于版本的介绍可以看看<a target="_blank" rel="noopener" href="https://blog.csdn.net/FKCSSS/article/details/47206245?locationNum=2&fps=1">navicat的简单介绍</a>这篇文章，这里先只使用navicat premium，以后用过其它版本后再更新该博客</p>
-<h2><span id="使用navicat-premium">使用navicat premium</span></h2><ol>
+<h2 id="使用navicat-premium"><a href="#使用navicat-premium" class="headerlink" title="使用navicat premium"></a>使用navicat premium</h2><ol>
 <li>启动<br>下载的是一个AppImage的可执行文件，双击即可运行<br>可能会弹出这样奇怪的界面：<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/3-6f6423.png" alt="在这里插入图片描述"><br>此时，给文件一个可执行的权限即可解决<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/4-b9eb0d.png" alt="在这里插入图片描述"><br>勾选<code>允许作为程序可执行文件</code>，或者在终端中用chmod更改权限也行<br>激活过程就不赘述了，启动成功：<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/5-d2e674.png" alt="在这里插入图片描述"></li>
-<li>连接数据库<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/6-d1a033.png" alt="在这里插入图片描述"><br>点击测试连接，出现权限不够的问题：<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/7-b38253.png" alt="在这里插入图片描述"><br>解决方法其实很简单，把主机里的localhost改成127.0.0.1就可以解决，如果还无法解决，可以修改<code>/etc/mysql/mysql.conf.d/mysqld.cnf</code>中的配置，可以参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/swan_tang/article/details/104607100">2002 - Can’t connect to local MySQL server through socket ‘/var/lib/mysql/mysql.sock’ (13 “权限不够”)</a><br>然后就能正常使用了：<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/8-0a0781.png" alt="在这里插入图片描述"><h2><span id="连接服务器上的mysql">连接服务器上的mysql</span></h2></li>
+<li>连接数据库<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/6-d1a033.png" alt="在这里插入图片描述"><br>点击测试连接，出现权限不够的问题：<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/7-b38253.png" alt="在这里插入图片描述"><br>解决方法其实很简单，把主机里的localhost改成127.0.0.1就可以解决，如果还无法解决，可以修改<code>/etc/mysql/mysql.conf.d/mysqld.cnf</code>中的配置，可以参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/swan_tang/article/details/104607100">2002 - Can’t connect to local MySQL server through socket ‘/var/lib/mysql/mysql.sock’ (13 “权限不够”)</a><br>然后就能正常使用了：<br><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/8-0a0781.png" alt="在这里插入图片描述"><h2 id="连接服务器上的mysql"><a href="#连接服务器上的mysql" class="headerlink" title="连接服务器上的mysql"></a>连接服务器上的mysql</h2></li>
 <li>用mysql直接连接–大失败</li>
 </ol>
 <blockquote>
@@ -591,61 +586,61 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/11/2019-9-20/%E7%88%B1%E6%95%B0%E7%A4%BE%E6%8B%9B%E6%96%B0%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/">爱数社招新试题解答</a>
+                    <a href="/2019/11/18/2019-11-18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%91/">数据结构实验报告-树</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/09/21/2019-9-21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E9%93%BE%E8%A1%A8/">数据结构实验报告-链表</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/09/15/2020-9-15/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/09/18/2020-9-18/%E5%B0%9D%E8%AF%95%E9%85%8D%E7%BD%AEhadoop%E7%8E%AF%E5%A2%83/">尝试配置hadoop环境</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/02/16/2021-02-16/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E8%BF%BD%E7%95%AA(%E8%A1%A5%E7%95%AA)%E7%9A%84%E6%96%B9%E6%B3%95/">推荐一个追番(补番)的方法</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/03/17/2021-03-16/jupyter-lab-build%E6%8A%A5%E9%94%99/">jupyter lab build报错</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/04/24/2021-04-24/ssh%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95%E6%9C%AC%E5%9C%B0localhost/">ssh无法登录本地localhost</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/01/06/2021-1-7/%E8%A5%BF%E7%94%B5%E8%BD%AF%E5%B7%A5%E8%AE%A1%E7%BB%84II%E7%AD%94%E6%A1%88/">西电软工计组II答案</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2022/01/31/2022-01-31/linux%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">linux传输文件解决方案</a>
+                    <a href="/2020/10/05/2020-10-5/%E7%A6%81%E7%94%A8%E9%94%AE%E7%9B%98%E4%B8%8A%E7%9A%84%E6%8C%89%E9%94%AE/">禁用键盘上的按键</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2020/12/12/2020-12-12/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B0%8F%E9%A1%B9%E7%9B%AE-%E6%96%B0%E9%97%BB%E7%88%AC%E5%8F%96%E4%B8%8E%E5%A4%84%E7%90%86/">大数据小项目-新闻爬取与处理</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/16/2020-9-16/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8navicat/">尝试使用navicat</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/12/17/2020-12-17/%E5%85%B3%E7%B3%BB%E5%9B%BEgraph/">关系图graph</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/22/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEodbc/">ubuntu上配置odbc</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/30/2020-9-30/ubuntu%E5%AE%89%E8%A3%85%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8/">ubuntu安装植物大战僵尸</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/03/05/2021-03-05/pdftk%E5%B7%A5%E5%85%B7/">pdftk工具</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/01/06/2021-1-7/%E8%A5%BF%E7%94%B5%E8%BD%AF%E5%B7%A5%E8%AE%A1%E7%BB%84II%E7%AD%94%E6%A1%88/">西电软工计组II答案</a>
                 </span>
             </li>
             
@@ -678,123 +673,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 8.6044642321217px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 11.48054367877674px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 19.554816360852733px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 14.75072877582251px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 18.94962846458201px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 12.508994667504366px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 9.988890469893006px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 16.32825795811189px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 18.33579891652046px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 11.80828202567108px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 19.986428791584682px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 13.021902865069642px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 12.443173630237684px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 10.822373424641125px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 17.503267413483734px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 17.138005140606737px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/vscode/" style="font-size: 18.026817211356896px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 16.793962389439084px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/linux/" style="font-size: 17.304321071978205px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/vscode/" style="font-size: 10.206196791394992px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 12.46093888221142px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/linux/" style="font-size: 13.041882032641373px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 12.643194167025545px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 12.658533796631158px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 8.10096298539029px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 15.653766637640718px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 14.295934063238077px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 14.619582130031663px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 16.493124283927482px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 19.51537827317748px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 19.67854374474436px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 11.84393763518526px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 14.850833703818333px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 15.852755547584831px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 9.125165151477809px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 14.827741705916177px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 15.758085993979597px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 15.51250494130967px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 17.96699773405713px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 8.816589060401451px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/bug/" style="font-size: 15.514347769858905px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/mysql/" style="font-size: 19.613257325612445px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10.772058456008923px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/sql/" style="font-size: 16.9955301500937px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/mysql/" style="font-size: 11.745319123627766px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/x-org/" style="font-size: 14.062284162536429px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/sql/" style="font-size: 15.236405275640827px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/bug/" style="font-size: 9.090603586101455px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/javafx/" style="font-size: 17.261428922888058px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 17.331694578821875px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 18.982714238106098px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 8.520816121033818px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 12.520383803307197px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 13.667906341486496px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 17.33352704297059px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 8.241250702145392px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 18.885208572841385px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 14.708279059234357px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 10.410045781644575px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/mapreduce/" style="font-size: 14.07362992133012px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 15.275095345991318px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 11.369264059319448px;" class="tag-cloud-link">爬虫</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 10.97155369393331px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/hadoop/" style="font-size: 12.92440226392747px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 12.72066891687604px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/kafka/" style="font-size: 17.483704414615893px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 16.24325793259419px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/navicat/" style="font-size: 10.549057840779891px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/navicat/" style="font-size: 8.937019127840095px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/pyecharts/" style="font-size: 19.049346578498344px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/hadoop/" style="font-size: 17.101147879227028px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 14.474011911669901px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 19.151169159589408px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 11.380523437980752px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 8.467780326751813px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 17.72326381560662px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/cuda/" style="font-size: 18.832160489820257px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/tenserflow/" style="font-size: 10.7836819667362px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/wine/" style="font-size: 18.63655097048545px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 11.1921358411409px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/hexo/" style="font-size: 17.797838924333583px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/cuda/" style="font-size: 13.49288230948562px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 13.640458530127166px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/wine/" style="font-size: 10.567277475929412px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 13.047423498635627px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/hexo/" style="font-size: 17.509454540199236px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/win7/" style="font-size: 9.02619174560115px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 13.343856651912024px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/telegram/" style="font-size: 12.12681839382488px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 8.183784577293952px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/ACGN/" style="font-size: 19.742926668818807px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/win7/" style="font-size: 9.070958714199518px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/github/" style="font-size: 17.439608223330982px;" class="tag-cloud-link">github</a>
+    <a href="/tags/telegram/" style="font-size: 12.86410872806821px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/github-action/" style="font-size: 8.238725492447832px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/ACGN/" style="font-size: 9.503705477524484px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/js/" style="font-size: 19.939483926231066px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 11.328318123623855px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 16.084015383437812px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 18.18243180685348px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 13.007198170216606px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 17.545875074061566px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 8.776172404183928px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/github/" style="font-size: 9.932336663719369px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 18.803850092785563px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/github-action/" style="font-size: 9.14785382269455px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 18.28033234354378px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/ssh/" style="font-size: 17.398247204146244px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 17.82172430683375px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 12.204451376770105px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/android/" style="font-size: 11.15410369049263px;" class="tag-cloud-link">android</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 19.041550842639726px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 18.4113702299129px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 10.975438907407451px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 11.558946378966358px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/android/" style="font-size: 10.167973011938933px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 13.637802975428713px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 16.755749709636902px;" class="tag-cloud-link">计算机组成原理</a>
     
 </div>
                 

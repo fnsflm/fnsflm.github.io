@@ -64,17 +64,12 @@
         }
       }
     </script>-->
-<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
 }
 
 mjx-container[jax="SVG"][display="true"] {
@@ -409,40 +404,38 @@ mjx-container[display="true"] + br {
         </center>
     </div>
     <div class="content-article">
-        <h1><span id="数据结构实验报告-串">数据结构实验报告-串</span></h1><p> [toc]</p>
-<h2><span id="一-实验目的">一、实验目的</span></h2><ul>
+        <h1 id="数据结构实验报告-串"><a href="#数据结构实验报告-串" class="headerlink" title="数据结构实验报告-串"></a>数据结构实验报告-串</h1><p> [toc]</p>
+<h2 id="一、实验目的"><a href="#一、实验目的" class="headerlink" title="一、实验目的"></a>一、实验目的</h2><ul>
 <li>掌握串的建立，遍历，插入等基本操作</li>
 <li>熟练文件读取等基本操作</li>
 <li>熟练string库的使用</li>
 </ul>
-<h2><span id="二-实验题目">二、实验题目</span></h2><ul>
+<h2 id="二、实验题目"><a href="#二、实验题目" class="headerlink" title="二、实验题目"></a>二、实验题目</h2><ul>
 <li>文学研究人员经常需要统计某篇英文小说中某些词语出现的次数,试写一个程序完成该统计要求</li>
 <li>英文小说存于一个文本文件中(有多行),需要统计的单词由键盘输入。程序运行结束后输出该关<br>键字在文中出现的总次数以及出现该关键字的行号和在该行中出现的次数。</li>
 </ul>
-<h2><span id="三-实验环境">三、实验环境</span></h2><ul>
+<h2 id="三、实验环境"><a href="#三、实验环境" class="headerlink" title="三、实验环境"></a>三、实验环境</h2><ul>
 <li>操作系统：Ubuntu 18.04 LTS</li>
 <li>IDE：CLion</li>
-<li>数据：<ul>
+<li>数据：</li>
 <li><a target="_blank" rel="noopener" href="https://paste.ubuntu.com/p/h5MG25rmkR/">https://paste.ubuntu.com/p/h5MG25rmkR/</a></li>
 <li>网上下载的英文小说：Venus in Furs.txt</li>
 <li>路径：”/home/hjy/CLionProjects/数据结构实验字符串/Venus in Furs.txt”</li>
 </ul>
-</li>
-</ul>
-<h2><span id="四-实验问题">四、实验问题</span></h2><ol>
+<h2 id="四、实验问题"><a href="#四、实验问题" class="headerlink" title="四、实验问题"></a>四、实验问题</h2><ol>
 <li>文件读取的问题<br>不是很清楚c++如何读入文件，取出数据，终止循环等。</li>
 <li>对于行末的处理<br>在写split函数时不知道何时是行末并终止循环。</li>
 <li>对string的一些常见操作不熟悉<br>在使用string中的substr时，要输入的是子串的长度，误认为子串的尾指针（索引值），导致结果错误。</li>
 </ol>
-<h2><span id="五-数据结构">五、数据结构</span></h2><ul>
+<h2 id="五、数据结构"><a href="#五、数据结构" class="headerlink" title="五、数据结构"></a>五、数据结构</h2><ul>
 <li>c++ stl 中的 <string></string></li>
 <li>stirng str[10001] 存储一行中的每个单词</li>
 <li>string tmp 存储从文件中读入一行的字符串</li>
 <li>string keyword 存储要查找的关键字</li>
 </ul>
-<h2><span id="六-主要算法">六、主要算法</span></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//str存一行所有的单词，tmp为一行的字符串</span></span><br><span class="line"><span class="built_in">string</span> str[<span class="number">10001</span>];</span><br><span class="line"><span class="built_in">string</span> tmp;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将tmp以空格为间隔，分成一个个string单词存到str中</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">split</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> before = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> now;</span><br><span class="line">    <span class="comment">//开头先跳过所有的空格</span></span><br><span class="line">    <span class="keyword">while</span> (tmp[before] == <span class="string">' '</span>)before++;</span><br><span class="line">    <span class="keyword">for</span> (now = before + <span class="number">1</span>; now &lt; tmp.length(); now++) {</span><br><span class="line">        <span class="keyword">if</span> (tmp[now] == <span class="string">'\r'</span>) {</span><br><span class="line">            str[length++] = tmp.substr(before, now - before);</span><br><span class="line">            <span class="keyword">return</span> length;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> (tmp[now] == <span class="string">' '</span> || tmp[now] == <span class="string">'.'</span> || tmp[now] == <span class="string">','</span>) {</span><br><span class="line">            str[length++] = tmp.substr(before, now - before);</span><br><span class="line">            <span class="comment">//考虑中间有多个空格时跳过去</span></span><br><span class="line">            <span class="keyword">while</span> (tmp[now] == <span class="string">' '</span>)now++;</span><br><span class="line">            before = now;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 返回str的长度length，即一行的单词数</span></span><br><span class="line">    <span class="keyword">return</span> length;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="comment">//读取txt文件</span></span><br><span class="line">    <span class="function">ifstream <span class="title">txt</span><span class="params">(<span class="string">"/home/hjy/CLionProjects/数据结构实验字符串/Venus in Furs.txt"</span>)</span></span>;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">int</span> times = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">string</span> keyworkd;<span class="comment">//用string类型存要查找的关键字</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter the keyword： "</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; keyworkd;</span><br><span class="line">    <span class="keyword">int</span> line = <span class="number">0</span>; <span class="comment">//记录行号</span></span><br><span class="line">    <span class="keyword">while</span> (!txt.eof()) {</span><br><span class="line">        line++;</span><br><span class="line">        <span class="comment">//用getline函数读取一行字符串</span></span><br><span class="line">        getline(txt, tmp);</span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//cout &lt;&lt; tmp &lt;&lt; endl;</span></span><br><span class="line">        n = split();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) {</span><br><span class="line">            <span class="keyword">if</span> (str[i] == keyworkd)m++;</span><br><span class="line">        }</span><br><span class="line">        times += m;</span><br><span class="line">        <span class="keyword">if</span>(m!=<span class="number">0</span>)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; line &lt;&lt; <span class="string">": "</span> &lt;&lt; m &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    }</span><br><span class="line">    txt.close();</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"total: "</span> &lt;&lt; times &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="六、主要算法"><a href="#六、主要算法" class="headerlink" title="六、主要算法"></a>六、主要算法</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//str存一行所有的单词，tmp为一行的字符串</span></span><br><span class="line">string str[<span class="number">10001</span>];</span><br><span class="line">string tmp;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将tmp以空格为间隔，分成一个个string单词存到str中</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">split</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="type">int</span> length = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> before = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> now;</span><br><span class="line">    <span class="comment">//开头先跳过所有的空格</span></span><br><span class="line">    <span class="keyword">while</span> (tmp[before] == <span class="string">' '</span>)before++;</span><br><span class="line">    <span class="keyword">for</span> (now = before + <span class="number">1</span>; now &lt; tmp.<span class="built_in">length</span>(); now++) {</span><br><span class="line">        <span class="keyword">if</span> (tmp[now] == <span class="string">'\r'</span>) {</span><br><span class="line">            str[length++] = tmp.<span class="built_in">substr</span>(before, now - before);</span><br><span class="line">            <span class="keyword">return</span> length;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> (tmp[now] == <span class="string">' '</span> || tmp[now] == <span class="string">'.'</span> || tmp[now] == <span class="string">','</span>) {</span><br><span class="line">            str[length++] = tmp.<span class="built_in">substr</span>(before, now - before);</span><br><span class="line">            <span class="comment">//考虑中间有多个空格时跳过去</span></span><br><span class="line">            <span class="keyword">while</span> (tmp[now] == <span class="string">' '</span>)now++;</span><br><span class="line">            before = now;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 返回str的长度length，即一行的单词数</span></span><br><span class="line">    <span class="keyword">return</span> length;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="comment">//读取txt文件</span></span><br><span class="line">    <span class="function">ifstream <span class="title">txt</span><span class="params">(<span class="string">"/home/hjy/CLionProjects/数据结构实验字符串/Venus in Furs.txt"</span>)</span></span>;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="type">int</span> times = <span class="number">0</span>;</span><br><span class="line">    string keyworkd;<span class="comment">//用string类型存要查找的关键字</span></span><br><span class="line">    cout &lt;&lt; <span class="string">"Enter the keyword： "</span>;</span><br><span class="line">    cin &gt;&gt; keyworkd;</span><br><span class="line">    <span class="type">int</span> line = <span class="number">0</span>; <span class="comment">//记录行号</span></span><br><span class="line">    <span class="keyword">while</span> (!txt.<span class="built_in">eof</span>()) {</span><br><span class="line">        line++;</span><br><span class="line">        <span class="comment">//用getline函数读取一行字符串</span></span><br><span class="line">        <span class="built_in">getline</span>(txt, tmp);</span><br><span class="line">        <span class="type">int</span> m = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//cout &lt;&lt; tmp &lt;&lt; endl;</span></span><br><span class="line">        n = <span class="built_in">split</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) {</span><br><span class="line">            <span class="keyword">if</span> (str[i] == keyworkd)m++;</span><br><span class="line">        }</span><br><span class="line">        times += m;</span><br><span class="line">        <span class="keyword">if</span>(m!=<span class="number">0</span>)</span><br><span class="line">            cout &lt;&lt; line &lt;&lt; <span class="string">": "</span> &lt;&lt; m &lt;&lt; endl;</span><br><span class="line">    }</span><br><span class="line">    txt.<span class="built_in">close</span>();</span><br><span class="line">    cout &lt;&lt; <span class="string">"total: "</span> &lt;&lt; times &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2><span id="七-实验小结">七、实验小结</span></h2><p>  这次实验，将文本读入并储存至string中，遍历string，分成一个个小的字符串，也就是单词，然后再进行与关键词的比较。在实验中，我学会了用ifstream读入文本文件，并用getline依次读入每一行的字符串。我使用了string自带的length来遍历，用重载过的”==”来觉字符串，使用substr来读取子串。在实验过程中，我不知道如何判断行末，使用调试后发现，每一行都是以’\r’回车结束，所以我也通过’\r’来判断行末。<br>  这次实验，我学到了许多文件读取，文件存储特点，字符串的知识，收获了许多。</p>
+<h2 id="七、实验小结"><a href="#七、实验小结" class="headerlink" title="七、实验小结"></a>七、实验小结</h2><p>  这次实验，将文本读入并储存至string中，遍历string，分成一个个小的字符串，也就是单词，然后再进行与关键词的比较。在实验中，我学会了用ifstream读入文本文件，并用getline依次读入每一行的字符串。我使用了string自带的length来遍历，用重载过的”==”来觉字符串，使用substr来读取子串。在实验过程中，我不知道如何判断行末，使用调试后发现，每一行都是以’\r’回车结束，所以我也通过’\r’来判断行末。<br>  这次实验，我学到了许多文件读取，文件存储特点，字符串的知识，收获了许多。</p>
 
     </div>
 </article>
@@ -607,49 +600,49 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/21/2019-10-19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%95%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">数据结构试验报告-栈和队列</a>
+                    <a href="/2019/10/11/2019-9-20/%E7%88%B1%E6%95%B0%E7%A4%BE%E6%8B%9B%E6%96%B0%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/">爱数社招新试题解答</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/02/18/2019-2-18/Linux%E4%B8%8Bvscode-C%E8%AF%AD%E8%A8%80-%E5%AF%B9pow%E3%80%81exp%E6%9C%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">Linux下vscode C语言 对pow、exp未定义引用问题</a>
+                    <a href="/2020/10/18/2020-10-17/kdenlive%E6%97%A0%E6%B3%95%E5%AF%BC%E5%87%BA%E5%A4%9A%E5%B1%82%E8%A7%86%E9%A2%91/">kdenlive无法导出多层视频</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/15/2020-9-15/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
+                    <a href="/2020/10/18/2020-10-18/ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85pixiv-nginx/">ubuntu上安装pixiv-nginx</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/18/2020-9-18/%E5%B0%9D%E8%AF%95%E9%85%8D%E7%BD%AEhadoop%E7%8E%AF%E5%A2%83/">尝试配置hadoop环境</a>
+                    <a href="/2020/11/24/2020-11-24/hbase%E9%85%8D%E7%BD%AE/">hbase配置</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/22/2020-9-23/tensorflow-gpu%E6%8A%A5%E9%94%99%E2%80%9CCould-not-load-dynamic-library-libcudart-so-10-1-%E2%80%9D/">tensorflow-gpu报错“Could not load dynamic library &#39;libcudart.so.10.1&#39;”</a>
+                    <a href="/2020/12/12/2020-12-12/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B0%8F%E9%A1%B9%E7%9B%AE-%E6%96%B0%E9%97%BB%E7%88%AC%E5%8F%96%E4%B8%8E%E5%A4%84%E7%90%86/">大数据小项目-新闻爬取与处理</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/28/2020-9-28/linux%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/">linux中的查找</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/01/27/2021-01-27/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85live2d(gal%E4%B8%BB%E9%A2%98)/">hexo博客安装live2d(gal主题)</a>
+                    <a href="/2020/12/17/2020-12-17/%E5%85%B3%E7%B3%BB%E5%9B%BEgraph/">关系图graph</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2021/03/29/2021-03-29/vscode%E6%BA%90%E6%96%87%E4%BB%B6%E5%92%8C%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E5%88%86%E7%A6%BB/">vscode源文件和可执行文件分离</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/01/06/2021-1-7/%E8%A5%BF%E7%94%B5%E8%BD%AF%E5%B7%A5%E8%AE%A1%E7%BB%84II%E7%AD%94%E6%A1%88/">西电软工计组II答案</a>
                 </span>
             </li>
             
@@ -688,123 +681,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 9.31111599600732px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 16.69815322941781px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 11.361104256604705px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 11.72341409617436px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14.664407952007771px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 11.054849697976884px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 11.033180049687875px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 14.691916230299519px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 11.299066355289849px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 17.574838181948653px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 8.779272680890697px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 14.164514189673179px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 14.144771817550286px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 14.966763768553728px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 17.34827136753024px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 9.909502861827026px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/vscode/" style="font-size: 17.46882661323429px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 19.964609521150464px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/linux/" style="font-size: 12.192969792232326px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/vscode/" style="font-size: 13.771473895466585px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 13.345492192425851px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/linux/" style="font-size: 17.946395367768623px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 10.338836341853348px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 10.18690086267469px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 17.53012685835123px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 15.70820289236022px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 12.876900538569775px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 18.84371675650807px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 18.260420048519915px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 12.033912300131124px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 12.099669785850267px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 19.36544551240952px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 9.544291034740016px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 10.54756150840753px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 12.508061064359206px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 18.917891275717057px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 9.928636189400931px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 17.50161754341606px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 16.95126099878231px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14.134712162560803px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/bug/" style="font-size: 16.41919251700415px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/mysql/" style="font-size: 12.203762630514746px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.10625166554676px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/sql/" style="font-size: 18.767405860714007px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/mysql/" style="font-size: 9.223752528872685px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/x-org/" style="font-size: 13.515668565545294px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/sql/" style="font-size: 11.738434276773013px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/bug/" style="font-size: 10.23380195940102px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/javafx/" style="font-size: 16.152650431723604px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 16.037360110231475px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 13.343893793417799px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 12.946305170627767px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 9.255041747355968px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 10.138329890154907px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 15.689455223074514px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 17.588803577691046px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 19.23153112089255px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 18.68782618491046px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 11.27918728289127px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/mapreduce/" style="font-size: 8.513366415117712px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 10.114466947241842px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 17.860643249085282px;" class="tag-cloud-link">爬虫</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 18.07294617994058px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/hadoop/" style="font-size: 10.670843424286794px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 13.742674597422766px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/kafka/" style="font-size: 16.366059323068527px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 12.3383792988341px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/navicat/" style="font-size: 14.355560852696954px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/navicat/" style="font-size: 13.745123427126313px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/pyecharts/" style="font-size: 13.303330387720951px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/hadoop/" style="font-size: 18.90386744497475px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 16.351915055031164px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 16.506046038959227px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 13.215062150583051px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 17.987086584204583px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 10.271780862136072px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/cuda/" style="font-size: 18.204794968262046px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/tenserflow/" style="font-size: 14.50203776457386px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/wine/" style="font-size: 18.09122542279974px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 12.391931873455032px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/hexo/" style="font-size: 17.662419443032267px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/cuda/" style="font-size: 17.258434876022065px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 12.130185969982806px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/wine/" style="font-size: 19.25866948133072px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 17.999744792083494px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/hexo/" style="font-size: 10.324109101040682px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/win7/" style="font-size: 11.142138203307386px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 16.72643396764286px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/telegram/" style="font-size: 14.853046918722455px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 19.844103524845412px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/ACGN/" style="font-size: 8.063337059990761px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/win7/" style="font-size: 12.719888401458245px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/github/" style="font-size: 8.383908663086387px;" class="tag-cloud-link">github</a>
+    <a href="/tags/telegram/" style="font-size: 10.14654356523816px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/github-action/" style="font-size: 15.6193599769016px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/ACGN/" style="font-size: 9.370114320436857px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/js/" style="font-size: 11.899969064808676px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 13.9941281928843px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 19.700056121479957px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 12.40458094557702px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 10.20528152751264px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 14.315867866827602px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 11.436681686491628px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/github/" style="font-size: 18.400485076017905px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 9.612944984080755px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/github-action/" style="font-size: 17.258653097870297px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10.077522200056706px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/ssh/" style="font-size: 10.064002329982088px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 15.53091575896664px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 10.948168050910185px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/android/" style="font-size: 15.159669989423804px;" class="tag-cloud-link">android</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 18.21970241282297px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 17.676051086608425px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 11.357797581316039px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 11.169647335885715px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/android/" style="font-size: 19.02152366113901px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 18.860007403585424px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 17.34588111127775px;" class="tag-cloud-link">计算机组成原理</a>
     
 </div>
                 

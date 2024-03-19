@@ -64,17 +64,12 @@
         }
       }
     </script>-->
-<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
 }
 
 mjx-container[jax="SVG"][display="true"] {
@@ -410,19 +405,19 @@ mjx-container[display="true"] + br {
     </div>
     <div class="content-article">
         <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/03/29/illust_57130967_20201011_135135-f9f650.jpg" alt="ILLUSTRATION"></p>
-<h1><span id="安装obs-studio报错">安装obs-studio报错</span></h1><blockquote>
+<h1 id="安装obs-studio报错"><a href="#安装obs-studio报错" class="headerlink" title="安装obs-studio报错"></a>安装obs-studio报错</h1><blockquote>
 <p>  声明: 我只是写出我安装时遇到的问题, 如果读者碰到了一样的错误, 可以参考我解决的方法, 如果能帮上忙最好不过了 ,如果解决过程中和我的有出入, 恕我无能为力,谷歌上多搜搜吧.</p>
 </blockquote>
-<h2><span id="系统环境">系统环境</span></h2><ul>
-<li>windows 7 32位</li>
-<li>obs studio 26.1.1</li>
+<h2 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h2><ul>
+<li>  windows 7 32位</li>
+<li>  obs studio 26.1.1</li>
 </ul>
-<h2><span id="缺少directx组件-solved">缺少directx组件 [solved]</span></h2><blockquote>
+<h2 id="缺少directx组件-solved"><a href="#缺少directx组件-solved" class="headerlink" title="缺少directx组件 [solved]"></a>缺少directx组件 [solved]</h2><blockquote>
 <p>  报错: Your System is missing DirectX compoments …</p>
 </blockquote>
 <p>报错点击确认后会自动弹出微软的<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-CN/download/details.aspx?id=35">下载</a>, 但发现已经不提供下载</p>
 <blockquote>
-<h3><span id="were-sorry-this-download-is-no-longer-available">We’re sorry, this download is no longer available.</span></h3></blockquote>
+<h3 id="We’re-sorry-this-download-is-no-longer-available"><a href="#We’re-sorry-this-download-is-no-longer-available" class="headerlink" title="We’re sorry, this download is no longer available."></a>We’re sorry, this download is no longer available.</h3></blockquote>
 <p>在微软<a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/topic/how-to-install-the-latest-version-of-directx-d1f5ffa5-dae2-246c-91b1-ee1e973ed8c2">How to install the latest version of DirectX</a> 里提供了directx检测工具的使用方法, 有修复directx的功能</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/03/image-20210203204848843-467310.png" alt="image-20210203204848843"></p>
 <p>然而诊断结果并没有问题.</p>
@@ -434,7 +429,7 @@ mjx-container[display="true"] + br {
 <p>   <strong>As this program modifies system files,  be sure to disable anti-virus or other firewall / security software  before downloading or running it.</strong></p>
 </blockquote>
 <p>成功解决该报错!</p>
-<h2><span id="缺少-msvcp140_1dll-solved">缺少 msvcp140_1.dll [solved]</span></h2><blockquote>
+<h2 id="缺少-msvcp140-1-dll-solved"><a href="#缺少-msvcp140-1-dll-solved" class="headerlink" title="缺少 msvcp140_1.dll [solved]"></a>缺少 msvcp140_1.dll [solved]</h2><blockquote>
 <p>  <strong>The program can’t start because MSVCP140_1.dll is missing from your computer. Try reinstalling the program to fix this problem</strong></p>
 </blockquote>
 <p>网上查到是msvcp140_1在 visual studio 2015 redistributable 中, 去微软官网下载<a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0">https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0</a> 里边的<code>vc_redist.*.exe</code>似乎要爬梯才能下载</p>
@@ -461,7 +456,7 @@ mjx-container[display="true"] + br {
 <p>我选择了最新版, 下载解压后粘贴到<code>C:\Windows\System32</code></p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/02/04/03466B4E-6BA79B57.100A1B60.png-cc527d.png" alt="03466B4E@6BA79B57.100A1B60.png"></p>
 <p>…成功启动</p>
-<h2><span id="吐槽">吐槽</span></h2><p>我好傻…缺msvcp140_1补上就行, 我还绕好大一圈.</p>
+<h2 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h2><p>我好傻…缺msvcp140_1补上就行, 我还绕好大一圈.</p>
 <p>本来是家里的旧电脑不太行, 重装下系统, 系统从win10降到了win7, 考虑过装个linux更适合旧电脑, 可</p>
 <p>对家里人的门槛高了点, 还是装了win7.</p>
 <p>这次装个软件真的超出我想象, 一直以为windows系统都是傻瓜式装软件, 没想到有了折腾linux的感觉</p>
@@ -624,25 +619,25 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/18/2019-11-18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%91/">数据结构实验报告-树</a>
+                    <a href="/2019/10/21/2019-10-19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%95%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">数据结构试验报告-栈和队列</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/03/2019-11-3/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E4%B8%B2/">数据结构实验报告-串</a>
+                    <a href="/2019/12/15/2019-12-15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%8E%92%E5%BA%8F/">数据结构实验报告-排序</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/11/2019-9-20/%E7%88%B1%E6%95%B0%E7%A4%BE%E6%8B%9B%E6%96%B0%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/">爱数社招新试题解答</a>
+                    <a href="/2020/11/22/2020-11-22/javafx%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/">javafx设置背景图片</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/18/2020-10-17/kdenlive%E6%97%A0%E6%B3%95%E5%AF%BC%E5%87%BA%E5%A4%9A%E5%B1%82%E8%A7%86%E9%A2%91/">kdenlive无法导出多层视频</a>
+                    <a href="/2020/12/15/2020-12-15/kafka%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">kafka安装配置</a>
                 </span>
             </li>
             
@@ -654,31 +649,31 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/22/2020-9-23/tensorflow-gpu%E6%8A%A5%E9%94%99%E2%80%9CCould-not-load-dynamic-library-libcudart-so-10-1-%E2%80%9D/">tensorflow-gpu报错“Could not load dynamic library &#39;libcudart.so.10.1&#39;”</a>
+                    <a href="/2020/09/26/2020-9-26/vscode%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95c++/">vscode快速配置调试c++</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/27/2021-02-17/%E6%8E%A8%E8%8D%90github%E7%8A%B6%E6%80%81%E5%8D%A1%E7%89%87/">推荐github状态卡片</a>
+                    <a href="/2020/09/30/2020-9-30/ubuntu%E5%AE%89%E8%A3%85%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8/">ubuntu安装植物大战僵尸</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/29/2021-03-29/vscode%E6%BA%90%E6%96%87%E4%BB%B6%E5%92%8C%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E5%88%86%E7%A6%BB/">vscode源文件和可执行文件分离</a>
+                    <a href="/2021/01/27/2021-01-27/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85live2d(gal%E4%B8%BB%E9%A2%98)/">hexo博客安装live2d(gal主题)</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/01/10/2021-1-11/%E5%BA%9F%E7%89%A9%E5%88%A9%E7%94%A8--%E6%97%A7%E6%89%8B%E6%9C%BA%E6%90%AD%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/">废物利用--旧手机搭建服务器</a>
+                    <a href="/2021/03/17/2021-03-17/git_clone%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">git_clone加速方法整理</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/01/06/2021-1-7/%E8%A5%BF%E7%94%B5%E8%BD%AF%E5%B7%A5%E8%AE%A1%E7%BB%84II%E7%AD%94%E6%A1%88/">西电软工计组II答案</a>
+                    <a href="/2020/09/15/2020-9-15/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
                 </span>
             </li>
             
@@ -711,123 +706,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 12.40911625358694px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 18.225018543563653px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 17.280456776392995px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 16.290782157972494px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.792817773546812px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 13.189147496460016px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 14.292944388364928px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 12.66883431728898px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 19.257624344031925px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 12.87970694818266px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 10.451334847322059px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 11.289345698537398px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 11.713126484293314px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 11.3507119341261px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 14.470292010110583px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 9.317349597631232px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/vscode/" style="font-size: 15.258276998500913px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 12.8490994949431px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/linux/" style="font-size: 13.184549083580968px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/vscode/" style="font-size: 12.350528938626464px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 11.315970943907054px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/linux/" style="font-size: 12.243162221576132px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 8.118483781583432px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 12.807830874949172px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 12.101863017663366px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 16.428801863078068px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 14.951102383249069px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 19.9681327309398px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 19.627244806553172px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 9.595315597219603px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 8.192594634556759px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 18.057459897380358px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 15.980628019239248px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 15.337135419278901px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 8.043717406928817px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 16.592049583447086px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 9.73283084305567px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 15.425651611601229px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 11.816902816967968px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10.361096535707537px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/bug/" style="font-size: 14.481079577561912px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/mysql/" style="font-size: 11.867540829151723px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 19.596462974088265px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/sql/" style="font-size: 9.733245276759579px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/mysql/" style="font-size: 15.656952670740454px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/x-org/" style="font-size: 18.244006646489858px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/sql/" style="font-size: 12.769106664706586px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/bug/" style="font-size: 14.80581774889805px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/javafx/" style="font-size: 12.72811598828161px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 12.580227610056184px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 10.893953663456836px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 18.44187571629509px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 12.245768092281722px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 14.050028195964554px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 15.909452167760012px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 16.16422931460136px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 14.518798551955483px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 17.08413829808506px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 9.419050562614775px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/mapreduce/" style="font-size: 16.827517261891984px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 17.880242747685315px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 19.45420914382682px;" class="tag-cloud-link">爬虫</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 11.231991099780677px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/hadoop/" style="font-size: 12.451790461007075px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 13.288914063279094px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/kafka/" style="font-size: 12.518865287871044px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 9.56175243928325px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/navicat/" style="font-size: 12.596176664758188px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/navicat/" style="font-size: 15.717863975796611px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/pyecharts/" style="font-size: 19.503124663871283px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/hadoop/" style="font-size: 11.790458916631398px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 14.03595174672696px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 16.462312584718255px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 19.166107093503967px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 8.771610670774017px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 8.740240163527055px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/cuda/" style="font-size: 17.743189933719442px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/tenserflow/" style="font-size: 9.610934397034146px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/wine/" style="font-size: 15.976360977740926px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 16.915108552124988px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/hexo/" style="font-size: 9.952690074347268px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/cuda/" style="font-size: 18.998738475919282px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 19.566439806986637px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/wine/" style="font-size: 16.05091285328441px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 13.95260705044814px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/hexo/" style="font-size: 19.933211264004804px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/win7/" style="font-size: 15.099159404164201px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 12.537930987139452px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/telegram/" style="font-size: 10.315445681571818px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 11.121026796011499px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/ACGN/" style="font-size: 18.384824489879446px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/win7/" style="font-size: 15.741516870375632px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/github/" style="font-size: 8.518199785887543px;" class="tag-cloud-link">github</a>
+    <a href="/tags/telegram/" style="font-size: 12.5077054925255px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/github-action/" style="font-size: 11.084054838740483px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/ACGN/" style="font-size: 13.759356140058163px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/js/" style="font-size: 18.964007335553006px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 17.514666289376976px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 12.493861630280122px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 14.50478920464683px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 8.733494365308685px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 14.12204231308781px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 11.99787905735775px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/github/" style="font-size: 12.354890819970192px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 9.943506409983424px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/github-action/" style="font-size: 18.36294128427278px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 9.151316251730707px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/ssh/" style="font-size: 19.092355385474495px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 9.859058504839393px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 11.915413451651514px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/android/" style="font-size: 9.05812096060815px;" class="tag-cloud-link">android</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 12.212710240750793px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 11.137544325545946px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 8.169043595509446px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 8.861756239775337px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/android/" style="font-size: 17.589897998530077px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 8.899968048986864px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 10.221948923955946px;" class="tag-cloud-link">计算机组成原理</a>
     
 </div>
                 

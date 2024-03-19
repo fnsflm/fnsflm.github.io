@@ -64,17 +64,12 @@
         }
       }
     </script>-->
-<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
 }
 
 mjx-container[jax="SVG"][display="true"] {
@@ -409,14 +404,14 @@ mjx-container[display="true"] + br {
         </center>
     </div>
     <div class="content-article">
-        <h1><span id="ubuntu安装植物大战僵尸">ubuntu安装植物大战僵尸</span></h1><p>国庆放假，突然想玩植物大战僵尸了，就装了一下</p>
-<h2><span id="环境">环境</span></h2><ul>
-<li><p>Linux ubuntu 18.04LTS</p>
+        <h1 id="ubuntu安装植物大战僵尸"><a href="#ubuntu安装植物大战僵尸" class="headerlink" title="ubuntu安装植物大战僵尸"></a>ubuntu安装植物大战僵尸</h1><p>国庆放假，突然想玩植物大战僵尸了，就装了一下</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li><p>  Linux ubuntu 18.04LTS</p>
 </li>
-<li><p>deepin-wine</p>
+<li><p>  deepin-wine</p>
 </li>
 </ul>
-<h2><span id="下载植物大战僵尸">下载植物大战僵尸</span></h2><blockquote>
+<h2 id="下载植物大战僵尸"><a href="#下载植物大战僵尸" class="headerlink" title="下载植物大战僵尸"></a>下载植物大战僵尸</h2><blockquote>
 <p>  原贴： <a target="_blank" rel="noopener" href="https://www.52pojie.cn/forum.php?mod=viewthread&amp;tid=1207851">https://www.52pojie.cn/forum.php?mod=viewthread&amp;tid=1207851</a></p>
 </blockquote>
 <p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1SZ-W_JElScWjffL6ZeUB5w">https://pan.baidu.com/s/1SZ-W_JElScWjffL6ZeUB5w</a> 提取码: 6r8q</p>
@@ -425,12 +420,12 @@ mjx-container[display="true"] + br {
 
 <p>如果没有显示缺失依赖包(已经装了deepin-wine)，那么就可以直接玩了</p>
 <p>我是用find找到游戏在哪儿的，我的在<code>/opt/apps/plantsvszombies</code>文件夹中，运行<code>files/run.sh</code>即可</p>
-<h2><span id="安装deepin-wine">安装deepin-wine</span></h2><p>如果上一步游戏已经能正常运行，那就可以忽视这一步</p>
+<h2 id="安装deepin-wine"><a href="#安装deepin-wine" class="headerlink" title="安装deepin-wine"></a>安装deepin-wine</h2><p>如果上一步游戏已经能正常运行，那就可以忽视这一步</p>
 <blockquote>
 <p>  参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42592666/article/details/108384719">https://blog.csdn.net/weixin_42592666/article/details/108384719</a></p>
 </blockquote>
 <p>将这个网址里的deb包全部下载下来即可 <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/">http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"deb [trusted=yes] http://mirrors.aliyun.com/deepin stable main contrib non-free"</span> | sudo tee /etc/apt/sources.list.d/deepin.list</span><br><span class="line">sudo apt update</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-fonts-wine_2.18-18_all.deb </span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-fonts-wine_2.18-22~rc0_all.deb </span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-libwine-dbg_2.18-18_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-libwine-dbg_2.18-22~rc0_i386.deb </span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-libwine-dev_2.18-18_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-libwine-dev_2.18-22~rc0_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-libwine_2.18-18_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-libwine_2.18-22~rc0_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine-binfmt_2.18-18_all.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine-binfmt_2.18-22~rc0_all.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32-preloader_2.18-18_i386.deb </span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32-preloader_2.18-22~rc0_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32-tools_2.18-18_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32-tools_2.18-22~rc0_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32_2.18-18_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32_2.18-22~rc0_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine_2.18-18_all.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine_2.18-22~rc0_all.deb</span><br><span class="line">sudo dpkg -i *.deb</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt -f install</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"deb [trusted=yes] http://mirrors.aliyun.com/deepin stable main contrib non-free"</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/deepin.list</span><br><span class="line">sudo apt update</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-fonts-wine_2.18-18_all.deb </span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-fonts-wine_2.18-22~rc0_all.deb </span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-libwine-dbg_2.18-18_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-libwine-dbg_2.18-22~rc0_i386.deb </span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-libwine-dev_2.18-18_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-libwine-dev_2.18-22~rc0_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-libwine_2.18-18_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-libwine_2.18-22~rc0_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine-binfmt_2.18-18_all.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine-binfmt_2.18-22~rc0_all.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32-preloader_2.18-18_i386.deb </span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32-preloader_2.18-22~rc0_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32-tools_2.18-18_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32-tools_2.18-22~rc0_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32_2.18-18_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32_2.18-22~rc0_i386.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine_2.18-18_all.deb</span><br><span class="line">wget http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin-wine/deepin-wine_2.18-22~rc0_all.deb</span><br><span class="line">sudo dpkg -i *.deb</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt -f install</span><br></pre></td></tr></table></figure>
 
 
 
@@ -592,7 +587,7 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/02/18/2019-2-18/Linux%E4%B8%8Bvscode-C%E8%AF%AD%E8%A8%80-%E5%AF%B9pow%E3%80%81exp%E6%9C%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E7%94%A8%E9%97%AE%E9%A2%98/">Linux下vscode C语言 对pow、exp未定义引用问题</a>
+                    <a href="/2019/12/15/2019-12-15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%8E%92%E5%BA%8F/">数据结构实验报告-排序</a>
                 </span>
             </li>
             
@@ -604,13 +599,25 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/02/2020-10-2/%E6%8E%A8%E8%8D%90%E4%B8%80%E6%AC%BE%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%B7%A5%E5%85%B7/">推荐一款图片压缩工具</a>
+                    <a href="/2020/10/18/2020-10-17/kdenlive%E6%97%A0%E6%B3%95%E5%AF%BC%E5%87%BA%E5%A4%9A%E5%B1%82%E8%A7%86%E9%A2%91/">kdenlive无法导出多层视频</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEodbc/">ubuntu上配置odbc</a>
+                    <a href="/2020/11/17/2020-11-17/sql%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%8A%A5%E9%94%99/">sql创建函数过程中的报错</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/10/07/2020-10-7/ubuntu%E5%BC%80%E6%9C%BA%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AFlocale-check%20%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/">ubuntu开机提示错误locale-check: 没有那个文件或目录</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8Ac++%E4%BD%BF%E7%94%A8mysql%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/">ubuntu上c++使用mysql接口调用数据库</a>
                 </span>
             </li>
             
@@ -622,31 +629,19 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/27/2021-02-17/%E6%8E%A8%E8%8D%90github%E7%8A%B6%E6%80%81%E5%8D%A1%E7%89%87/">推荐github状态卡片</a>
+                    <a href="/2021/01/06/2021-1-7/%E8%A5%BF%E7%94%B5%E8%BD%AF%E5%B7%A5%E8%AE%A1%E7%BB%84II%E7%AD%94%E6%A1%88/">西电软工计组II答案</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/05/2021-03-05/pdftk%E5%B7%A5%E5%85%B7/">pdftk工具</a>
+                    <a href="/2020/09/15/2020-9-15/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E9%9B%86%E5%92%8C%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E9%9B%86/">mysql数据库收集和导入数据集</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/12/2021-03-12/%E5%8A%9E%E7%90%86visa%E5%8D%A1%E7%BB%8F%E5%8E%86/">办理visa卡经历</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/03/29/2021-03-29/vscode%E6%BA%90%E6%96%87%E4%BB%B6%E5%92%8C%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E5%88%86%E7%A6%BB/">vscode源文件和可执行文件分离</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2021/04/24/2021-04-24/ssh%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95%E6%9C%AC%E5%9C%B0localhost/">ssh无法登录本地localhost</a>
+                    <a href="/2022/01/31/2022-01-31/linux%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">linux传输文件解决方案</a>
                 </span>
             </li>
             
@@ -679,123 +674,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 15.597706313006597px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10.632644038370582px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 15.194718793905931px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 10.486999037846173px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 18.711774170002275px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 15.330139018298057px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 18.8693489102582px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 12.798238481567509px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 10.319451612165668px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 12.80669252226896px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 12.459919268711843px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 19.11584224156238px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 10.838261113447139px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 13.30336949159172px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 8.64468636220977px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 11.810928061419162px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/vscode/" style="font-size: 13.650874073178638px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 17.830265919769175px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/linux/" style="font-size: 13.071337842336852px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/vscode/" style="font-size: 9.857964973962066px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 19.912137865725228px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/linux/" style="font-size: 19.11897817511592px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 13.565460529185579px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 14.338397936989614px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 13.503034580484071px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 18.353586742223246px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 17.28625217322516px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 19.4089980017455px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 13.727454356763339px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 10.780985948683103px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 14.202185945920725px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 17.507926003355642px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 11.955157753771601px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 9.66438696922729px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 13.143646822553164px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 12.279074233662957px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 9.630095156545984px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 17.60778670897382px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 19.040433851872393px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14.29719601149899px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/bug/" style="font-size: 19.349489543781566px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/mysql/" style="font-size: 13.632765098693909px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14.869385542788066px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/sql/" style="font-size: 17.60124997803277px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/mysql/" style="font-size: 18.601941839322425px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/x-org/" style="font-size: 17.650960645286776px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/sql/" style="font-size: 14.299367376191205px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/bug/" style="font-size: 14.312835020640977px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/javafx/" style="font-size: 8.43844236290933px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 9.585483669949724px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 14.979631579688366px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 11.921462473487694px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 15.123164711269112px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 17.940751052009603px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 17.73100108958608px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 17.508590176945276px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 12.371510057819492px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 11.063352165197632px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 13.092154494394071px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/mapreduce/" style="font-size: 19.72886006002458px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 11.064036045647352px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 9.231928772266079px;" class="tag-cloud-link">爬虫</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 11.760805356011506px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/hadoop/" style="font-size: 14.257413951973147px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 16.15752565512097px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/kafka/" style="font-size: 17.573589788901636px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 16.484811726489863px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/navicat/" style="font-size: 9.99096496712163px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/navicat/" style="font-size: 8.998823245749492px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/pyecharts/" style="font-size: 10.843405993250908px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/hadoop/" style="font-size: 13.319893098584007px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 13.09198066465395px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 9.875715681479658px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 9.638747380967263px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 18.71025620219475px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 18.929780942381438px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/cuda/" style="font-size: 10.3145975905718px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/tenserflow/" style="font-size: 8.27688380077932px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/wine/" style="font-size: 13.833611004629743px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 11.438710184372493px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/hexo/" style="font-size: 14.277620485042377px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/cuda/" style="font-size: 14.264900377484512px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 19.39908367409568px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/wine/" style="font-size: 13.30243502867597px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 18.128013634057098px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/hexo/" style="font-size: 10.360922971158782px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/win7/" style="font-size: 19.122579729904324px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 13.36938361329435px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/telegram/" style="font-size: 13.910597745208362px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 12.220282227927697px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/ACGN/" style="font-size: 16.32575149885897px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/win7/" style="font-size: 16.23525790409153px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/github/" style="font-size: 11.008794157178226px;" class="tag-cloud-link">github</a>
+    <a href="/tags/telegram/" style="font-size: 18.56537305987967px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/github-action/" style="font-size: 15.886370205753153px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/ACGN/" style="font-size: 10.568000510398452px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/js/" style="font-size: 8.547520955799392px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 19.366953107485752px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 14.102510640855225px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 11.684224424039638px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 13.162514073619889px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 19.775420113423905px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 13.839737746486664px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/github/" style="font-size: 15.502178789946356px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 15.396692124134065px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/github-action/" style="font-size: 16.354707589490552px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 14.465913880732703px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/ssh/" style="font-size: 13.995713370925221px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 15.839185284606392px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 17.66353275602631px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/android/" style="font-size: 11.009359026326205px;" class="tag-cloud-link">android</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 9.879621411692813px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 18.989976004629526px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 12.715368524107856px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 10.520885405299925px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/android/" style="font-size: 16.19167788094623px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 9.99393293341141px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 8.73930803097127px;" class="tag-cloud-link">计算机组成原理</a>
     
 </div>
                 

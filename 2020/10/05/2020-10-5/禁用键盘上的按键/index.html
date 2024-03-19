@@ -64,17 +64,12 @@
         }
       }
     </script>-->
-<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
 mjx-container[jax="SVG"] > svg {
   overflow: visible;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
 }
 
 mjx-container[jax="SVG"][display="true"] {
@@ -406,34 +401,34 @@ mjx-container[display="true"] + br {
     </div>
     <div class="content-article">
         <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/03/29/%E5%9B%9B%E5%8F%B6%E8%8D%89%E5%89%A7%E5%9C%BA_69864221_p0-f69ae4.jpg" alt="illustration"></p>
-<h1><span id="禁用键盘上的按键">禁用键盘上的按键</span></h1><p>我的键盘方向键是这样的</p>
+<h1 id="禁用键盘上的按键"><a href="#禁用键盘上的按键" class="headerlink" title="禁用键盘上的按键"></a>禁用键盘上的按键</h1><p>我的键盘方向键是这样的</p>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/timg-78a9f5.jpeg"><br>按左右键的时候总是按错就很烦，所以就查了下怎样禁用按键</p>
 <blockquote>
 <p>参考 <a target="_blank" rel="noopener" href="https://blog.csdn.net/cock333/article/details/8872603">linux下屏蔽键盘按键</a></p>
 </blockquote>
 <ol>
-<li>先用<code>xev</code>来查看目标按键的<code>keycode</code>，终端中输入<code>xev</code>后随着你按不同的键，就会弹出对应的keycode</li>
+<li> 先用<code>xev</code>来查看目标按键的<code>keycode</code>，终端中输入<code>xev</code>后随着你按不同的键，就会弹出对应的keycode</li>
 </ol>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/001-5f4dc2.jpg"></p>
 <p>我这里<code>PgUp</code>是112，<code>PgDn</code>是117</p>
 <ol start="2">
-<li>使用xmodmap更改映射关系</li>
+<li> 使用xmodmap更改映射关系</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xmodmap -pke &gt; ~/.xmodmap </span><br><span class="line">cp ~/.xmodmap  ~/.xmodmap.back</span><br><span class="line">vim  ~/.xmodmap <span class="comment"># 更改keycode 112，keycode117等号后的全删了</span></span><br><span class="line">xmodmap -e <span class="string">"clear Lock"</span> </span><br><span class="line">xmodmap ~/.xmodmap</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xmodmap -pke &gt; ~/.xmodmap </span><br><span class="line"><span class="built_in">cp</span> ~/.xmodmap  ~/.xmodmap.back</span><br><span class="line">vim  ~/.xmodmap <span class="comment"># 更改keycode 112，keycode117等号后的全删了</span></span><br><span class="line">xmodmap -e <span class="string">"clear Lock"</span> </span><br><span class="line">xmodmap ~/.xmodmap</span><br></pre></td></tr></table></figure>
 
 <p>这就完成了按键的屏蔽，但这是一次性的，重启之后就会失效</p>
 <ol start="3">
 <li><p>开机自启动</p>
-<p>这个开机自启动说起来都是泪，试过chkconfig发现ubuntu已经不支持了，然后用systemd然后发现xsever好像不支持，报错有<code>unable to open display</code>或者<code>No protocol specified</code></p>
-<p>参考<a target="_blank" rel="noopener" href="https://ywnz.com/linuxjc/2761.html">Ubuntu 18.04开机启动键盘映射的方法</a>，最后用gnome自带的工具得到解决</p>
-<p>终端输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gnome-session-properties</span><br></pre></td></tr></table></figure>
+<p> 这个开机自启动说起来都是泪，试过chkconfig发现ubuntu已经不支持了，然后用systemd然后发现xsever好像不支持，报错有<code>unable to open display</code>或者<code>No protocol specified</code></p>
+<p> 参考<a target="_blank" rel="noopener" href="https://ywnz.com/linuxjc/2761.html">Ubuntu 18.04开机启动键盘映射的方法</a>，最后用gnome自带的工具得到解决</p>
+<p> 终端输入：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gnome-session-properties</span><br></pre></td></tr></table></figure>
 
-<p>点击添加，名称和注释随便填，命令为</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c <span class="string">"sleep 30; xmodmap  -e \"keycode 112 =\" ;  xmodmap -e \"keycode 117 =\";  notify-send \"auto_ban_pupd\" \"finished\""</span></span><br></pre></td></tr></table></figure>
+<p> 点击添加，名称和注释随便填，命令为</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c <span class="string">"sleep 30; xmodmap  -e \"keycode 112 =\" ;  xmodmap -e \"keycode 117 =\";  notify-send \"auto_ban_pupd\" \"finished\""</span></span><br></pre></td></tr></table></figure>
 
-<p>附上未转义的代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash -c</span></span><br><span class="line">sleep 30;</span><br><span class="line">xmodmap -e <span class="string">"keycode 112 ="</span> ; </span><br><span class="line">xmodmap -e <span class="string">"keycode 117 ="</span>;</span><br><span class="line">notify-send <span class="string">"auto_ban_pupd"</span> <span class="string">"finished"</span>;</span><br></pre></td></tr></table></figure>
+<p> 附上未转义的代码</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash -c</span></span><br><span class="line"><span class="built_in">sleep</span> 30;</span><br><span class="line">xmodmap -e <span class="string">"keycode 112 ="</span> ; </span><br><span class="line">xmodmap -e <span class="string">"keycode 117 ="</span>;</span><br><span class="line">notify-send <span class="string">"auto_ban_pupd"</span> <span class="string">"finished"</span>;</span><br></pre></td></tr></table></figure>
 <p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/004-1e163e.jpg"><br>然后原文里写的是<code>xmodmap ~/.xmodmap</code>，这个我亲自试过，会有短暂的卡顿现象，所以用xmodmap -e会快许多，notify-send会在你的通知栏显示成功了</p>
 </li>
 </ol>
@@ -595,25 +590,7 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/21/2019-10-19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%95%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">数据结构试验报告-栈和队列</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/11/18/2019-11-18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%91/">数据结构实验报告-树</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/12/15/2019-12-15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%8E%92%E5%BA%8F/">数据结构实验报告-排序</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/10/10/2020-10-10/python%E7%94%9F%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/">python生成可执行文件</a>
+                    <a href="/2020/10/07/2020-10-7/ubuntu%E5%BC%80%E6%9C%BA%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AFlocale-check%20%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/">ubuntu开机提示错误locale-check: 没有那个文件或目录</a>
                 </span>
             </li>
             
@@ -625,25 +602,43 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/22/2020-9-22/%E5%AE%89%E8%A3%85tensorflow-gpu/">安装tensorflow-gpu</a>
+                    <a href="/2020/09/18/2020-9-18/%E5%B0%9D%E8%AF%95%E9%85%8D%E7%BD%AEhadoop%E7%8E%AF%E5%A2%83/">尝试配置hadoop环境</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/26/2020-9-26/vscode%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95c++/">vscode快速配置调试c++</a>
+                    <a href="/2020/09/22/2020-9-23/tensorflow-gpu%E6%8A%A5%E9%94%99%E2%80%9CCould-not-load-dynamic-library-libcudart-so-10-1-%E2%80%9D/">tensorflow-gpu报错“Could not load dynamic library &#39;libcudart.so.10.1&#39;”</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/17/2021-03-17/git_clone%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">git_clone加速方法整理</a>
+                    <a href="/2020/09/30/2020-9-30/ubuntu%E5%AE%89%E8%A3%85%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8/">ubuntu安装植物大战僵尸</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/04/24/2021-04-24/ssh%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95%E6%9C%AC%E5%9C%B0localhost/">ssh无法登录本地localhost</a>
+                    <a href="/2021/02/16/2021-02-16/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E8%BF%BD%E7%95%AA(%E8%A1%A5%E7%95%AA)%E7%9A%84%E6%96%B9%E6%B3%95/">推荐一个追番(补番)的方法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/09/27/2021-02-17/%E6%8E%A8%E8%8D%90github%E7%8A%B6%E6%80%81%E5%8D%A1%E7%89%87/">推荐github状态卡片</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/03/12/2021-03-12/%E5%8A%9E%E7%90%86visa%E5%8D%A1%E7%BB%8F%E5%8E%86/">办理visa卡经历</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/01/10/2021-1-11/%E5%BA%9F%E7%89%A9%E5%88%A9%E7%94%A8--%E6%97%A7%E6%89%8B%E6%9C%BA%E6%90%AD%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/">废物利用--旧手机搭建服务器</a>
                 </span>
             </li>
             
@@ -682,123 +677,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 12.480127539769235px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13.733955546869009px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 14.401818106658741px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 18.398588720331418px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 11.65813769983288px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.280850539967386px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 14.941588863105945px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 11.5629364931083px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 11.018121152152293px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 13.956726333456615px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 15.420205054186155px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 10.596179510189373px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 14.039100864118264px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 18.062659197602102px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 15.282203168138702px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 12.861860072852231px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/vscode/" style="font-size: 16.912862749779233px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 13.223130515747677px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/linux/" style="font-size: 17.774501744554904px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/vscode/" style="font-size: 15.790098690773526px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 17.621911487896554px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/linux/" style="font-size: 11.703974044048671px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 8.176327873093179px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 17.835939725203104px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 13.626079625516352px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 17.89316459294969px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 12.60943999275144px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 12.72446927838713px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 9.130659116287042px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 13.818908400279401px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 14.536837972076421px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 19.548184298257546px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 10.046995718632417px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 17.34603031973772px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 16.651935236319396px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 11.26535688264767px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 17.619117308696243px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 17.554149082517085px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 17.94713396712619px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.070390909811788px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/bug/" style="font-size: 14.198092385496844px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/mysql/" style="font-size: 14.861086502952446px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 15.445289813979265px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/sql/" style="font-size: 12.673167260925567px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/mysql/" style="font-size: 15.566672896056716px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/x-org/" style="font-size: 17.542225687724493px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/sql/" style="font-size: 9.911087644202142px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/bug/" style="font-size: 18.574836189221028px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/javafx/" style="font-size: 9.40333401606847px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 18.255086337090763px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 13.387471123740715px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 19.681331767296577px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 12.201160735474076px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 10.837255176803602px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 15.73891051717291px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 17.238450530742917px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 11.103844754523355px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 8.670387699419152px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 17.294071861053137px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/mapreduce/" style="font-size: 14.50393665734493px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 11.38448972400613px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 11.744663898473497px;" class="tag-cloud-link">爬虫</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 9.211004627638587px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/hadoop/" style="font-size: 13.351820538137044px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 15.931987245482249px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/kafka/" style="font-size: 12.381773058540098px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 18.62538479066468px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/navicat/" style="font-size: 13.599660412258341px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/navicat/" style="font-size: 15.12157801797563px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/pyecharts/" style="font-size: 8.36547591034075px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/hadoop/" style="font-size: 19.476134547453846px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 14.200986800540647px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 19.675217536345386px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 16.1113679625189px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 9.35951528373307px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 19.664280155218812px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/cuda/" style="font-size: 9.740707523314306px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/tenserflow/" style="font-size: 8.983821755989283px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/wine/" style="font-size: 18.72145442258187px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 13.162379037838507px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/hexo/" style="font-size: 18.82693789554729px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/cuda/" style="font-size: 10.982131868218783px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 16.600301801561002px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/wine/" style="font-size: 16.129337769865625px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 17.330420381656342px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/hexo/" style="font-size: 14.728053257691677px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/win7/" style="font-size: 19.787941755995462px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10.411164382002143px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/telegram/" style="font-size: 8.055698737151566px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10.727692880387739px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/ACGN/" style="font-size: 12.085165516121299px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/win7/" style="font-size: 12.240786063790136px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/github/" style="font-size: 8.112370009268764px;" class="tag-cloud-link">github</a>
+    <a href="/tags/telegram/" style="font-size: 9.678061862580797px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/github-action/" style="font-size: 12.43303782391694px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/ACGN/" style="font-size: 9.709849404944944px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/js/" style="font-size: 13.83402794883846px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 12.814271038445824px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 10.766144420364387px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 19.906664472805897px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 19.901275723671233px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 8.734701524128491px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 9.40260198921428px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/github/" style="font-size: 15.938347836776147px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 10.908039379896604px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/github-action/" style="font-size: 9.844661006811673px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 8.621003889586547px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/ssh/" style="font-size: 14.70614481573654px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 13.799549985075224px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 14.010518776902414px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/android/" style="font-size: 11.816500410040746px;" class="tag-cloud-link">android</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 18.862007963820375px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 19.289958264859145px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 12.089822564732238px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 16.72805563088876px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/android/" style="font-size: 16.0600024803919px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 15.73985949135178px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 15.854040655779329px;" class="tag-cloud-link">计算机组成原理</a>
     
 </div>
                 
