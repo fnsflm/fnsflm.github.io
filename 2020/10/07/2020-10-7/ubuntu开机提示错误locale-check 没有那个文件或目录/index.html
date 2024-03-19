@@ -12,7 +12,7 @@
     
     
     
-    <title>categories: 博客 | nanodesu~</title>
+    <title>ubuntu开机提示错误locale-check: 没有那个文件或目录 | nanodesu~</title>
     <link href="https://fnsflm.xyz" rel="prefetch" />
     
 <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -342,19 +342,40 @@ mjx-container[display="true"] + br {
     <div class="container">
         <div class="row">
             <div class="col-md-8 gal-right" id="mainstay">
-                <article class="article well article-body" id="article-category">
+                
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="https://fnsflm.xyz">nanodesu~</a>
         >
-        <span>目录</span>
+        <span>ubuntu开机提示错误locale-check: 没有那个文件或目录</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/categories/%E5%8D%9A%E5%AE%A2/index.html">博客</a>
+                <a href="/2020/10/07/2020-10-7/ubuntu%E5%BC%80%E6%9C%BA%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AFlocale-check%20%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/">ubuntu开机提示错误locale-check: 没有那个文件或目录</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/linux/">linux</a>, 
+                
+                <a href="/tags/bug/">bug</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-10-07
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -362,24 +383,65 @@ mjx-container[display="true"] + br {
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/categories/%E5%8D%9A%E5%AE%A2/index.html">博客</a>
+                    <a href="/2020/10/07/2020-10-7/ubuntu%E5%BC%80%E6%9C%BA%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AFlocale-check%20%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/">ubuntu开机提示错误locale-check: 没有那个文件或目录</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2020-10-07
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/linux/">linux</a>, 
+                
+                <a href="/tags/bug/">bug</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-            <a href="/2021/02/28/2021-02-28/hexo%E5%8D%9A%E5%AE%A2%E5%8E%8B%E7%BC%A9css%E3%80%81js%E7%AD%89%E6%96%87%E4%BB%B6/">hexo博客压缩css、js等文件</a>
-            <br>
-            
-            <a href="/2021/01/27/2021-01-27/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85live2d(gal%E4%B8%BB%E9%A2%98)/">hexo博客安装live2d(gal主题)</a>
-            <br>
-            
-            
-        </div>
+    <div class="content-article">
+        <p><img src="https://cdn.jsdelivr.net/gh/fnsflm/myPicbed/2021/03/29/Summer%EF%BC%81_75999729_p0-b2a49d.jpg" alt="illustration"></p>
+<h1><span id="ubuntu开机提示错误locale-check-没有那个文件或目录">ubuntu开机提示错误locale-check: 没有那个文件或目录</span></h1><p>开机时发现了这个错误</p>
+<p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/1-693313.jpg"></p>
+<blockquote>
+<p>  参考：<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/1096110/bash-usr-bin-locale-check-no-such-file-or-directory-error-after-i-downgraded">bash: /usr/bin/locale-check: No such file or directory error after i downgraded from ubuntu 18.10 to 18.04</a></p>
+</blockquote>
+<p>按这篇文章的回答就能解决，大体思路是，base-files包出了问题，然后通过<code>apt-cache policy base-files</code>_</p>
+<p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/004-2f627b.jpg"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-cache policy base-files</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/005-2e7e91.jpg"></p>
+<p>其实看到这里我明白了，是我之前下载deepin-wine时残留下来的问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apt download base-files=10.1ubuntu2.2</span><br><span class="line">apt download base-files=10.1ubuntu2.10</span><br><span class="line">apt download base-files=10.1ubuntu2</span><br><span class="line">dpkg -c base-files_10.1ubuntu2.2_amd64.deb | grep "/usr/bin"</span><br><span class="line">dpkg -c base-files_10.1ubuntu2.10_amd64.deb | grep "/usr/bin"</span><br><span class="line">dpkg -c base-files_10.1ubuntu2_amd64.deb | grep "/usr/bin"</span><br></pre></td></tr></table></figure>
+
+<p>在2.10版本里找到了locale-check</p>
+<p><img src="https://cdn.jsdelivr.net/gh/fnsflmzqdydk/myPicbed/2021/01/14/006-ea8926.jpg"></p>
+<p>安装就好</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i base-files_10.1ubuntu2.10_amd64.deb</span><br></pre></td></tr></table></figure>
+
+<p>但是，如果在之后安装其它软件是使用了<code>apt upgrade</code>那么又会按回原来的版本，而locale-check会被删除，所以要把local-check备份一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/bin/locale-check ./</span><br><span class="line">sudo apt upgrade</span><br><span class="line">sudo cp ./locale-check /usr/bin/locale-check</span><br></pre></td></tr></table></figure>
+
+<p>over！</p>
+
     </div>
 </article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = 'ubuntu开机提示错误locale-check: 没有那个文件或目录'
+    }
+</script>
+
             </div>
             <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -524,25 +586,25 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/1999/04/14/1999-4-14/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/10/21/2019-10-19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%95%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">数据结构试验报告-栈和队列</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/03/2019-11-3/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E4%B8%B2/">数据结构实验报告-串</a>
+                    <a href="/2019/12/15/2019-12-15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A-%E6%8E%92%E5%BA%8F/">数据结构实验报告-排序</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/10/18/2020-10-18/ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85pixiv-nginx/">ubuntu上安装pixiv-nginx</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/10/07/2020-10-7/ubuntu%E5%BC%80%E6%9C%BA%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AFlocale-check%20%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/">ubuntu开机提示错误locale-check: 没有那个文件或目录</a>
+                    <a href="/2020/09/20/2019-9-20/%E7%88%B1%E6%95%B0%E7%A4%BE%E6%8B%9B%E6%96%B0%E8%AF%95%E9%A2%98/">爱数社招新试题</a>
                 </span>
             </li>
             
@@ -554,31 +616,31 @@ mjx-container[display="true"] + br {
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/09/26/2020-9-26/vscode%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95c++/">vscode快速配置调试c++</a>
+                    <a href="/2020/09/25/2020-9-25/ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AEodbc/">ubuntu上配置odbc</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/02/16/2021-02-16/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E8%BF%BD%E7%95%AA(%E8%A1%A5%E7%95%AA)%E7%9A%84%E6%96%B9%E6%B3%95/">推荐一个追番(补番)的方法</a>
+                    <a href="/2020/09/28/2020-9-28/linux%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/">linux中的查找</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/02/28/2021-02-28/hexo%E5%8D%9A%E5%AE%A2%E5%8E%8B%E7%BC%A9css%E3%80%81js%E7%AD%89%E6%96%87%E4%BB%B6/">hexo博客压缩css、js等文件</a>
+                    <a href="/2020/09/30/2020-9-30/ubuntu%E5%AE%89%E8%A3%85%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8/">ubuntu安装植物大战僵尸</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/05/2021-03-05/pdftk%E5%B7%A5%E5%85%B7/">pdftk工具</a>
+                    <a href="/2020/09/27/2021-02-17/%E6%8E%A8%E8%8D%90github%E7%8A%B6%E6%80%81%E5%8D%A1%E7%89%87/">推荐github状态卡片</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/04/24/2021-04-24/ssh%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95%E6%9C%AC%E5%9C%B0localhost/">ssh无法登录本地localhost</a>
+                    <a href="/2022/11/29/2022-11-29/pycharm-opencv%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">pycharm opencv无法自动补全</a>
                 </span>
             </li>
             
@@ -593,17 +655,17 @@ mjx-container[display="true"] + br {
 
                 
                 <li>
-                    <a href="/categories/%E5%8D%9A%E5%AE%A2/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2020/10/07/2020-10-7/ubuntu%E5%BC%80%E6%9C%BA%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AFlocale-check%20%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/categories/%E5%8D%9A%E5%AE%A2/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2020/10/07/2020-10-7/ubuntu%E5%BC%80%E6%9C%BA%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AFlocale-check%20%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/categories/%E5%8D%9A%E5%AE%A2/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2020/10/07/2020-10-7/ubuntu%E5%BC%80%E6%9C%BA%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AFlocale-check%20%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -611,123 +673,123 @@ mjx-container[display="true"] + br {
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 19.43582588241167px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 9.772297345610621px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/c-c/" style="font-size: 14.44559414254141px;" class="tag-cloud-link">c/c++</a>
+    <a href="/tags/c-c/" style="font-size: 13.296328466827688px;" class="tag-cloud-link">c/c++</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 12.59140411494532px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 15.859910890219492px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/%E6%A0%88/" style="font-size: 16.114159018228975px;" class="tag-cloud-link">栈</a>
+    <a href="/tags/%E6%A0%88/" style="font-size: 19.364126413588775px;" class="tag-cloud-link">栈</a>
     
-    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 15.322657083351565px;" class="tag-cloud-link">队列</a>
+    <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 10.973234295942998px;" class="tag-cloud-link">队列</a>
     
-    <a href="/tags/%E6%A0%91/" style="font-size: 9.503783799109446px;" class="tag-cloud-link">树</a>
+    <a href="/tags/%E6%A0%91/" style="font-size: 19.18537684315956px;" class="tag-cloud-link">树</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 13.203602540097723px;" class="tag-cloud-link">算法 - 字符串</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 10.608445977833945px;" class="tag-cloud-link">算法 - 字符串</a>
     
-    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 15.604643239699822px;" class="tag-cloud-link">图论</a>
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 16.07395332875017px;" class="tag-cloud-link">图论</a>
     
-    <a href="/tags/vscode/" style="font-size: 8.32965963815252px;" class="tag-cloud-link">vscode</a>
+    <a href="/tags/vscode/" style="font-size: 8.183183568251133px;" class="tag-cloud-link">vscode</a>
     
-    <a href="/tags/linux/" style="font-size: 12.013166818850367px;" class="tag-cloud-link">linux</a>
+    <a href="/tags/linux/" style="font-size: 11.631835296781896px;" class="tag-cloud-link">linux</a>
     
-    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 13.259620383192619px;" class="tag-cloud-link">排序</a>
+    <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 19.499156093741945px;" class="tag-cloud-link">排序</a>
     
-    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 14.181025004706111px;" class="tag-cloud-link">高等数学</a>
+    <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 15.586694862414276px;" class="tag-cloud-link">高等数学</a>
     
-    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 15.52614592425969px;" class="tag-cloud-link">链表</a>
+    <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 12.841926863938223px;" class="tag-cloud-link">链表</a>
     
-    <a href="/tags/python/" style="font-size: 19.55425810732138px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 9.511519767385618px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/kdenlive/" style="font-size: 17.03358066603261px;" class="tag-cloud-link">kdenlive</a>
+    <a href="/tags/kdenlive/" style="font-size: 8.945448387619994px;" class="tag-cloud-link">kdenlive</a>
     
-    <a href="/tags/pixiv/" style="font-size: 16.14178267574194px;" class="tag-cloud-link">pixiv</a>
+    <a href="/tags/pixiv/" style="font-size: 16.420241637362246px;" class="tag-cloud-link">pixiv</a>
     
-    <a href="/tags/nginx/" style="font-size: 13.965640646957516px;" class="tag-cloud-link">nginx</a>
+    <a href="/tags/nginx/" style="font-size: 8.857624115915414px;" class="tag-cloud-link">nginx</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 14.491964834961102px;" class="tag-cloud-link">安装配置</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" style="font-size: 16.253263097168485px;" class="tag-cloud-link">安装配置</a>
     
-    <a href="/tags/fcitx/" style="font-size: 8.5784830679833px;" class="tag-cloud-link">fcitx</a>
+    <a href="/tags/fcitx/" style="font-size: 15.771078325259314px;" class="tag-cloud-link">fcitx</a>
     
-    <a href="/tags/x-org/" style="font-size: 10.781390295360822px;" class="tag-cloud-link">x.org</a>
+    <a href="/tags/x-org/" style="font-size: 12.918732632414887px;" class="tag-cloud-link">x.org</a>
     
-    <a href="/tags/bug/" style="font-size: 14.851339786260066px;" class="tag-cloud-link">bug</a>
+    <a href="/tags/bug/" style="font-size: 12.87431144819853px;" class="tag-cloud-link">bug</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 8.66775796892556px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 17.346895861187015px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/mysql/" style="font-size: 11.748514882522358px;" class="tag-cloud-link">mysql</a>
+    <a href="/tags/mysql/" style="font-size: 17.20750483666084px;" class="tag-cloud-link">mysql</a>
     
-    <a href="/tags/sql/" style="font-size: 15.025712245104474px;" class="tag-cloud-link">sql</a>
+    <a href="/tags/sql/" style="font-size: 8.343059564118239px;" class="tag-cloud-link">sql</a>
     
-    <a href="/tags/javafx/" style="font-size: 12.838587387568765px;" class="tag-cloud-link">javafx</a>
+    <a href="/tags/javafx/" style="font-size: 19.83903348263298px;" class="tag-cloud-link">javafx</a>
     
-    <a href="/tags/java/" style="font-size: 8.837273912596604px;" class="tag-cloud-link">java</a>
+    <a href="/tags/java/" style="font-size: 11.148997386497015px;" class="tag-cloud-link">java</a>
     
-    <a href="/tags/css/" style="font-size: 17.626502132338434px;" class="tag-cloud-link">css</a>
+    <a href="/tags/css/" style="font-size: 16.1300517179309px;" class="tag-cloud-link">css</a>
     
-    <a href="/tags/hbase/" style="font-size: 8.994318181919025px;" class="tag-cloud-link">hbase</a>
+    <a href="/tags/hbase/" style="font-size: 10.03108993006775px;" class="tag-cloud-link">hbase</a>
     
-    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 8.649097206259011px;" class="tag-cloud-link">大数据</a>
+    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 19.829583852411893px;" class="tag-cloud-link">大数据</a>
     
-    <a href="/tags/kafka/" style="font-size: 12.054170093925007px;" class="tag-cloud-link">kafka</a>
+    <a href="/tags/kafka/" style="font-size: 9.368218121433868px;" class="tag-cloud-link">kafka</a>
     
-    <a href="/tags/pyecharts/" style="font-size: 9.154973881458014px;" class="tag-cloud-link">pyecharts</a>
+    <a href="/tags/pyecharts/" style="font-size: 9.088795131113063px;" class="tag-cloud-link">pyecharts</a>
     
-    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 17.350335890368033px;" class="tag-cloud-link">绘图</a>
+    <a href="/tags/%E7%BB%98%E5%9B%BE/" style="font-size: 12.329842573018864px;" class="tag-cloud-link">绘图</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 9.299776697765857px;" class="tag-cloud-link">数据可视化</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 8.414727112659453px;" class="tag-cloud-link">数据可视化</a>
     
-    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 18.322690969071882px;" class="tag-cloud-link">关系图</a>
+    <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9B%BE/" style="font-size: 14.39852026863302px;" class="tag-cloud-link">关系图</a>
     
-    <a href="/tags/navicat/" style="font-size: 19.521219534430664px;" class="tag-cloud-link">navicat</a>
+    <a href="/tags/navicat/" style="font-size: 18.403960274555704px;" class="tag-cloud-link">navicat</a>
     
-    <a href="/tags/hadoop/" style="font-size: 12.812734570357026px;" class="tag-cloud-link">hadoop</a>
+    <a href="/tags/hadoop/" style="font-size: 18.630377842473894px;" class="tag-cloud-link">hadoop</a>
     
-    <a href="/tags/tenserflow/" style="font-size: 12.136386577200206px;" class="tag-cloud-link">tenserflow</a>
+    <a href="/tags/tenserflow/" style="font-size: 8.090156906321457px;" class="tag-cloud-link">tenserflow</a>
     
-    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 8.604849143591268px;" class="tag-cloud-link">机器学习</a>
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 17.30145046090821px;" class="tag-cloud-link">机器学习</a>
     
-    <a href="/tags/cuda/" style="font-size: 18.413692297106355px;" class="tag-cloud-link">cuda</a>
+    <a href="/tags/cuda/" style="font-size: 14.868818758289656px;" class="tag-cloud-link">cuda</a>
     
-    <a href="/tags/wine/" style="font-size: 18.8261526165314px;" class="tag-cloud-link">wine</a>
+    <a href="/tags/wine/" style="font-size: 16.780516533466944px;" class="tag-cloud-link">wine</a>
     
-    <a href="/tags/hexo/" style="font-size: 10.574594576986373px;" class="tag-cloud-link">hexo</a>
+    <a href="/tags/hexo/" style="font-size: 9.614408081371746px;" class="tag-cloud-link">hexo</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 13.978282955836605px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 13.841245981337629px;" class="tag-cloud-link">博客</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10.178562263641009px;" class="tag-cloud-link">前端</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 18.718398658196726px;" class="tag-cloud-link">前端</a>
     
-    <a href="/tags/win7/" style="font-size: 8.79254377501228px;" class="tag-cloud-link">win7</a>
+    <a href="/tags/win7/" style="font-size: 9.101918069893102px;" class="tag-cloud-link">win7</a>
     
-    <a href="/tags/telegram/" style="font-size: 11.429516030769939px;" class="tag-cloud-link">telegram</a>
+    <a href="/tags/telegram/" style="font-size: 13.14063399199592px;" class="tag-cloud-link">telegram</a>
     
-    <a href="/tags/ACGN/" style="font-size: 11.135994586092522px;" class="tag-cloud-link">ACGN</a>
+    <a href="/tags/ACGN/" style="font-size: 16.006030296227653px;" class="tag-cloud-link">ACGN</a>
     
-    <a href="/tags/github/" style="font-size: 15.350044617473202px;" class="tag-cloud-link">github</a>
+    <a href="/tags/github/" style="font-size: 9.5560515876419px;" class="tag-cloud-link">github</a>
     
-    <a href="/tags/github-action/" style="font-size: 13.965807386293484px;" class="tag-cloud-link">github action</a>
+    <a href="/tags/github-action/" style="font-size: 14.056549609458859px;" class="tag-cloud-link">github action</a>
     
-    <a href="/tags/js/" style="font-size: 12.247897705567205px;" class="tag-cloud-link">js</a>
+    <a href="/tags/js/" style="font-size: 18.1651866037403px;" class="tag-cloud-link">js</a>
     
-    <a href="/tags/html/" style="font-size: 8.586474172841513px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 10.86831339936159px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/gulp/" style="font-size: 9.627391990266524px;" class="tag-cloud-link">gulp</a>
+    <a href="/tags/gulp/" style="font-size: 10.21836966306597px;" class="tag-cloud-link">gulp</a>
     
-    <a href="/tags/ssh/" style="font-size: 11.351904982918096px;" class="tag-cloud-link">ssh</a>
+    <a href="/tags/ssh/" style="font-size: 10.973610176045685px;" class="tag-cloud-link">ssh</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 8.838311848203801px;" class="tag-cloud-link">内网穿透</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 14.924500246655796px;" class="tag-cloud-link">内网穿透</a>
     
-    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 12.59520655344318px;" class="tag-cloud-link">服务器</a>
+    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 8.921572324813418px;" class="tag-cloud-link">服务器</a>
     
-    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 13.800176190296792px;" class="tag-cloud-link">网络</a>
+    <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 13.265040309686034px;" class="tag-cloud-link">网络</a>
     
-    <a href="/tags/android/" style="font-size: 8.616433258818338px;" class="tag-cloud-link">android</a>
+    <a href="/tags/android/" style="font-size: 18.59418417126231px;" class="tag-cloud-link">android</a>
     
-    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 8.163144770332472px;" class="tag-cloud-link">计算机组成原理</a>
+    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 8.880449059950786px;" class="tag-cloud-link">计算机组成原理</a>
     
-    <a href="/tags/mapreduce/" style="font-size: 10.346162179398183px;" class="tag-cloud-link">mapreduce</a>
+    <a href="/tags/mapreduce/" style="font-size: 10.846152494607278px;" class="tag-cloud-link">mapreduce</a>
     
-    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 12.506413437414594px;" class="tag-cloud-link">爬虫</a>
+    <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 17.00672616635783px;" class="tag-cloud-link">爬虫</a>
     
 </div>
                 
@@ -839,6 +901,35 @@ mjx-container[display="true"] + br {
     
 <script src="/js/comment/leancloud.js"></script>
 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <script>
+        if (window.commentConfig) {
+            window.commentConfig.id = 'Wed Oct 07 2020 20:00:00 GMT+0800'
+            window.commentConfig.owner = 'fnsflm'
+            window.commentConfig.repo = 'fnsflm.github.io'
+            window.commentConfig.client_id = '3944a1f0ecd9ba78988b'
+            window.commentConfig.client_secret = 'c63e09f78d2fbc940cf7394e3370fc7ad1cc1df1'
+            window.commentConfig.redirect_uri = ''
+            window.commentConfig.proxy = 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+        } else {
+            window.commentConfig = {
+                id: 'Wed Oct 07 2020 20:00:00 GMT+0800',
+                owner: 'fnsflm',
+                repo: 'fnsflm.github.io',
+                client_id: '3944a1f0ecd9ba78988b',
+                client_secret: 'c63e09f78d2fbc940cf7394e3370fc7ad1cc1df1',
+                redirect_uri: '',
+                proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+            }
+        }
+    </script>
+    <!--    
+<script src="/js/comment/gitment.js"></script>
+-->
+    
+<script src="/js/comment/gitalk.js"></script>
 
 
 </html>
