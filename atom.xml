@@ -6,7 +6,7 @@
   <link href="https://fnsflm.xyz/atom.xml" rel="self"/>
   
   <link href="https://fnsflm.xyz/"/>
-  <updated>2024-03-19T23:39:41.765Z</updated>
+  <updated>2024-03-21T10:25:51.452Z</updated>
   <id>https://fnsflm.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://fnsflm.xyz/2024/03/20/2024-03-20/%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85DDNS%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A%E5%8A%A8%E6%80%81IP/"/>
     <id>https://fnsflm.xyz/2024/03/20/2024-03-20/%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85DDNS%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A%E5%8A%A8%E6%80%81IP/</id>
     <published>2024-03-20T00:00:00.000Z</published>
-    <updated>2024-03-19T23:39:41.765Z</updated>
+    <updated>2024-03-21T10:25:51.452Z</updated>
     
     
       
@@ -416,9 +416,9 @@
     
     <category term="java" scheme="https://fnsflm.xyz/tags/java/"/>
     
-    <category term="kafka" scheme="https://fnsflm.xyz/tags/kafka/"/>
-    
     <category term="大数据" scheme="https://fnsflm.xyz/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    <category term="kafka" scheme="https://fnsflm.xyz/tags/kafka/"/>
     
   </entry>
   
@@ -445,13 +445,13 @@
     
     <category term="java" scheme="https://fnsflm.xyz/tags/java/"/>
     
+    <category term="hbase" scheme="https://fnsflm.xyz/tags/hbase/"/>
+    
     <category term="大数据" scheme="https://fnsflm.xyz/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
     <category term="mapreduce" scheme="https://fnsflm.xyz/tags/mapreduce/"/>
     
     <category term="爬虫" scheme="https://fnsflm.xyz/tags/%E7%88%AC%E8%99%AB/"/>
-    
-    <category term="hbase" scheme="https://fnsflm.xyz/tags/hbase/"/>
     
     <category term="hadoop" scheme="https://fnsflm.xyz/tags/hadoop/"/>
     
@@ -482,9 +482,9 @@
     
     <category term="java" scheme="https://fnsflm.xyz/tags/java/"/>
     
-    <category term="大数据" scheme="https://fnsflm.xyz/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
     <category term="hbase" scheme="https://fnsflm.xyz/tags/hbase/"/>
+    
+    <category term="大数据" scheme="https://fnsflm.xyz/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
   </entry>
   
